@@ -84,6 +84,8 @@ function copyStaticAssets() {
   }
 }
 
+const SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9';
+
 function urlEntry(domain, page) {
   return `  <url>
     <loc>${domain}${page.path === '/' ? '/' : page.path}</loc>
@@ -101,7 +103,7 @@ function generateSitemap(pages) {
   if (pages.length <= threshold) {
     const urls = pages.map(p => urlEntry(site.domain, p)).join('\n');
     writeFileSync(join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="${SITEMAP_NS}">
 ${urls}
 </urlset>`);
     console.log(`Sitemap: ${pages.length} URLs`);
@@ -131,7 +133,7 @@ ${urls}
     const filename = `sitemap-${name}.xml`;
     const urls = sectionPages.map(p => urlEntry(site.domain, p)).join('\n');
     writeFileSync(join(DIST, filename), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="${SITEMAP_NS}">
 ${urls}
 </urlset>`);
     sitemapFiles.push({ filename, lastmod: new Date().toISOString().split('T')[0] });
@@ -143,7 +145,7 @@ ${urls}
   </sitemap>`).join('\n');
 
   writeFileSync(join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="${SITEMAP_NS}">
 ${indexEntries}
 </sitemapindex>`);
 

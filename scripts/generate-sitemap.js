@@ -17,7 +17,7 @@ const urls = pages.map(p => `  <url>
   </url>`).join('\n');
 
 writeFileSync(join(ROOT, 'dist', 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
 </urlset>`);
 
