@@ -1,0 +1,732 @@
+[
+  {
+    "slug": "hs256-vs-rs256",
+    "title": "HS256 vs RS256 — Which JWT Algorithm to Use?",
+    "seoTitle": "HS256 vs RS256 Difference — JWT Algorithm Comparison",
+    "description": "Compare HS256 and RS256 JWT signing algorithms. Learn when to use symmetric vs asymmetric keys for JWT security.",
+    "keywords": "hs256 vs rs256,jwt algorithm comparison,hs256 rs256 difference",
+    "category": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-security-best-practices"
+    ],
+    "faq": [
+      {
+        "q": "What is HS256?",
+        "a": "HMAC-SHA256 — symmetric algorithm using a shared secret for signing and verification."
+      },
+      {
+        "q": "What is RS256?",
+        "a": "RSA-SHA256 — asymmetric algorithm using a private key to sign and public key to verify."
+      },
+      {
+        "q": "Which is more secure?",
+        "a": "RS256 is better for distributed systems since only the auth server holds the private key."
+      }
+    ],
+    "content": "<h2>HS256 — Symmetric</h2><p>Uses one shared secret. Simple but every service that verifies tokens must know the secret.</p><table><tr><th>Pros</th><th>Cons</th></tr><tr><td>Fast, simple setup</td><td>Secret must be shared with all verifiers</td></tr><tr><td>Good for monoliths</td><td>Secret leak compromises all tokens</td></tr></table><h2>RS256 — Asymmetric</h2><p>Private key signs, public key verifies. Ideal for microservices and OAuth/OIDC.</p><table><tr><th>Pros</th><th>Cons</th></tr><tr><td>Public key can be distributed via JWKS</td><td>Slower, more complex key management</td></tr><tr><td>Private key never leaves auth server</td><td>Requires certificate/key rotation plan</td></tr></table><h2>Recommendation</h2><ul><li><strong>Monolith / internal APIs</strong> → HS256 with strong secret (256+ bits)</li><li><strong>Public APIs / OAuth / microservices</strong> → RS256 or ES256</li></ul>"
+  },
+  {
+    "slug": "rs512-explained",
+    "title": "RS512 Explained — RSA-SHA512 JWT Signing",
+    "seoTitle": "RS512 JWT Algorithm Explained — RSA SHA-512 Signing",
+    "description": "Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.",
+    "keywords": "rs512 jwt,rs512 explained,rsa sha512 jwt",
+    "category": "algorithms",
+    "relatedTools": [
+      "jwks-validator",
+      "jwt-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-security-best-practices"
+    ],
+    "faq": [
+      {
+        "q": "Is RS512 stronger than RS256?",
+        "a": "RS512 uses SHA-512 instead of SHA-256. Both use RSA; RS512 provides a larger hash output."
+      },
+      {
+        "q": "Should I use RS512?",
+        "a": "RS256 is the industry default. Use RS512 only if your security policy requires SHA-512."
+      }
+    ],
+    "content": "<h2>What is RS512?</h2><p>RS512 combines RSA public-key cryptography with the SHA-512 hash function. The JWT header specifies <code>\"alg\": \"RS512\"</code>.</p><h2>Header Example</h2><pre><code>{ \"alg\": \"RS512\", \"typ\": \"JWT\", \"kid\": \"key-1\" }</code></pre><h2>Verification</h2><p>Verify using the RSA public key from your JWKS endpoint. Our <a href=\"/tools/jwks-validator.html\">JWKS Validator</a> supports RS512 verification.</p>"
+  },
+  {
+    "slug": "es256-explained",
+    "title": "ES256 JWT Algorithm Explained",
+    "seoTitle": "ES256 JWT Algorithm Explained | JWTValidator.org",
+    "description": "ECDSA P-256 SHA-256 JWT signing explained",
+    "keywords": "es256 jwt",
+    "content": "<h2>ES256 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>es256 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is es256 jwt?",
+        "a": "A common JWT authentication topic. This guide explains es256 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "es384-explained",
+    "title": "ES384 JWT Algorithm Explained",
+    "seoTitle": "ES384 JWT Algorithm Explained | JWTValidator.org",
+    "description": "ECDSA P-384 JWT signing guide",
+    "keywords": "es384 jwt",
+    "content": "<h2>ES384 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>es384 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is es384 jwt?",
+        "a": "A common JWT authentication topic. This guide explains es384 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "es512-explained",
+    "title": "ES512 JWT Algorithm Explained",
+    "seoTitle": "ES512 JWT Algorithm Explained | JWTValidator.org",
+    "description": "ECDSA P-521 JWT signing guide",
+    "keywords": "es512 jwt",
+    "content": "<h2>ES512 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>es512 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is es512 jwt?",
+        "a": "A common JWT authentication topic. This guide explains es512 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "hs384-explained",
+    "title": "HS384 JWT Algorithm Explained",
+    "seoTitle": "HS384 JWT Algorithm Explained | JWTValidator.org",
+    "description": "HMAC SHA-384 JWT signing guide",
+    "keywords": "hs384 jwt",
+    "content": "<h2>HS384 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>hs384 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is hs384 jwt?",
+        "a": "A common JWT authentication topic. This guide explains hs384 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "hs512-explained",
+    "title": "HS512 JWT Algorithm Explained",
+    "seoTitle": "HS512 JWT Algorithm Explained | JWTValidator.org",
+    "description": "HMAC SHA-512 JWT signing guide",
+    "keywords": "hs512 jwt",
+    "content": "<h2>HS512 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>hs512 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is hs512 jwt?",
+        "a": "A common JWT authentication topic. This guide explains hs512 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "rs256-explained",
+    "title": "RS256 JWT Algorithm Explained",
+    "seoTitle": "RS256 JWT Algorithm Explained | JWTValidator.org",
+    "description": "RSA SHA-256 JWT signing — most common asymmetric algorithm",
+    "keywords": "rs256 jwt",
+    "content": "<h2>RS256 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>rs256 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is rs256 jwt?",
+        "a": "A common JWT authentication topic. This guide explains rs256 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "rs384-explained",
+    "title": "RS384 JWT Algorithm Explained",
+    "seoTitle": "RS384 JWT Algorithm Explained | JWTValidator.org",
+    "description": "RSA SHA-384 JWT signing guide",
+    "keywords": "rs384 jwt",
+    "content": "<h2>RS384 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>rs384 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is rs384 jwt?",
+        "a": "A common JWT authentication topic. This guide explains rs384 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "ps256-explained",
+    "title": "PS256 JWT Algorithm Explained",
+    "seoTitle": "PS256 JWT Algorithm Explained | JWTValidator.org",
+    "description": "RSA-PSS SHA-256 JWT signing guide",
+    "keywords": "ps256 jwt",
+    "content": "<h2>PS256 JWT Algorithm Explained</h2>\n<p>This guide explains <strong>ps256 jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is ps256 jwt?",
+        "a": "A common JWT authentication topic. This guide explains ps256 jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "eddsa-jwt",
+    "title": "EdDSA JWT Algorithm",
+    "seoTitle": "EdDSA JWT Algorithm | JWTValidator.org",
+    "description": "Ed25519 JWT signing with EdDSA algorithm",
+    "keywords": "eddsa jwt",
+    "content": "<h2>EdDSA JWT Algorithm</h2>\n<p>This guide explains <strong>eddsa jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is eddsa jwt?",
+        "a": "A common JWT authentication topic. This guide explains eddsa jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-alg-none",
+    "title": "JWT alg none Explained",
+    "seoTitle": "JWT alg none Explained | JWTValidator.org",
+    "description": "Why alg:none is dangerous and must be rejected",
+    "keywords": "jwt alg none",
+    "content": "<h2>JWT alg none Explained</h2>\n<p>This guide explains <strong>jwt alg none</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is jwt alg none?",
+        "a": "A common JWT authentication topic. This guide explains jwt alg none with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-algorithm-selection",
+    "title": "JWT Algorithm Selection Guide",
+    "seoTitle": "JWT Algorithm Selection Guide | JWTValidator.org",
+    "description": "How to choose the right JWT signing algorithm",
+    "keywords": "jwt algorithm selection",
+    "content": "<h2>JWT Algorithm Selection Guide</h2>\n<p>This guide explains <strong>jwt algorithm selection</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is jwt algorithm selection?",
+        "a": "A common JWT authentication topic. This guide explains jwt algorithm selection with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-symmetric-vs-asymmetric",
+    "title": "JWT Symmetric vs Asymmetric",
+    "seoTitle": "JWT Symmetric vs Asymmetric | JWTValidator.org",
+    "description": "HMAC vs RSA vs ECDSA for JWT signing",
+    "keywords": "symmetric vs asymmetric jwt",
+    "content": "<h2>JWT Symmetric vs Asymmetric</h2>\n<p>This guide explains <strong>symmetric vs asymmetric jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is symmetric vs asymmetric jwt?",
+        "a": "A common JWT authentication topic. This guide explains symmetric vs asymmetric jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-hs256-secret-length",
+    "title": "HS256 Secret Key Length",
+    "seoTitle": "HS256 Secret Key Length | JWTValidator.org",
+    "description": "Minimum secret key length for HS256 JWT",
+    "keywords": "hs256 secret length",
+    "content": "<h2>HS256 Secret Key Length</h2>\n<p>This guide explains <strong>hs256 secret length</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is hs256 secret length?",
+        "a": "A common JWT authentication topic. This guide explains hs256 secret length with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-rs256-key-size",
+    "title": "RS256 Key Size Requirements",
+    "seoTitle": "RS256 Key Size Requirements | JWTValidator.org",
+    "description": "RSA key size recommendations for RS256 JWT",
+    "keywords": "rs256 key size",
+    "content": "<h2>RS256 Key Size Requirements</h2>\n<p>This guide explains <strong>rs256 key size</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is rs256 key size?",
+        "a": "A common JWT authentication topic. This guide explains rs256 key size with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-ecdsa-vs-rsa",
+    "title": "ECDSA vs RSA for JWT",
+    "seoTitle": "ECDSA vs RSA for JWT | JWTValidator.org",
+    "description": "Compare ES256 and RS256 for JWT signing",
+    "keywords": "ecdsa vs rsa jwt",
+    "content": "<h2>ECDSA vs RSA for JWT</h2>\n<p>This guide explains <strong>ecdsa vs rsa jwt</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is ecdsa vs rsa jwt?",
+        "a": "A common JWT authentication topic. This guide explains ecdsa vs rsa jwt with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-jwks-explained",
+    "title": "JWKS Explained for JWT",
+    "seoTitle": "JWKS Explained for JWT | JWTValidator.org",
+    "description": "JSON Web Key Set for JWT public key verification",
+    "keywords": "jwks explained",
+    "content": "<h2>JWKS Explained for JWT</h2>\n<p>This guide explains <strong>jwks explained</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is jwks explained?",
+        "a": "A common JWT authentication topic. This guide explains jwks explained with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-kid-header",
+    "title": "JWT kid Header Claim",
+    "seoTitle": "JWT kid Header Claim | JWTValidator.org",
+    "description": "Key ID in JWT header for key rotation",
+    "keywords": "jwt kid header",
+    "content": "<h2>JWT kid Header Claim</h2>\n<p>This guide explains <strong>jwt kid header</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is jwt kid header?",
+        "a": "A common JWT authentication topic. This guide explains jwt kid header with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "jwt-key-rotation",
+    "title": "JWT Key Rotation Guide",
+    "seoTitle": "JWT Key Rotation Guide | JWTValidator.org",
+    "description": "Rotate JWT signing keys without downtime",
+    "keywords": "jwt key rotation",
+    "content": "<h2>JWT Key Rotation Guide</h2>\n<p>This guide explains <strong>jwt key rotation</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "faq": [
+      {
+        "q": "What is jwt key rotation?",
+        "a": "A common JWT authentication topic. This guide explains jwt key rotation with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "algorithms",
+    "pageType": "algorithms",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-encoder",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-authentication-explained",
+      "jwt-invalid-signature"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  }
+]

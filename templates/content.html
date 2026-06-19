@@ -1,0 +1,20 @@
+{{{breadcrumbsHtml}}}
+
+<article class="content-page">
+  <header class="page-header">
+    <h1>{{page.title}}</h1>
+    <p class="lead">{{page.description}}</p>
+  </header>
+
+  {{#if quickAnswerHtml}}
+  <div class="featured-snippet">{{{quickAnswerHtml}}}</div>
+  {{/if}}
+
+  <div class="prose">
+    {{{contentHtml}}}
+  </div>
+
+  {{{tryItHtml}}}
+  {{{faqHtml}}}
+  {{{relatedHtml}}}
+</article>

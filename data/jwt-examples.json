@@ -1,0 +1,24 @@
+{
+  "hs256": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjk5OTk5OTk5OTksImlzcyI6ImV4YW1wbGUuY29tIiwiYXVkIjoiYXBpLmV4YW1wbGUuY29tIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "secret": "your-256-bit-secret",
+    "description": "Standard HS256 JWT with sub, name, iat, exp, iss, aud claims"
+  },
+  "rs256": {
+    "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTAwMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDAwMDAwMCwiZXhwIjo5OTk5OTk5OTk5fQ.placeholder",
+    "description": "RS256 JWT — paste your own token signed with RSA private key"
+  },
+  "expired": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJleHBpcmVkLXVzZXIiLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MTUxNjIzOTAyMn0.4Adcj3UFYzPUVaY3F91aGW1-2x7wBW7Qga5U1q8q0YI",
+    "secret": "your-256-bit-secret",
+    "description": "Expired token (exp in the past) for testing expiry checker"
+  },
+  "malformed": {
+    "token": "not.a.valid.jwt.token",
+    "description": "Malformed JWT for error testing"
+  },
+  "oauth": {
+    "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImtpZC0xIn0.eyJpc3MiOiJodHRwczovL2xvZ2luLmV4YW1wbGUuY29tIiwic3ViIjoidXNlci0xMjMiLCJhdWQiOiJteS1hcGkiLCJleHAiOjk5OTk5OTk5OTksImlhdCI6MTcwMDAwMDAwMCwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.placeholder",
+    "description": "OAuth 2.0 access token structure with scope, iss, aud"
+  }
+}

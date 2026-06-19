@@ -1,0 +1,298 @@
+[
+  {
+    "slug": "microservices-auth",
+    "title": "JWT for microservices architectures",
+    "seoTitle": "JWT Authentication for microservices architectures — Guide",
+    "description": "jwt authentication microservices — implementation guide with tools and best practices.",
+    "keywords": "jwt authentication microservices",
+    "content": "<h2>JWT for microservices architectures</h2>\n<p><strong>jwt authentication microservices</strong> — how JWT authentication works for microservices architectures.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for microservices architectures. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt authentication microservices?",
+        "a": "A common JWT authentication topic. This guide explains jwt authentication microservices with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "spa-authentication",
+    "title": "JWT for single-page applications",
+    "seoTitle": "JWT Authentication for single-page applications (React, Vue, Angular) — Guide",
+    "description": "jwt authentication spa react — implementation guide with tools and best practices.",
+    "keywords": "jwt authentication spa react",
+    "content": "<h2>JWT for single-page applications (React, Vue, Angular)</h2>\n<p><strong>jwt authentication spa react</strong> — how JWT authentication works for single-page applications (React, Vue, Angular).</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for single-page applications (React, Vue, Angular). The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt authentication spa react?",
+        "a": "A common JWT authentication topic. This guide explains jwt authentication spa react with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "mobile-api-auth",
+    "title": "JWT for mobile app API authentication",
+    "seoTitle": "JWT Authentication for mobile app API authentication — Guide",
+    "description": "jwt mobile app authentication — implementation guide with tools and best practices.",
+    "keywords": "jwt mobile app authentication",
+    "content": "<h2>JWT for mobile app API authentication</h2>\n<p><strong>jwt mobile app authentication</strong> — how JWT authentication works for mobile app API authentication.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for mobile app API authentication. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt mobile app authentication?",
+        "a": "A common JWT authentication topic. This guide explains jwt mobile app authentication with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "api-gateway-jwt",
+    "title": "JWT for API gateway token validation",
+    "seoTitle": "JWT Authentication for API gateway token validation — Guide",
+    "description": "jwt api gateway validation — implementation guide with tools and best practices.",
+    "keywords": "jwt api gateway validation",
+    "content": "<h2>JWT for API gateway token validation</h2>\n<p><strong>jwt api gateway validation</strong> — how JWT authentication works for API gateway token validation.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for API gateway token validation. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt api gateway validation?",
+        "a": "A common JWT authentication topic. This guide explains jwt api gateway validation with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "single-sign-on",
+    "title": "JWT for single sign-on",
+    "seoTitle": "JWT Authentication for single sign-on (SSO) systems — Guide",
+    "description": "jwt single sign on sso — implementation guide with tools and best practices.",
+    "keywords": "jwt single sign on sso",
+    "content": "<h2>JWT for single sign-on (SSO) systems</h2>\n<p><strong>jwt single sign on sso</strong> — how JWT authentication works for single sign-on (SSO) systems.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for single sign-on (SSO) systems. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt single sign on sso?",
+        "a": "A common JWT authentication topic. This guide explains jwt single sign on sso with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "machine-to-machine",
+    "title": "JWT for machine-to-machine",
+    "seoTitle": "JWT Authentication for machine-to-machine (M2M) communication — Guide",
+    "description": "jwt machine to machine m2m — implementation guide with tools and best practices.",
+    "keywords": "jwt machine to machine m2m",
+    "content": "<h2>JWT for machine-to-machine (M2M) communication</h2>\n<p><strong>jwt machine to machine m2m</strong> — how JWT authentication works for machine-to-machine (M2M) communication.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for machine-to-machine (M2M) communication. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt machine to machine m2m?",
+        "a": "A common JWT authentication topic. This guide explains jwt machine to machine m2m with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "graphql-jwt-auth",
+    "title": "JWT for GraphQL API authentication",
+    "seoTitle": "JWT Authentication for GraphQL API authentication — Guide",
+    "description": "jwt graphql authentication — implementation guide with tools and best practices.",
+    "keywords": "jwt graphql authentication",
+    "content": "<h2>JWT for GraphQL API authentication</h2>\n<p><strong>jwt graphql authentication</strong> — how JWT authentication works for GraphQL API authentication.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for GraphQL API authentication. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt graphql authentication?",
+        "a": "A common JWT authentication topic. This guide explains jwt graphql authentication with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  },
+  {
+    "slug": "websocket-jwt-auth",
+    "title": "JWT for WebSocket connection authentication",
+    "seoTitle": "JWT Authentication for WebSocket connection authentication — Guide",
+    "description": "jwt websocket authentication — implementation guide with tools and best practices.",
+    "keywords": "jwt websocket authentication",
+    "content": "<h2>JWT for WebSocket connection authentication</h2>\n<p><strong>jwt websocket authentication</strong> — how JWT authentication works for WebSocket connection authentication.</p>\n<h2>Architecture</h2>\n<p>JWTs enable stateless authentication ideal for WebSocket connection authentication. The client stores an access token and sends it with each request via the <code>Authorization: Bearer</code> header.</p>\n<h2>Implementation Checklist</h2>\n<ul>\n<li>Issue short-lived access tokens (5–15 min)</li>\n<li>Implement refresh token rotation</li>\n<li>Validate signature, exp, iss, aud on every request</li>\n<li>Store tokens securely (httpOnly cookies for web)</li>\n</ul>\n<h2>Test Your Tokens</h2>\n<p>Use <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, <a href=\"/tools/jwt-validator.html\">JWT Validator</a>, and <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> during development.</p>",
+    "faq": [
+      {
+        "q": "What is jwt websocket authentication?",
+        "a": "A common JWT authentication topic. This guide explains jwt websocket authentication with examples and links to free decoder/validator tools."
+      },
+      {
+        "q": "Are JWT tools on this site free?",
+        "a": "Yes. All tools run client-side in your browser with no account required."
+      },
+      {
+        "q": "How do I debug JWT errors?",
+        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+      }
+    ],
+    "cluster": "security",
+    "pageType": "use-cases",
+    "relatedTools": [
+      "jwt-validator",
+      "jwt-debugger",
+      "jwks-validator"
+    ],
+    "relatedGuides": [
+      "jwt-invalid-signature",
+      "jwt-expired-token-fix"
+    ],
+    "relatedArticles": [
+      "jwt-beginner-guide",
+      "jwt-security-best-practices"
+    ]
+  }
+]

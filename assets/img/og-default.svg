@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#1e293b" stroke="#475569"/>
+  <text x="100" y="200" fill="#2563eb" font-family="system-ui,sans-serif" font-size="48" font-weight="700">JWTValidator.org</text>
+  <text x="100" y="280" fill="#f1f5f9" font-family="system-ui,sans-serif" font-size="36">Decode · Validate · Debug JWT Tokens</text>
+  <text x="100" y="360" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="24">Free tools · 1,000+ guides · 100% private</text>
+</svg>

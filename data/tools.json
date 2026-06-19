@@ -1,0 +1,193 @@
+[
+  {
+    "slug": "jwt-decoder",
+    "title": "JWT Decoder",
+    "seoTitle": "JWT Decoder Online Free | Decode JWT Token Instantly",
+    "description": "Free online JWT decoder. Paste any JWT token to instantly decode header, payload, and signature. 100% client-side, no upload.",
+    "keywords": "jwt decoder,jwt decode online,decode jwt token,jwt parser,jwt payload viewer",
+    "icon": "🔓",
+    "script": "jwt-decoder.js",
+    "relatedGuides": ["jwt-authentication-explained", "jwt-expired-token-fix"],
+    "relatedTools": ["jwt-encoder", "jwt-validator", "jwt-debugger", "jwt-expiry-checker"],
+    "faq": [
+      { "q": "Is this JWT decoder free?", "a": "Yes, completely free with no account required." },
+      { "q": "Are my tokens sent to a server?", "a": "No. All decoding happens locally in your browser." },
+      { "q": "Can I share a decoded token?", "a": "Use the Share URL button to encode the token in the query string." }
+    ]
+  },
+  {
+    "slug": "jwt-encoder",
+    "title": "JWT Encoder",
+    "seoTitle": "JWT Encoder Online | Create JWT Tokens Free",
+    "description": "Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.",
+    "keywords": "jwt encoder,create jwt token,jwt generator,encode jwt online",
+    "icon": "🔐",
+    "script": "jwt-encoder.js",
+    "relatedGuides": ["jwt-authentication-explained"],
+    "relatedTools": ["jwt-decoder", "jwt-validator", "base64-decode"],
+    "faq": [
+      { "q": "Which algorithms are supported?", "a": "HS256, HS384, and HS512 using Web Crypto API." },
+      { "q": "Is the secret stored?", "a": "No. Your secret never leaves your browser." }
+    ]
+  },
+  {
+    "slug": "jwt-validator",
+    "title": "JWT Validator",
+    "seoTitle": "JWT Validator Online | Verify JWT Signature Free",
+    "description": "Validate JWT token signatures online. Verify HS256/HS384/HS512 tokens with your secret key. Client-side only.",
+    "keywords": "jwt validator,jwt verify,jwt signature verification,validate jwt token",
+    "icon": "✅",
+    "script": "jwt-validator.js",
+    "relatedGuides": ["jwt-invalid-signature", "jwt-authentication-explained"],
+    "relatedTools": ["jwt-decoder", "jwt-debugger", "jwks-validator"],
+    "faq": [
+      { "q": "Can I validate RS256 tokens?", "a": "Use the JWKS Validator tool with a public key or JWKS endpoint." },
+      { "q": "What if validation fails?", "a": "Check our jwt-invalid-signature guide for common causes." }
+    ]
+  },
+  {
+    "slug": "jwt-debugger",
+    "title": "JWT Debugger",
+    "seoTitle": "JWT Debugger Online | Inspect & Debug JWT Tokens",
+    "description": "Debug JWT tokens with claim-by-claim analysis, timeline view, and validation warnings. Perfect for OAuth and API development.",
+    "keywords": "jwt debugger,jwt debug tool,jwt inspector,jwt claims analyzer",
+    "icon": "🔍",
+    "script": "jwt-debugger.js",
+    "relatedGuides": ["jwt-authentication-explained", "jwt-expired-token-fix"],
+    "relatedTools": ["jwt-decoder", "jwt-validator", "oauth-token-inspector"],
+    "faq": [
+      { "q": "What does the debugger show?", "a": "Decoded claims, expiration timeline, issuer/audience checks, and warnings." }
+    ]
+  },
+  {
+    "slug": "jwt-expiry-checker",
+    "title": "JWT Expiry Checker",
+    "seoTitle": "JWT Expiry Checker | Check JWT Token Expiration",
+    "description": "Instantly check if a JWT token is expired. See exact expiration time, time remaining, and refresh recommendations.",
+    "keywords": "jwt expired,jwt expiration check,jwt exp claim,jwt expiry checker",
+    "icon": "⏰",
+    "script": "jwt-expiry-checker.js",
+    "relatedGuides": ["jwt-expired-token-fix", "jwt-authentication-explained"],
+    "relatedTools": ["jwt-decoder", "jwt-debugger", "jwt-validator"],
+    "faq": [
+      { "q": "What is the exp claim?", "a": "The exp (expiration) claim is a Unix timestamp after which the token must not be accepted." }
+    ]
+  },
+  {
+    "slug": "base64-decode",
+    "title": "Base64 Decode",
+    "seoTitle": "Base64 Decode Online | JWT Base64URL Decoder",
+    "description": "Decode Base64 and Base64URL strings. Essential for understanding JWT header and payload encoding.",
+    "keywords": "base64 decode,base64url decode,jwt base64 decoder",
+    "icon": "📦",
+    "script": "base64-decode.js",
+    "relatedGuides": ["jwt-authentication-explained"],
+    "relatedTools": ["jwt-decoder", "jwt-encoder"],
+    "faq": [
+      { "q": "What is Base64URL?", "a": "JWT uses Base64URL encoding which replaces + with - and / with _ and omits padding." }
+    ]
+  },
+  {
+    "slug": "jwks-validator",
+    "title": "JWKS Validator",
+    "seoTitle": "JWKS Validator | Verify JWT with JWKS Endpoint",
+    "description": "Validate RS256/RS512 JWT tokens using JWKS (JSON Web Key Set) endpoints. Fetch keys from OIDC providers client-side.",
+    "keywords": "jwks validator,jwks jwt,verify jwt rs256,jwks endpoint",
+    "icon": "🔑",
+    "script": "jwks-validator.js",
+    "relatedGuides": ["jwt-invalid-signature"],
+    "relatedTools": ["jwt-validator", "jwt-decoder", "oauth-token-inspector"],
+    "faq": [
+      { "q": "What is JWKS?", "a": "JSON Web Key Set — a JSON document containing public keys used to verify JWT signatures." }
+    ]
+  },
+  {
+    "slug": "oauth-token-inspector",
+    "title": "OAuth Token Inspector",
+    "seoTitle": "OAuth Token Inspector | Analyze OAuth 2.0 Access Tokens",
+    "description": "Inspect OAuth 2.0 access tokens and OpenID Connect ID tokens. Analyze scopes, issuer, audience, and claims.",
+    "keywords": "oauth token inspector,oauth jwt,id token decoder,access token analyzer",
+    "icon": "🛡️",
+    "script": "oauth-token-inspector.js",
+    "relatedGuides": ["jwt-authentication-explained"],
+    "relatedTools": ["jwt-debugger", "jwt-decoder", "jwks-validator"],
+    "faq": [
+      { "q": "What's the difference between access and ID tokens?", "a": "Access tokens authorize API access; ID tokens authenticate the user (OpenID Connect)." }
+    ]
+  },
+  {
+    "slug": "jwt-claims-viewer",
+    "title": "JWT Claims Viewer",
+    "seoTitle": "JWT Claims Viewer Online | Inspect All JWT Claims Free",
+    "description": "View all JWT claims in a structured table. Inspect registered and custom claims with descriptions, validation hints, and copy support.",
+    "keywords": "jwt claims viewer,jwt claims inspector,jwt payload viewer,jwt claims decoder",
+    "icon": "📋",
+    "script": "jwt-claims-viewer.js",
+    "relatedGuides": ["jwt-claims-explained", "jwt-basics"],
+    "relatedTools": ["jwt-decoder", "jwt-debugger", "jwt-validator"],
+    "faq": [
+      { "q": "What claims does it show?", "a": "All claims in the payload — registered (exp, sub, iss) and custom claims with descriptions." },
+      { "q": "Is it different from the decoder?", "a": "The Claims Viewer focuses on claim-by-claim analysis with validation hints in a table format." }
+    ]
+  },
+  {
+    "slug": "jwt-header-decoder",
+    "title": "JWT Header Decoder",
+    "seoTitle": "JWT Header Decoder Online | Decode JWT alg & typ Free",
+    "description": "Decode JWT header instantly. Inspect alg, typ, kid and critical header parameters without decoding the full token.",
+    "keywords": "jwt header decoder,decode jwt header,jwt alg typ,kid header jwt",
+    "icon": "📄",
+    "script": "jwt-header-decoder.js",
+    "relatedGuides": ["jwt-header-explained", "jwt-basics"],
+    "relatedTools": ["jwt-decoder", "jwt-claims-viewer", "jwt-validator"],
+    "faq": [
+      { "q": "What is in the JWT header?", "a": "Typically alg (algorithm), typ (token type), and optionally kid (key ID) for JWKS lookup." },
+      { "q": "Why check the header first?", "a": "The alg claim tells you how to verify the signature — critical for security." }
+    ]
+  },
+  {
+    "slug": "pem-to-jwk",
+    "title": "PEM to JWK Converter",
+    "seoTitle": "PEM to JWK Converter Online | RSA Public Key to JWK",
+    "description": "Convert PEM public keys to JWK (JSON Web Key) format online. Use output with JWKS Validator for RS256 token verification.",
+    "keywords": "pem to jwk,convert pem to jwk,rsa public key jwk,jwk converter",
+    "icon": "🔄",
+    "script": "pem-to-jwk.js",
+    "relatedGuides": ["jwt-invalid-signature"],
+    "relatedTools": ["jwks-validator", "jwt-validator", "jwt-decoder"],
+    "faq": [
+      { "q": "What formats are supported?", "a": "RSA public keys in PEM format (BEGIN PUBLIC KEY)." },
+      { "q": "Is my key uploaded?", "a": "No. Conversion happens entirely in your browser using Web Crypto API." }
+    ]
+  },
+  {
+    "slug": "jwt-beautifier",
+    "title": "JWT Beautifier",
+    "seoTitle": "JWT Beautifier Online | Format & Pretty Print JWT Free",
+    "description": "Beautify and format JWT tokens. Pretty-print decoded header and payload JSON with syntax highlighting. 100% client-side.",
+    "keywords": "jwt beautifier,jwt formatter,pretty print jwt,format jwt token,jwt prettify",
+    "icon": "✨",
+    "script": "jwt-beautifier.js",
+    "relatedGuides": ["jwt-basics"],
+    "relatedTools": ["jwt-decoder", "jwt-header-decoder", "jwt-claims-viewer"],
+    "faq": [
+      { "q": "What does beautify do?", "a": "Decodes the JWT and formats header and payload JSON with readable indentation." },
+      { "q": "Can I copy formatted output?", "a": "Yes — use the copy buttons for header, payload, or the full formatted token." }
+    ]
+  },
+  {
+    "slug": "jwt-bulk-decoder",
+    "title": "JWT Bulk Decoder",
+    "seoTitle": "JWT Bulk Decoder | Decode Multiple JWT Tokens Online",
+    "description": "Decode multiple JWT tokens at once. Paste one token per line to batch-decode headers and payloads. Free, client-side only.",
+    "keywords": "jwt bulk decoder,decode multiple jwt,batch jwt decode,jwt batch parser",
+    "icon": "📚",
+    "script": "jwt-bulk-decoder.js",
+    "relatedGuides": ["jwt-authentication-explained"],
+    "relatedTools": ["jwt-decoder", "jwt-debugger", "jwt-validator"],
+    "faq": [
+      { "q": "How many tokens can I decode?", "a": "There is no hard limit — processing is local. Very large batches may slow your browser." },
+      { "q": "Are tokens uploaded?", "a": "No. All decoding happens in your browser." }
+    ]
+  }
+]

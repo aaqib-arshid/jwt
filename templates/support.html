@@ -1,0 +1,51 @@
+{{{breadcrumbsHtml}}}
+
+<article class="content-page trust-page">
+  <header class="page-header">
+    <h1>{{page.title}}</h1>
+    <p class="lead">{{page.description}}</p>
+  </header>
+
+  <div class="prose">
+    {{{contentHtml}}}
+  </div>
+
+  <section class="support-quick-links card">
+    <h2>Quick Links</h2>
+    <div class="support-links-grid">
+      <a href="/tools/jwt-decoder.html" class="support-link-card">
+        <strong>JWT Decoder</strong>
+        <span>Decode tokens instantly</span>
+      </a>
+      <a href="/tools/jwt-validator.html" class="support-link-card">
+        <strong>JWT Validator</strong>
+        <span>Verify signatures</span>
+      </a>
+      <a href="/guides/jwt-basics.html" class="support-link-card">
+        <strong>JWT Basics Guide</strong>
+        <span>Learn token structure</span>
+      </a>
+      <a href="/errors/malformed-jwt.html" class="support-link-card">
+        <strong>Malformed JWT</strong>
+        <span>Fix decode errors</span>
+      </a>
+      <a href="/guides/jwt-invalid-signature.html" class="support-link-card">
+        <strong>Invalid Signature</strong>
+        <span>Diagnose verify failures</span>
+      </a>
+      <a href="/guides/jwt-expired-token-fix.html" class="support-link-card">
+        <strong>Expired Token Fix</strong>
+        <span>Handle exp errors</span>
+      </a>
+    </div>
+  </section>
+
+  {{{faqHtml}}}
+
+  <section class="support-email card">
+    <h2>Still Need Help?</h2>
+    <p>Email our support team at <a href="mailto:{{contactEmail}}">{{contactEmail}}</a>. We respond within 2–3 business days.</p>
+  </section>
+
+  {{{trustLinksHtml}}}
+</article>

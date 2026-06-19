@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "jwt-beginner-guide",
+    "title": "JWT Beginner Guide — Start Here",
+    "seoTitle": "JWT Beginner Guide — Learn JSON Web Tokens from Scratch",
+    "description": "Complete JWT beginner guide. Learn token structure, claims, signing, verification, and your first JWT implementation.",
+    "keywords": "jwt beginner guide,learn jwt,what is jwt token,jwt tutorial",
+    "date": "2026-06-01",
+    "author": "JWTValidator.org",
+    "relatedTools": ["jwt-decoder", "jwt-encoder", "jwt-validator"],
+    "relatedGuides": ["jwt-authentication-explained"],
+    "relatedArticles": ["oauth-vs-jwt", "jwt-security-best-practices"],
+    "faq": [
+      { "q": "Do I need to understand cryptography?", "a": "Basic understanding helps, but libraries handle signing. Focus on claims, expiration, and secure storage." },
+      { "q": "How long does it take to learn JWT?", "a": "You can decode and understand tokens in 30 minutes. Production implementation takes longer due to security considerations." }
+    ],
+    "content": "<h2>Introduction</h2><p>JSON Web Tokens (JWTs) are the standard for stateless authentication in modern APIs. This guide takes you from zero to confidently working with JWTs.</p><h2>Step 1: Decode a Token</h2><p>Paste any JWT into our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>. You'll see three parts: header, payload, signature.</p><h2>Step 2: Understand Claims</h2><p>Registered claims: <code>iss</code>, <code>sub</code>, <code>aud</code>, <code>exp</code>, <code>nbf</code>, <code>iat</code>, <code>jti</code>. Custom claims carry app-specific data.</p><h2>Step 3: Create Your First Token</h2><pre><code class=\"language-javascript\">// Node.js\nconst jwt = require('jsonwebtoken');\nconst token = jwt.sign(\n  { sub: 'user-42', role: 'user' },\n  process.env.JWT_SECRET,\n  { expiresIn: '1h', issuer: 'my-app' }\n);</code></pre><pre><code class=\"language-python\"># Python\nimport jwt\nfrom datetime import datetime, timedelta\ntoken = jwt.encode(\n    {'sub': 'user-42', 'exp': datetime.utcnow() + timedelta(hours=1)},\n    secret, algorithm='HS256'\n)</code></pre><h2>Step 4: Verify on Every Request</h2><p>Never trust decoded payload without signature verification. Always verify with the correct key and algorithm.</p><h2>Next Steps</h2><p>Continue with our <a href=\"/learning-path.html\">JWT Learning Path</a> or read <a href=\"/guides/jwt-authentication-explained.html\">JWT Authentication Explained</a>.</p>"
+  },
+  {
+    "slug": "jwt-security-best-practices",
+    "title": "JWT Security Best Practices",
+    "seoTitle": "JWT Security Best Practices — Protect Your Tokens",
+    "description": "Essential JWT security best practices: algorithm choice, secret management, storage, expiration, and attack prevention.",
+    "keywords": "jwt security best practices,jwt security,jwt vulnerabilities",
+    "date": "2026-06-05",
+    "author": "JWTValidator.org",
+    "relatedTools": ["jwt-validator", "jwt-debugger", "jwks-validator"],
+    "relatedGuides": ["jwt-invalid-signature", "jwt-authentication-explained"],
+    "relatedArticles": ["jwt-beginner-guide", "refresh-token-rotation"],
+    "faq": [
+      { "q": "Is JWT secure?", "a": "JWTs are secure when implemented correctly: strong keys, proper validation, short expiration, and secure storage." },
+      { "q": "What is the alg:none attack?", "a": "Attackers set alg to 'none' hoping servers skip verification. Always whitelist allowed algorithms." }
+    ],
+    "content": "<h2>Algorithm Security</h2><ul><li>Never accept <code>alg: none</code></li><li>Whitelist allowed algorithms server-side</li><li>Prefer RS256/ES256 for public APIs</li><li>Use 256+ bit secrets for HS256</li></ul><h2>Storage</h2><ul><li>Avoid localStorage (XSS vulnerable)</li><li>Use httpOnly, Secure, SameSite cookies for web apps</li><li>Store in memory for SPAs when possible</li></ul><h2>Validation Checklist</h2><ol><li>Verify signature with correct key</li><li>Validate exp, nbf, iat</li><li>Check iss and aud match expected values</li><li>Reject unexpected algorithms</li></ol><h2>Real-World Attack Scenarios</h2><h3>Token Theft via XSS</h3><p>Malicious scripts read tokens from localStorage. Mitigation: httpOnly cookies + CSP headers.</p><h3>Algorithm Confusion</h3><p>RS256 token verified with HS256 using public key as secret. Mitigation: strict algorithm whitelist.</p><h3>Weak Secrets</h3><p>Brute-force HS256 secrets. Mitigation: 256-bit random secrets, rate limiting.</p>"
+  },
+  {
+    "slug": "oauth-vs-jwt",
+    "title": "OAuth 2.0 vs JWT — What's the Difference?",
+    "seoTitle": "OAuth vs JWT — Understanding the Relationship",
+    "description": "OAuth 2.0 vs JWT explained. OAuth is an authorization framework; JWT is a token format. Learn how they work together.",
+    "keywords": "oauth vs jwt,oauth jwt difference,oauth 2.0 jwt",
+    "date": "2026-06-10",
+    "author": "JWTValidator.org",
+    "relatedTools": ["oauth-token-inspector", "jwt-decoder", "jwks-validator"],
+    "relatedGuides": ["jwt-authentication-explained"],
+    "relatedArticles": ["jwt-beginner-guide", "refresh-token-rotation"],
+    "faq": [
+      { "q": "Is OAuth the same as JWT?", "a": "No. OAuth 2.0 is an authorization framework. JWT is a token format. OAuth access tokens are often JWTs but can be opaque strings." },
+      { "q": "Do I need OAuth if I use JWT?", "a": "JWT is often used inside OAuth flows. You can use JWT without OAuth for simple API auth." }
+    ],
+    "content": "<h2>OAuth 2.0</h2><p>An authorization framework defining how apps obtain limited access to user resources. Roles: resource owner, client, authorization server, resource server.</p><h2>JWT</h2><p>A compact, self-contained token format (RFC 7519). Contains claims and a signature. Used as access tokens, ID tokens, and session tokens.</p><h2>How They Work Together</h2><ol><li>User authorizes via OAuth flow</li><li>Authorization server returns JWT access token</li><li>Client sends JWT to resource server</li><li>Resource server validates JWT signature and claims</li></ol><p>Inspect OAuth tokens with our <a href=\"/tools/oauth-token-inspector.html\">OAuth Token Inspector</a>.</p>"
+  },
+  {
+    "slug": "refresh-token-rotation",
+    "title": "Refresh Token Rotation — Secure Implementation",
+    "seoTitle": "Refresh Token Rotation — JWT Security Pattern",
+    "description": "Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.",
+    "keywords": "refresh token rotation,jwt refresh token,token rotation security",
+    "date": "2026-06-15",
+    "author": "JWTValidator.org",
+    "relatedTools": ["jwt-expiry-checker", "jwt-validator"],
+    "relatedGuides": ["jwt-expired-token-fix", "jwt-authentication-explained"],
+    "relatedArticles": ["jwt-security-best-practices", "oauth-vs-jwt"],
+    "faq": [
+      { "q": "What is refresh token rotation?", "a": "Each time a refresh token is used, a new refresh token is issued and the old one is invalidated." },
+      { "q": "Why rotate refresh tokens?", "a": "If a refresh token is stolen, rotation limits the attack window and enables reuse detection." }
+    ],
+    "content": "<h2>Why Rotate?</h2><p>Long-lived refresh tokens are high-value targets. Rotation ensures stolen tokens have a short useful life.</p><h2>Implementation Pattern</h2><pre><code class=\"language-javascript\">// Server: on refresh\nconst newRefresh = generateRefreshToken(userId);\nawait revokeRefreshToken(oldRefreshTokenId);\nawait storeRefreshToken(newRefresh, userId);\nreturn { access_token, refresh_token: newRefresh };</code></pre><h2>Reuse Detection</h2><p>If a revoked refresh token is presented, invalidate all sessions for that user — possible token theft.</p><h2>Check Expiration</h2><p>Use our <a href=\"/tools/jwt-expiry-checker.html\">JWT Expiry Checker</a> to monitor access token lifetimes.</p>"
+  }
+]

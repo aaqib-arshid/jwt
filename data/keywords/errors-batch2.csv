@@ -1,0 +1,102 @@
+slug,title,primary_keyword,description,error_code
+jwt-expired-axios,JWT Expired Axios Error,jwt expired axios,Axios interceptor handling expired JWT 401 errors,ERR_JWT_EXPIRED
+jwt-expired-fetch,JWT Expired Fetch Error,jwt expired fetch API,Handle expired JWT in Fetch API responses,ERR_JWT_EXPIRED
+jwt-expired-apollo,JWT Expired Apollo Client,jwt expired apollo client,Refresh expired JWT in Apollo GraphQL client,ERR_JWT_EXPIRED
+jwt-expired-tanstack-query,JWT Expired TanStack Query,jwt expired tanstack query,Handle JWT expiry with TanStack Query retry,ERR_JWT_EXPIRED
+jwt-expired-rtk-query,JWT Expired RTK Query,jwt expired rtk query,RTK Query JWT token refresh on 401,ERR_JWT_EXPIRED
+jwt-expired-swr,JWT Expired SWR Error,jwt expired swr,Handle expired JWT with SWR data fetching,ERR_JWT_EXPIRED
+jwt-expired-nestjs,JWT Expired NestJS Guard,jwt expired nestjs guard,NestJS JWT guard expired token exception,ERR_JWT_EXPIRED
+jwt-expired-fastify,JWT Expired Fastify,jwt expired fastify,Handle expired JWT in Fastify JWT plugin,ERR_JWT_EXPIRED
+jwt-expired-koa,JWT Expired Koa.js,jwt expired koa,Expired JWT handling in Koa middleware,ERR_JWT_EXPIRED
+jwt-expired-hapi,JWT Expired Hapi.js,jwt expired hapi,Fix expired JWT in Hapi auth strategy,ERR_JWT_EXPIRED
+jwt-expired-micronaut,JWT Expired Micronaut,jwt expired micronaut,Micronaut JWT expired token exception,ERR_JWT_EXPIRED
+jwt-expired-quarkus,JWT Expired Quarkus,jwt expired quarkus,Quarkus MicroProfile JWT expired error,ERR_JWT_EXPIRED
+jwt-expired-gin,JWT Expired Gin Go,jwt expired gin golang,Handle expired JWT in Gin Go middleware,ERR_JWT_EXPIRED
+jwt-expired-echo,JWT Expired Echo Go,jwt expired echo golang,Expired JWT error in Echo Go framework,ERR_JWT_EXPIRED
+jwt-expired-fiber,JWT Expired Fiber Go,jwt expired fiber golang,Handle expired JWT in Fiber Go middleware,ERR_JWT_EXPIRED
+jwt-expired-actix,JWT Expired Actix Rust,jwt expired actix rust,Expired JWT in Actix Web Rust handler,ERR_JWT_EXPIRED
+jwt-expired-rocket,JWT Expired Rocket Rust,jwt expired rocket rust,Rocket Rust JWT expired token error,ERR_JWT_EXPIRED
+jwt-expired-phoenix,JWT Expired Phoenix Elixir,jwt expired phoenix elixir,Handle expired JWT in Phoenix Elixir,ERR_JWT_EXPIRED
+jwt-expired-ktor,JWT Expired Ktor Kotlin,jwt expired ktor kotlin,Ktor JWT expired token handling,ERR_JWT_EXPIRED
+jwt-expired-spring-security,JWT Expired Spring Security,jwt expired spring security,Spring Security JWT expired exception handler,ERR_JWT_EXPIRED
+jwt-invalid-signature-nestjs,JWT Invalid Signature NestJS,jwt invalid signature nestjs,NestJS JWT invalid signature Passport error,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-fastify,JWT Invalid Signature Fastify,jwt invalid signature fastify,Fastify JWT signature verification failed,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-fastapi,JWT Invalid Signature FastAPI,jwt invalid signature fastapi,FastAPI JWT invalid signature HTTPException,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-django,JWT Invalid Signature Django,jwt invalid signature django,Django REST JWT invalid signature error,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-laravel,JWT Invalid Signature Laravel,jwt invalid signature laravel,Laravel JWT invalid signature exception,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-spring,JWT Invalid Signature Spring,jwt invalid signature spring,Spring Boot JWT signature validation failed,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-auth0,JWT Invalid Signature Auth0,jwt invalid signature auth0 sdk,Auth0 SDK invalid JWT signature error,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-firebase-admin,JWT Invalid Signature Firebase Admin,jwt invalid signature firebase admin,Firebase Admin SDK invalid ID token signature,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-cognito-sdk,JWT Invalid Signature Cognito SDK,jwt invalid signature cognito sdk,AWS Cognito JWT verifier signature error,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-invalid-signature-jwks,JWT Invalid Signature JWKS,jwt invalid signature jwks,JWKS key mismatch invalid signature error,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-malformed-axios,JWT Malformed Axios,jwt malformed axios,Malformed JWT error in Axios request interceptor,ERR_JWT_MALFORMED
+jwt-malformed-react-native,JWT Malformed React Native,jwt malformed react native,Fix malformed JWT in React Native apps,ERR_JWT_MALFORMED
+jwt-malformed-flutter,JWT Malformed Flutter,jwt malformed flutter,Malformed JWT token error in Flutter apps,ERR_JWT_MALFORMED
+jwt-malformed-postman,JWT Malformed Postman,jwt malformed postman,Fix malformed JWT when testing in Postman,ERR_JWT_MALFORMED
+jwt-malformed-swagger,JWT Malformed Swagger,jwt malformed swagger ui,Malformed JWT in Swagger UI authorize button,ERR_JWT_MALFORMED
+jwt-audience-error-nodejs,JWT Audience Error Node.js,jwt audience error nodejs,Fix JWT audience aud validation error Node.js,ERR_JWT_AUDIENCE
+jwt-audience-error-python,JWT Audience Error Python,jwt audience error python,Fix JWT aud claim mismatch in PyJWT,ERR_JWT_AUDIENCE
+jwt-issuer-error-nodejs,JWT Issuer Error Node.js,jwt issuer error nodejs,Fix JWT iss issuer validation error Node.js,ERR_JWT_ISSUER
+jwt-issuer-error-python,JWT Issuer Error Python,jwt issuer error python,Fix JWT issuer mismatch in PyJWT,ERR_JWT_ISSUER
+jwt-not-before-nodejs,JWT Not Before Node.js,jwt not before nodejs,Fix JWT nbf not before error Node.js,ERR_JWT_NOT_ACTIVE
+jwt-not-before-python,JWT Not Before Python,jwt not before python,Handle JWT nbf claim error in PyJWT,ERR_JWT_NOT_ACTIVE
+jwt-kid-mismatch,JWT kid Mismatch Error,jwt kid mismatch,JWT header kid does not match any JWKS key,ERR_JWT_KEY_NOT_FOUND
+jwt-jwks-fetch-failed,JWT JWKS Fetch Failed,jwt jwks fetch failed,Failed to fetch JWKS endpoint for JWT verification,ERR_JWT_JWKS
+jwt-jwks-timeout,JWT JWKS Timeout Error,jwt jwks timeout,JWKS endpoint timeout during JWT verification,ERR_JWT_JWKS
+jwt-jwks-cache,JWT JWKS Cache Error,jwt jwks cache error,JWKS cache stale key JWT verification failure,ERR_JWT_JWKS
+jwt-decode-base64-nodejs,JWT Base64 Decode Node.js,jwt base64 decode nodejs,Fix Base64 decode error JWT Node.js Buffer,ERR_JWT_MALFORMED
+jwt-decode-base64-browser,JWT Base64 Decode Browser,jwt base64 decode browser,Fix browser atob JWT decode errors,ERR_JWT_MALFORMED
+jwt-token-truncated,JWT Token Truncated Error,jwt token truncated,Fix truncated JWT token copy paste error,ERR_JWT_MALFORMED
+jwt-token-double-encoded,JWT Double Encoded Error,jwt double encoded token,Fix double Base64 encoded JWT token,ERR_JWT_MALFORMED
+jwt-token-wrong-format,JWT Wrong Format Error,jwt wrong format token,JWT token in wrong format not three segments,ERR_JWT_MALFORMED
+jwt-bearer-prefix-missing,JWT Bearer Prefix Missing,jwt bearer prefix missing,Fix missing Bearer prefix in Authorization header,ERR_JWT_MALFORMED
+jwt-authorization-header-missing,JWT Authorization Header Missing,jwt authorization header missing,Fix missing Authorization header JWT API call,ERR_JWT_MALFORMED
+jwt-secret-env-not-set,JWT Secret Env Not Set,jwt secret env not set,Fix JWT secret environment variable not configured,ERR_JWT_CONFIG
+jwt-secret-rotation-failed,JWT Secret Rotation Failed,jwt secret rotation failed,JWT verification failed after secret rotation,ERR_JWS_SIGNATURE_VERIFICATION_FAILED
+jwt-public-key-parse-error,JWT Public Key Parse Error,jwt public key parse error,Failed to parse PEM public key for JWT verify,ERR_JWT_KEY_PARSE
+jwt-private-key-parse-error,JWT Private Key Parse Error,jwt private key parse error,Failed to parse PEM private key for JWT sign,ERR_JWT_KEY_PARSE
+jwt-openssl-key-error,JWT OpenSSL Key Error,jwt openssl key error,OpenSSL error generating JWT signing keys,ERR_JWT_KEY_PARSE
+jwt-crypto-subtle-error,JWT Web Crypto Subtle Error,jwt web crypto subtle error,Web Crypto API JWT sign verify error browser,ERR_JWT_CRYPTO
+jwt-alg-not-allowed-nodejs,JWT Algorithm Not Allowed Node.js,jwt algorithm not allowed nodejs,Fix JWT algorithm not in allowed list Node.js,ERR_JWT_ALGORITHM
+jwt-alg-not-allowed-python,JWT Algorithm Not Allowed Python,jwt algorithm not allowed python,Fix PyJWT algorithm not allowed error,ERR_JWT_ALGORITHM
+jwt-none-algorithm-rejected,JWT None Algorithm Rejected,jwt none algorithm rejected,Reject JWT with alg none algorithm attack,ERR_JWT_ALGORITHM
+jwt-rs256-hs256-confusion,JWT RS256 HS256 Confusion,jwt rs256 hs256 confusion,Algorithm confusion RS256 verified as HS256,ERR_JWT_ALGORITHM
+jwt-token-revoked-error,JWT Token Revoked Error,jwt token revoked error,JWT rejected because token is revoked blocklisted,ERR_JWT_REVOKED
+jwt-jti-revoked,JWT jti Revoked Error,jwt jti revoked,JWT jti claim found in revocation list,ERR_JWT_REVOKED
+jwt-session-expired-frontend,JWT Session Expired Frontend,jwt session expired frontend,Handle JWT session expired in frontend SPA,ERR_JWT_EXPIRED
+jwt-auto-refresh-failed,JWT Auto Refresh Failed,jwt auto refresh failed,Automatic JWT refresh token request failed,ERR_JWT_REFRESH
+jwt-refresh-token-expired,JWT Refresh Token Expired,jwt refresh token expired,Refresh token also expired re-authenticate user,ERR_JWT_EXPIRED
+jwt-refresh-token-revoked,JWT Refresh Token Revoked,jwt refresh token revoked,Refresh token revoked due to reuse detection,ERR_JWT_REVOKED
+jwt-concurrent-session,JWT Concurrent Session Error,jwt concurrent session error,JWT rejected due to concurrent session limit,ERR_JWT_SESSION
+jwt-ip-mismatch-error,JWT IP Mismatch Error,jwt ip mismatch error,JWT rejected IP address does not match claim,ERR_JWT_CLAIM
+jwt-device-mismatch-error,JWT Device Mismatch Error,jwt device mismatch error,JWT device fingerprint claim mismatch error,ERR_JWT_CLAIM
+jwt-scope-insufficient,JWT Insufficient Scope Error,jwt insufficient scope error,JWT valid but insufficient OAuth scope for action,ERR_JWT_SCOPE
+jwt-role-insufficient,JWT Insufficient Role Error,jwt insufficient role error,JWT valid but user role claim insufficient,ERR_JWT_ROLE
+jwt-tenant-mismatch,JWT Tenant Mismatch Error,jwt tenant mismatch error,JWT tenant_id claim does not match request,ERR_JWT_CLAIM
+jwt-org-mismatch,JWT Organization Mismatch,jwt organization mismatch,JWT org claim mismatch multi-tenant error,ERR_JWT_CLAIM
+jwt-graphql-unauthorized,JWT GraphQL Unauthorized Error,jwt graphql unauthorized,GraphQL 401 unauthorized JWT authentication error,ERR_JWT_UNAUTHORIZED
+jwt-grpc-unauthenticated,JWT gRPC Unauthenticated Error,jwt grpc unauthenticated,gRPC Unauthenticated JWT metadata missing,ERR_JWT_UNAUTHORIZED
+jwt-websocket-unauthorized,JWT WebSocket Unauthorized,jwt websocket unauthorized,WebSocket connection rejected JWT auth failed,ERR_JWT_UNAUTHORIZED
+jwt-serverless-unauthorized,JWT Serverless Unauthorized,jwt serverless unauthorized,JWT 401 in AWS Lambda serverless function,ERR_JWT_UNAUTHORIZED
+jwt-edge-unauthorized,JWT Edge Function Unauthorized,jwt edge function unauthorized,JWT auth failure Vercel Cloudflare edge,ERR_JWT_UNAUTHORIZED
+jwt-cdn-unauthorized,JWT CDN Unauthorized,jwt cdn unauthorized,JWT validation failed at CDN edge layer,ERR_JWT_UNAUTHORIZED
+jwt-api-version-mismatch,JWT API Version Mismatch,jwt api version mismatch,JWT valid but API version claim mismatch,ERR_JWT_CLAIM
+jwt-custom-claim-missing,JWT Custom Claim Missing Error,jwt custom claim missing,Required custom JWT claim missing from token,ERR_JWT_CLAIM
+jwt-custom-claim-invalid,JWT Custom Claim Invalid,jwt custom claim invalid,Custom JWT claim value failed validation,ERR_JWT_CLAIM
+jwt-payload-too-large-error,JWT Payload Too Large,jwt payload too large error,JWT payload exceeds size limit error,ERR_JWT_SIZE
+jwt-header-too-large,JWT Header Too Large,jwt header too large,JWT header exceeds maximum size limit,ERR_JWT_SIZE
+jwt-token-size-limit,JWT Token Size Limit Exceeded,jwt token size limit,JWT token exceeds HTTP header size limit,ERR_JWT_SIZE
+jwt-cookie-size-limit,JWT Cookie Size Limit,jwt cookie size limit,JWT too large to store in httpOnly cookie,ERR_JWT_SIZE
+jwt-localstorage-quota,JWT localStorage Quota Error,jwt localstorage quota exceeded,JWT too large for localStorage quota,ERR_JWT_STORAGE
+jwt-indexeddb-storage,JWT IndexedDB Storage Error,jwt indexeddb storage error,Store large JWT tokens in IndexedDB browser,ERR_JWT_STORAGE
+jwt-memory-storage-spa,JWT Memory Storage SPA,jwt memory storage spa,In-memory JWT storage pattern for SPAs,ERR_JWT_STORAGE
+jwt-tab-sync-error,JWT Tab Sync Error,jwt tab sync error,Sync JWT token state across browser tabs,ERR_JWT_STORAGE
+jwt-ssr-hydration-error,JWT SSR Hydration Error,jwt ssr hydration error,JWT auth state mismatch SSR hydration error,ERR_JWT_SSR
+jwt-nextjs-middleware-error,JWT Next.js Middleware Error,jwt nextjs middleware error,Next.js middleware JWT validation error,ERR_JWT_MIDDLEWARE
+jwt-remix-loader-error,JWT Remix Loader Error,jwt remix loader error,JWT authentication error in Remix loader,ERR_JWT_MIDDLEWARE
+jwt-nuxt-middleware-error,JWT Nuxt Middleware Error,jwt nuxt middleware error,Nuxt route middleware JWT auth error,ERR_JWT_MIDDLEWARE
+jwt-sveltekit-hooks-error,JWT SvelteKit Hooks Error,jwt sveltekit hooks error,SvelteKit server hooks JWT validation error,ERR_JWT_MIDDLEWARE
+jwt-test-env-error,JWT Test Environment Error,jwt test environment error,JWT auth failing in test environment CI,ERR_JWT_TEST
+jwt-mock-auth-error,JWT Mock Auth Test Error,jwt mock auth test error,Mock JWT authentication failing in unit tests,ERR_JWT_TEST
+jwt-e2e-auth-error,JWT E2E Test Auth Error,jwt e2e test auth error,JWT authentication failing in E2E Cypress tests,ERR_JWT_TEST
+jwt-playwright-auth-error,JWT Playwright Auth Error,jwt playwright auth error,Playwright E2E JWT authentication setup error,ERR_JWT_TEST

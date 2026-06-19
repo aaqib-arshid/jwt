@@ -1,0 +1,98 @@
+{
+  "clusters": [
+    {
+      "id": "tools",
+      "name": "JWT Tools",
+      "hubSlug": "jwt-tools",
+      "hubPath": "/hubs/jwt-tools.html",
+      "description": "Free client-side JWT decoder, validator, encoder, and debugger tools.",
+      "priority": 0.95,
+      "sections": ["tools"]
+    },
+    {
+      "id": "decode-validate",
+      "name": "Decode & Validate",
+      "hubSlug": "decode-validate",
+      "hubPath": "/hubs/decode-validate.html",
+      "description": "How to decode, validate, and debug JWT tokens.",
+      "priority": 0.9,
+      "sections": ["guides", "errors"]
+    },
+    {
+      "id": "algorithms",
+      "name": "JWT Algorithms",
+      "hubSlug": "algorithms",
+      "hubPath": "/hubs/algorithms.html",
+      "description": "HS256, RS256, ES256 and algorithm comparisons.",
+      "priority": 0.85,
+      "sections": ["algorithms", "compare"]
+    },
+    {
+      "id": "implementation",
+      "name": "Implementation Guides",
+      "hubSlug": "implementation",
+      "hubPath": "/hubs/implementation.html",
+      "description": "JWT authentication examples in Node.js, Python, Java, Go, and more.",
+      "priority": 0.85,
+      "sections": ["learn"]
+    },
+    {
+      "id": "claims",
+      "name": "JWT Claims",
+      "hubSlug": "claims",
+      "hubPath": "/hubs/claims.html",
+      "description": "Understand exp, sub, iss, aud, and every JWT claim.",
+      "priority": 0.8,
+      "sections": ["claims"]
+    },
+    {
+      "id": "providers",
+      "name": "Auth Providers",
+      "hubSlug": "providers",
+      "hubPath": "/hubs/providers.html",
+      "description": "JWT with Auth0, Firebase, AWS Cognito, Okta, and OAuth providers.",
+      "priority": 0.8,
+      "sections": ["providers"]
+    },
+    {
+      "id": "security",
+      "name": "JWT Security",
+      "hubSlug": "security",
+      "hubPath": "/hubs/security.html",
+      "description": "JWT security best practices, vulnerabilities, and attack prevention.",
+      "priority": 0.85,
+      "sections": ["guides", "blog", "compare"]
+    },
+    {
+      "id": "comparisons",
+      "name": "Comparisons",
+      "hubSlug": "comparisons",
+      "hubPath": "/hubs/comparisons.html",
+      "description": "JWT vs sessions, OAuth, API keys — and jwt.io alternatives.",
+      "priority": 0.75,
+      "sections": ["compare"]
+    }
+  ],
+  "linkingRules": {
+    "defaultTools": ["jwt-decoder", "jwt-validator", "jwt-debugger"],
+    "defaultGuides": ["jwt-basics", "jwt-authentication-explained"],
+    "defaultErrors": ["invalid-signature", "token-expired", "malformed-jwt"],
+    "toolToGuides": 4,
+    "guideToTools": 3,
+    "contentMinWordSections": ["intro", "quickFix", "howTo", "examples", "faq"]
+  },
+  "pageTypes": {
+    "guides": { "path": "/guides/{slug}.html", "priority": 0.8, "template": "content" },
+    "errors": { "path": "/errors/{slug}.html", "priority": 0.75, "template": "content" },
+    "algorithms": { "path": "/algorithms/{slug}.html", "priority": 0.8, "template": "content" },
+    "compare": { "path": "/compare/{slug}.html", "priority": 0.7, "template": "content" },
+    "learn": { "path": "/learn/{lang}/{slug}.html", "priority": 0.75, "template": "content" },
+    "claims": { "path": "/claims/{slug}.html", "priority": 0.7, "template": "content" },
+    "providers": { "path": "/providers/{slug}.html", "priority": 0.7, "template": "content" },
+    "use-cases": { "path": "/use-cases/{slug}.html", "priority": 0.7, "template": "content" }
+  },
+  "sitemap": {
+    "indexThreshold": 500,
+    "changefreq": "weekly"
+  }
+}

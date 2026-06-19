@@ -1,0 +1,15 @@
+{{{breadcrumbsHtml}}}
+
+<article class="content-page">
+  <header class="page-header">
+    <h1>{{page.title}}</h1>
+  </header>
+  <ul class="index-list">
+    {{#each listItems}}
+    <li class="index-item card">
+      <a href="{{href}}"><h2>{{title}}</h2></a>
+      <p>{{description}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</article>

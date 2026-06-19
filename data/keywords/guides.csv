@@ -1,0 +1,54 @@
+slug,title,primary_keyword,description,cluster,fix_type,language
+what-is-jwt-token,What Is a JWT Token,what is jwt token,Complete explanation of JSON Web Tokens for beginners,decode-validate,,
+jwt-decode-online,JWT Decode Online,jwt decode online,How to decode JWT tokens online safely in your browser,decode-validate,,
+jwt-decode-without-secret,Decode JWT Without Secret,jwt decode without secret,Can you decode a JWT without the secret key? Yes — here's how,decode-validate,,
+jwt-verify-online,JWT Verify Online,jwt verify online,Verify JWT signatures online with HS256 and RS256,decode-validate,,
+jwt-expired-fix,JWT Expired Fix,jwt expired fix,How to fix expired JWT tokens and implement refresh flows,decode-validate,expired,
+jwt-invalid-signature-fix,JWT Invalid Signature Fix,jwt invalid signature fix,Diagnose and fix JWT signature verification failures,decode-validate,signature,
+jwt-malformed-fix,JWT Malformed Fix,jwt malformed token fix,Fix malformed JWT errors and invalid token format,decode-validate,malformed,
+jwt-not-valid-yet,JWT Not Valid Yet,jwt not before nbf,Understanding the nbf claim and not-yet-valid tokens,decode-validate,,
+jwt-claims-explained,JWT Claims Explained,jwt claims explained,Complete guide to registered and custom JWT claims,decode-validate,,
+jwt-header-explained,JWT Header Explained,jwt header explained,Understanding the JWT header alg and typ fields,decode-validate,,
+jwt-payload-explained,JWT Payload Explained,jwt payload explained,What data is stored in the JWT payload,decode-validate,,
+jwt-signature-explained,JWT Signature Explained,jwt signature explained,How JWT signatures work and why they matter,decode-validate,,
+jwt-secret-key,JWT Secret Key Guide,jwt secret key,How to generate and manage JWT secret keys securely,security,,
+jwt-token-structure,JWT Token Structure,jwt token structure,The three parts of a JWT token explained with examples,decode-validate,,
+how-to-create-jwt,How to Create a JWT Token,how to create jwt token,Step-by-step guide to creating and signing JWT tokens,decode-validate,,nodejs
+how-to-validate-jwt,How to Validate a JWT,how to validate jwt token,Server-side JWT validation checklist for developers,decode-validate,,
+jwt-authentication-flow,JWT Authentication Flow,jwt authentication flow,Complete JWT login and API authentication flow diagram,decode-validate,,
+jwt-authorization-bearer,JWT Bearer Token Authorization,jwt bearer token authorization,How to send JWT tokens in Authorization headers,decode-validate,,
+jwt-decode-javascript,JWT Decode JavaScript,jwt decode javascript,Decode JWT tokens in JavaScript and Node.js,implementation,,nodejs
+jwt-decode-python,JWT Decode Python,jwt decode python,Decode and verify JWT tokens in Python with PyJWT,implementation,,python
+jwt-decode-java,JWT Decode Java,decode jwt java,Decode JWT tokens in Java with JJWT library,implementation,,java
+jwt-nodejs-example,JWT Node.js Example,jwt nodejs example,Complete Node.js JWT authentication example,implementation,,nodejs
+jwt-python-example,JWT Python Example,jwt python example,Python JWT encode decode and verify tutorial,implementation,,python
+jwt-react-authentication,JWT React Authentication,jwt react authentication,Implement JWT auth in React SPAs securely,implementation,,
+jwt-angular-authentication,JWT Angular Authentication,jwt angular authentication,JWT authentication in Angular applications,implementation,,
+jwt-vue-authentication,JWT Vue Authentication,jwt vue authentication,JWT auth implementation for Vue.js apps,implementation,,
+jwt-express-middleware,JWT Express Middleware,jwt express middleware,Protect Express routes with JWT middleware,implementation,,nodejs
+jwt-spring-boot,JWT Spring Boot Authentication,jwt spring boot,Spring Boot JWT security configuration guide,implementation,,java
+jwt-flask-authentication,JWT Flask Authentication,jwt flask python,Flask JWT authentication with PyJWT,implementation,,python
+jwt-laravel-authentication,JWT Laravel Authentication,jwt laravel,Laravel JWT authentication package guide,implementation,,php
+jwt-go-example,JWT Go Example,jwt golang example,Go JWT authentication with golang-jwt library,implementation,,go
+jwt-csharp-example,JWT C# Example,jwt c# example,.NET JWT authentication with System.IdentityModel.Tokens.Jwt,implementation,,csharp
+jwt-ruby-on-rails,JWT Ruby on Rails,jwt ruby on rails,Rails JWT authentication implementation guide,implementation,,ruby
+jwt-refresh-token-guide,JWT Refresh Token Guide,jwt refresh token,Implement refresh tokens with JWT access tokens,security,,
+jwt-revocation,JWT Token Revocation,jwt token revocation,How to revoke JWT tokens before expiration,security,,
+jwt-blacklist,JWT Blacklist Implementation,jwt blacklist,Implement JWT blocklist for token revocation,security,,
+jwt-localstorage-danger,JWT localStorage Security Risk,jwt localstorage security,Why storing JWTs in localStorage is dangerous,security,,
+jwt-httponly-cookie,JWT httpOnly Cookie,jwt httponly cookie,Store JWT tokens in httpOnly cookies securely,security,,
+jwt-xss-prevention,JWT XSS Prevention,jwt xss prevention,Protect JWT tokens from XSS attacks,security,,
+jwt-alg-none-attack,JWT alg none Attack,jwt alg none attack,Understanding and preventing the alg:none vulnerability,security,,
+jwt-algorithm-confusion,JWT Algorithm Confusion Attack,jwt algorithm confusion attack,Prevent RS256 to HS256 algorithm confusion,security,,
+jwt-brute-force,JWT Secret Brute Force,jwt secret brute force,Protect HS256 secrets from brute force attacks,security,,
+jwt-token-theft,JWT Token Theft Prevention,jwt token theft,Prevent and detect stolen JWT tokens,security,,
+jwt-best-practices-production,JWT Production Best Practices,jwt production best practices,Production-ready JWT authentication checklist,security,,
+jwt-microservices-security,JWT Microservices Security,jwt microservices security,Secure JWT authentication across microservices,security,,
+jwt-api-security,JWT API Security,jwt api security,Secure REST API authentication with JWT tokens,security,,
+jwt-oauth2-integration,JWT OAuth 2.0 Integration,jwt oauth2 integration,Use JWT as OAuth 2.0 access tokens,decode-validate,,
+jwt-openid-connect,JWT OpenID Connect,id token openid connect,JWT ID tokens in OpenID Connect explained,decode-validate,,
+jwt-decode-chrome-extension,JWT Decode Browser,jwt decode browser,Decode JWT tokens in browser developer tools,decode-validate,,
+jwt-online-tool-free,JWT Online Tool Free,jwt online tool free,Best free online JWT decoder and validator tools,decode-validate,,
+jwt-debugging-guide,JWT Debugging Guide,jwt debugging,Complete guide to debugging JWT authentication issues,decode-validate,,
+jwt-interview-questions,JWT Interview Questions,jwt interview questions,Common JWT authentication interview questions answered,decode-validate,,
+jwt-rfc-7519,RFC 7519 JWT Standard,jwt rfc 7519,Understanding the JWT RFC 7519 specification,decode-validate,,

@@ -1,0 +1,29 @@
+{{{breadcrumbsHtml}}}
+
+<article class="resources-page">
+  <header class="page-header">
+    <h1>JWT Resource Directory</h1>
+    <p class="lead">Search and browse every tool, guide, error fix, algorithm reference, and glossary term on JWTValidator.org — the most complete JWT resource online.</p>
+  </header>
+
+  <div class="resources-search card">
+    <label for="resources-filter">Filter resources</label>
+    <input type="search" id="resources-filter" placeholder="Search tools, guides, errors, algorithms…" autocomplete="off">
+  </div>
+
+  {{#each sections}}
+  <section class="resources-section">
+    <h2>{{title}} <span class="count">({{count}})</span></h2>
+    <ul class="resources-list">
+      {{#each items}}
+      <li class="resources-item">
+        <a href="{{href}}">
+          <strong>{{title}}</strong>
+          <span>{{description}}</span>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/each}}
+</article>

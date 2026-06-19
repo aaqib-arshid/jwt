@@ -1,0 +1,32 @@
+{
+  "domain": "https://jwtvalidator.org",
+  "name": "JWTValidator.org",
+  "tagline": "The #1 Free JWT Decoder, Validator & Learning Platform",
+  "description": "Decode, validate, and debug JWT tokens instantly. 1,000+ guides, 13 free tools, and the most complete JWT resource online — 100% private, runs in your browser.",
+  "author": "JWTValidator.org",
+  "twitter": "@jwtvalidator",
+  "themeColor": "#2563eb",
+  "ogImage": "https://jwtvalidator.org/assets/img/og-default.svg",
+  "contactEmail": "support@ratpdf.com",
+  "stats": {
+    "tools": 13,
+    "guides": "1,000+",
+    "languages": 13
+  },
+  "nav": [
+    { "label": "Tools", "href": "/#tools" },
+    { "label": "Guides", "href": "/guides/" },
+    { "label": "Glossary", "href": "/glossary/" },
+    { "label": "Resources", "href": "/resources.html" },
+    { "label": "Topics", "href": "/hubs/" },
+    { "label": "Learn", "href": "/learn/" }
+  ],
+  "footerLegal": [
+    { "label": "About", "href": "/about.html" },
+    { "label": "Privacy", "href": "/privacy.html" },
+    { "label": "Terms", "href": "/terms.html" },
+    { "label": "Disclaimer", "href": "/disclaimer.html" },
+    { "label": "Contact", "href": "/contact.html" },
+    { "label": "Support", "href": "/support.html" }
+  ]
+}

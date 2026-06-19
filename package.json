@@ -1,0 +1,17 @@
+{
+  "name": "jwtvalidator",
+  "version": "2.0.0",
+  "description": "JWT tools hub and programmatic SEO platform — fully static",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "generate": "node scripts/generate-pages.js",
+    "generate:programmatic": "node scripts/generate-programmatic.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "dev": "npx serve dist -l 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

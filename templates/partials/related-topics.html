@@ -1,0 +1,85 @@
+<section class="related-topics">
+  <h2>Related Topics</h2>
+  <div class="related-grid">
+    {{#if hasRelatedTools}}
+    <div class="related-group">
+      <h3>Tools</h3>
+      <ul>
+        {{#each relatedTools}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedGuides}}
+    <div class="related-group">
+      <h3>Guides</h3>
+      <ul>
+        {{#each relatedGuides}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedArticles}}
+    <div class="related-group">
+      <h3>Articles</h3>
+      <ul>
+        {{#each relatedArticles}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedAlgorithms}}
+    <div class="related-group">
+      <h3>Algorithms</h3>
+      <ul>
+        {{#each relatedAlgorithms}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedErrors}}
+    <div class="related-group">
+      <h3>Errors</h3>
+      <ul>
+        {{#each relatedErrors}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedComparisons}}
+    <div class="related-group">
+      <h3>Comparisons</h3>
+      <ul>
+        {{#each relatedComparisons}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedClaims}}
+    <div class="related-group">
+      <h3>Claims</h3>
+      <ul>
+        {{#each relatedClaims}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    {{#if hasRelatedProviders}}
+    <div class="related-group">
+      <h3>Providers</h3>
+      <ul>
+        {{#each relatedProviders}}
+        <li><a href="{{href}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+  </div>
+</section>

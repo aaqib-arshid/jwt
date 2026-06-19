@@ -1,0 +1,66 @@
+{
+  "title": "JWT Learning Path",
+  "seoTitle": "JWT Learning Path — From Beginner to Expert",
+  "description": "Structured JWT learning path. Master token decoding, validation, OAuth integration, and security best practices step by step.",
+  "steps": [
+    {
+      "order": 1,
+      "title": "Understand JWT Structure",
+      "description": "Learn header, payload, signature. Decode your first token.",
+      "links": [
+        { "label": "JWT Beginner Guide", "href": "/blog/posts/jwt-beginner-guide.html" },
+        { "label": "JWT Decoder Tool", "href": "/tools/jwt-decoder.html" }
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Authentication Flow",
+      "description": "How JWT authentication works in APIs and web apps.",
+      "links": [
+        { "label": "JWT Authentication Explained", "href": "/guides/jwt-authentication-explained.html" },
+        { "label": "JWT Encoder Tool", "href": "/tools/jwt-encoder.html" }
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Validate & Debug Tokens",
+      "description": "Verify signatures, check claims, debug issues.",
+      "links": [
+        { "label": "JWT Validator", "href": "/tools/jwt-validator.html" },
+        { "label": "JWT Debugger", "href": "/tools/jwt-debugger.html" },
+        { "label": "Invalid Signature Guide", "href": "/guides/jwt-invalid-signature.html" }
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Choose the Right Algorithm",
+      "description": "HS256 vs RS256 and when to use JWKS.",
+      "links": [
+        { "label": "HS256 vs RS256", "href": "/algorithms/hs256-vs-rs256.html" },
+        { "label": "JWKS Validator", "href": "/tools/jwks-validator.html" }
+      ]
+    },
+    {
+      "order": 5,
+      "title": "OAuth & Production Security",
+      "description": "OAuth integration, refresh tokens, and security hardening.",
+      "links": [
+        { "label": "OAuth vs JWT", "href": "/blog/posts/oauth-vs-jwt.html" },
+        { "label": "Security Best Practices", "href": "/blog/posts/jwt-security-best-practices.html" },
+        { "label": "Refresh Token Rotation", "href": "/blog/posts/refresh-token-rotation.html" }
+      ]
+    }
+  ],
+  "commonMistakes": [
+    "Decoding without verifying signature",
+    "Storing JWTs in localStorage",
+    "Using weak HS256 secrets",
+    "Ignoring exp, iss, and aud validation",
+    "Accepting alg: none"
+  ],
+  "attackScenarios": [
+    { "name": "XSS Token Theft", "mitigation": "httpOnly cookies, CSP, short-lived tokens" },
+    { "name": "Algorithm Confusion", "mitigation": "Whitelist algorithms, never use public key as HMAC secret" },
+    { "name": "Token Replay", "mitigation": "Short exp, jti claim with revocation list" }
+  ]
+}
