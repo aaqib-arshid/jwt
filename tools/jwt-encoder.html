@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
+  <script>try{var t=localStorage.getItem('jwt-theme')||'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
   <title>JWT Encoder Online | Create JWT Tokens Free</title>
-<meta name="description" content="Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.">
+<meta name="description" content="Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="keywords" content="jwt encoder,create jwt token,jwt generator,encode jwt online">
+<meta name="keywords" content="jwt encoder,create jwt token,jwt generator,encode jwt online,rs256 encoder,es256 jwt">
 <link rel="canonical" href="https://jwtvalidator.org/tools/jwt-encoder.html">
 <link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/tools/jwt-encoder.html">
 <link rel="alternate" hreflang="en" href="https://jwtvalidator.org/tools/jwt-encoder.html">
 <meta property="og:title" content="JWT Encoder Online | Create JWT Tokens Free">
-<meta property="og:description" content="Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.">
+<meta property="og:description" content="Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.">
 <meta property="og:url" content="https://jwtvalidator.org/tools/jwt-encoder.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JWTValidator.org">
 <meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="JWT Encoder Online | Create JWT Tokens Free">
-<meta name="twitter:description" content="Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.">
+<meta name="twitter:description" content="Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"JWT Encoder","description":"Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.","url":"https://jwtvalidator.org/tools/jwt-encoder.html","applicationCategory":"DeveloperApplication","applicationSubCategory":"SecurityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"1200","bestRating":"5"},"featureList":"JWT decode, encode, validate, debug, offline capable, no upload"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which algorithms are supported?","acceptedAnswer":{"@type":"Answer","text":"HS256, HS384, and HS512 using Web Crypto API."}},{"@type":"Question","name":"Is the secret stored?","acceptedAnswer":{"@type":"Answer","text":"No. Your secret never leaves your browser."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"JWT Encoder","description":"Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.","url":"https://jwtvalidator.org/tools/jwt-encoder.html","applicationCategory":"DeveloperApplication","applicationSubCategory":"SecurityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"1200","bestRating":"5"},"featureList":"JWT decode, encode, validate, debug, offline capable, no upload"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which algorithms are supported?","acceptedAnswer":{"@type":"Answer","text":"HS256, HS384, HS512, RS256, RS384, RS512, PS256, PS384, PS512, ES256, ES384, ES512, and EdDSA. HMAC uses a secret; all others use a PKCS#8 PEM private key."}},{"@type":"Question","name":"Is the secret stored?","acceptedAnswer":{"@type":"Answer","text":"No. Your secret and private key never leave your browser."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://jwtvalidator.org/#tools"},{"@type":"ListItem","position":3,"name":"JWT Encoder"}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -56,6 +56,10 @@
         <a href="/learn/">Learn</a>
         
       </nav>
+      <div class="theme-switcher" id="theme-switcher">
+        <label for="theme-select" class="visually-hidden">Color theme</label>
+        <select id="theme-select" aria-label="Color theme" title="Switch theme"></select>
+      </div>
     </div>
   </header>
 
@@ -79,7 +83,7 @@
   <header class="page-header">
     <span class="tool-icon">🔐</span>
     <h1>JWT Encoder</h1>
-    <p class="lead">Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.</p>
+    <p class="lead">Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.</p>
   </header>
 
   <div class="tool-workspace card" id="tool-root" data-tool="jwt-encoder">
@@ -99,12 +103,12 @@
     
     <details class="faq-item">
       <summary>Which algorithms are supported?</summary>
-      <p>HS256, HS384, and HS512 using Web Crypto API.</p>
+      <p>HS256, HS384, HS512, RS256, RS384, RS512, PS256, PS384, PS512, ES256, ES384, ES512, and EdDSA. HMAC uses a secret; all others use a PKCS#8 PEM private key.</p>
     </details>
     
     <details class="faq-item">
       <summary>Is the secret stored?</summary>
-      <p>No. Your secret never leaves your browser.</p>
+      <p>No. Your secret and private key never leave your browser.</p>
     </details>
     
   </div>
@@ -186,6 +190,7 @@
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/theme.js"></script>
   <script type="module" src="/assets/js/core/ui.js"></script>
   <script type="module" src="/assets/js/search.js"></script>
 </body>

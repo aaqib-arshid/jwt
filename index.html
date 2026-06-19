@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
+  <script>try{var t=localStorage.getItem('jwt-theme')||'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
   <title>JWT Decoder, Validator &amp; Tools Hub | JWTValidator.org</title>
 <meta name="description" content="Decode, validate, and debug JWT tokens instantly. 1,000+ guides, 13 free tools, and the most complete JWT resource online — 100% private, runs in your browser.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -55,6 +55,10 @@
         <a href="/learn/">Learn</a>
         
       </nav>
+      <div class="theme-switcher" id="theme-switcher">
+        <label for="theme-select" class="visually-hidden">Color theme</label>
+        <select id="theme-select" aria-label="Color theme" title="Switch theme"></select>
+      </div>
     </div>
   </header>
 
@@ -91,7 +95,7 @@
     <a href="/tools/jwt-encoder.html" class="card card-link">
       <span class="card-icon">🔐</span>
       <h3>JWT Encoder</h3>
-      <p>Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.</p>
+      <p>Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.</p>
     </a>
     
     <a href="/tools/jwt-validator.html" class="card card-link">
@@ -281,6 +285,7 @@
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/theme.js"></script>
   <script type="module" src="/assets/js/core/ui.js"></script>
   <script type="module" src="/assets/js/search.js"></script>
 </body>
