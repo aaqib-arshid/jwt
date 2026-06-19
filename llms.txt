@@ -1,0 +1,53 @@
+# JWTValidator.org
+
+> Free JWT decoder, validator, debugger, and programmatic SEO hub for JWT authentication.
+
+## Tools
+- https://jwtvalidator.org/tools/jwt-decoder.html
+- https://jwtvalidator.org/tools/jwt-encoder.html
+- https://jwtvalidator.org/tools/jwt-validator.html
+- https://jwtvalidator.org/tools/jwt-debugger.html
+- https://jwtvalidator.org/tools/jwt-expiry-checker.html
+- https://jwtvalidator.org/tools/base64-decode.html
+- https://jwtvalidator.org/tools/jwks-validator.html
+- https://jwtvalidator.org/tools/oauth-token-inspector.html
+- https://jwtvalidator.org/tools/jwt-claims-viewer.html
+- https://jwtvalidator.org/tools/jwt-header-decoder.html
+- https://jwtvalidator.org/tools/pem-to-jwk.html
+- https://jwtvalidator.org/tools/jwt-beautifier.html
+- https://jwtvalidator.org/tools/jwt-bulk-decoder.html
+
+## Top Guides
+- https://jwtvalidator.org/guides/jwt-basics.html
+- https://jwtvalidator.org/guides/jwt-authentication-explained.html
+- https://jwtvalidator.org/guides/jwt-expired-token-fix.html
+- https://jwtvalidator.org/guides/jwt-invalid-signature.html
+- https://jwtvalidator.org/guides/what-is-jwt-token.html
+- https://jwtvalidator.org/guides/jwt-decode-online.html
+- https://jwtvalidator.org/guides/jwt-decode-without-secret.html
+- https://jwtvalidator.org/guides/jwt-verify-online.html
+- https://jwtvalidator.org/guides/jwt-expired-fix.html
+- https://jwtvalidator.org/guides/jwt-invalid-signature-fix.html
+- https://jwtvalidator.org/guides/jwt-malformed-fix.html
+- https://jwtvalidator.org/guides/jwt-not-valid-yet.html
+- https://jwtvalidator.org/guides/jwt-claims-explained.html
+- https://jwtvalidator.org/guides/jwt-header-explained.html
+- https://jwtvalidator.org/guides/jwt-payload-explained.html
+- https://jwtvalidator.org/guides/jwt-signature-explained.html
+- https://jwtvalidator.org/guides/jwt-secret-key.html
+- https://jwtvalidator.org/guides/jwt-token-structure.html
+- https://jwtvalidator.org/guides/how-to-create-jwt.html
+- https://jwtvalidator.org/guides/how-to-validate-jwt.html
+
+## Resource Discovery
+- https://jwtvalidator.org/resources.html — Searchable directory of all pages
+- https://jwtvalidator.org/glossary/ — JWT terminology encyclopedia
+- https://jwtvalidator.org/assets/search-index.json — Machine-readable search index
+- https://jwtvalidator.org/hubs/decode-validate.html
+- https://jwtvalidator.org/hubs/algorithms.html
+- https://jwtvalidator.org/hubs/implementation.html
+- https://jwtvalidator.org/hubs/security.html
+- https://jwtvalidator.org/compare/jwt-io-alternative.html
+
+## Optional
+- https://jwtvalidator.org/llms-full.txt

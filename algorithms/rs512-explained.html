@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <style>
+    /* Critical fallback — prevents invisible text if stylesheet is slow or missing */
+    html, body { background: #0f172a; color: #f1f5f9; margin: 0; }
+    a { color: #60a5fa; }
+  </style>
+  <title>RS512 JWT Algorithm Explained — RSA SHA-512 Signing</title>
+<meta name="description" content="Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="keywords" content="rs512 jwt,rs512 explained,rsa sha512 jwt">
+<link rel="canonical" href="https://jwtvalidator.org/algorithms/rs512-explained.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/algorithms/rs512-explained.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/algorithms/rs512-explained.html">
+<meta property="og:title" content="RS512 JWT Algorithm Explained — RSA SHA-512 Signing">
+<meta property="og:description" content="Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.">
+<meta property="og:url" content="https://jwtvalidator.org/algorithms/rs512-explained.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RS512 JWT Algorithm Explained — RSA SHA-512 Signing">
+<meta name="twitter:description" content="Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"RS512 JWT Algorithm Explained — RSA SHA-512 Signing","description":"Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.","url":"https://jwtvalidator.org/algorithms/rs512-explained.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/algorithms/rs512-explained.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is RS512 stronger than RS256?","acceptedAnswer":{"@type":"Answer","text":"RS512 uses SHA-512 instead of SHA-256. Both use RSA; RS512 provides a larger hash output."}},{"@type":"Question","name":"Should I use RS512?","acceptedAnswer":{"@type":"Answer","text":"RS256 is the industry default. Use RS512 only if your security policy requires SHA-512."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Algorithms","item":"https://jwtvalidator.org/algorithms/"},{"@type":"ListItem","position":3,"name":"RS512 Explained — RSA-SHA512 JWT Signing"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"RS512 Explained — RSA-SHA512 JWT Signing","description":"Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}],"tool":[{"@type":"HowToTool","name":"JWTValidator.org JWT Decoder"}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  
+  
+  <span aria-current="page">RS512 Explained — RSA-SHA512 JWT Signing</span>
+  
+  <a href="">RS512 Explained — RSA-SHA512 JWT Signing</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page">
+  <header class="page-header">
+    <h1>RS512 Explained — RSA-SHA512 JWT Signing</h1>
+    <p class="lead">Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.</p>
+  </header>
+
+  
+  <div class="featured-snippet"><p class="snippet-label">Quick Answer</p><p><strong>RS512 Explained — RSA-SHA512 JWT Signing</strong> is a JWT signing algorithm. Use our <a href="/tools/jwt-decoder.html">Decoder</a> to check which algorithm a token uses, then verify with the matching key in our <a href="/tools/jwt-validator.html">Validator</a> or <a href="/tools/jwks-validator.html">JWKS Validator</a>.</p></div>
+  
+
+  <div class="prose">
+    <h2>What is RS512?</h2><p>RS512 combines RSA public-key cryptography with the SHA-512 hash function. The JWT header specifies <code>"alg": "RS512"</code>.</p><h2>Header Example</h2><pre><code>{ "alg": "RS512", "typ": "JWT", "kid": "key-1" }</code></pre><h2>Verification</h2><p>Verify using the RSA public key from your JWKS endpoint. Our <a href="/tools/jwks-validator.html">JWKS Validator</a> supports RS512 verification.</p>
+  </div>
+
+  <section class="try-it">
+  <h2>Try It Now</h2>
+  <div class="try-it-grid">
+    
+    <a href="/tools/jwks-validator.html" class="try-it-card">
+      <strong>JWKS Validator</strong>
+      <span>Open tool →</span>
+    </a>
+    
+    <a href="/tools/jwt-validator.html" class="try-it-card">
+      <strong>JWT Validator</strong>
+      <span>Open tool →</span>
+    </a>
+    
+  </div>
+</section>
+
+  <section class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    
+    <details class="faq-item">
+      <summary>Is RS512 stronger than RS256?</summary>
+      <p>RS512 uses SHA-512 instead of SHA-256. Both use RSA; RS512 provides a larger hash output.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Should I use RS512?</summary>
+      <p>RS256 is the industry default. Use RS512 only if your security policy requires SHA-512.</p>
+    </details>
+    
+  </div>
+</section>
+
+  <section class="related-topics">
+  <h2>Related Topics</h2>
+  <div class="related-grid">
+    
+    <div class="related-group">
+      <h3>Tools</h3>
+      <ul>
+        
+        <li><a href="/tools/jwks-validator.html">JWKS Validator</a></li>
+        
+        <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <div class="related-group">
+      <h3>Guides</h3>
+      <ul>
+        
+        <li><a href="/guides/jwt-invalid-signature.html">JWT Invalid Signature — Causes &amp; Fixes</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <div class="related-group">
+      <h3>Articles</h3>
+      <ul>
+        
+        <li><a href="/blog/posts/jwt-security-best-practices.html">JWT Security Best Practices</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+</section>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

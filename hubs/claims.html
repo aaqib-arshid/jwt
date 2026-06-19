@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <style>
+    /* Critical fallback — prevents invisible text if stylesheet is slow or missing */
+    html, body { background: #0f172a; color: #f1f5f9; margin: 0; }
+    a { color: #60a5fa; }
+  </style>
+  <title>JWT Claims — JWT Topic Hub | JWTValidator.org</title>
+<meta name="description" content="Understand exp, sub, iss, aud, and every JWT claim.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<link rel="canonical" href="https://jwtvalidator.org/hubs/claims.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/hubs/claims.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/hubs/claims.html">
+<meta property="og:title" content="JWT Claims — JWT Topic Hub | JWTValidator.org">
+<meta property="og:description" content="Understand exp, sub, iss, aud, and every JWT claim.">
+<meta property="og:url" content="https://jwtvalidator.org/hubs/claims.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JWT Claims — JWT Topic Hub | JWTValidator.org">
+<meta name="twitter:description" content="Understand exp, sub, iss, aud, and every JWT claim.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Topics","item":"https://jwtvalidator.org/hubs/"},{"@type":"ListItem","position":3,"name":"JWT Claims"}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  
+  
+  <span aria-current="page">JWT Claims</span>
+  
+  <a href="">JWT Claims</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page hub-page">
+  <header class="page-header">
+    <h1>JWT Claims</h1>
+    <p class="lead">Understand exp, sub, iss, aud, and every JWT claim.</p>
+  </header>
+
+  <section class="hub-grid">
+    
+    <a href="/guides/jwt-amr-claim.html" class="card card-link hub-card">
+      <h2>JWT amr Claim Explained</h2>
+      <p>Authentication Methods Reference amr claim</p>
+    </a>
+    
+    <a href="/guides/jwt-acr-claim.html" class="card card-link hub-card">
+      <h2>JWT acr Claim Explained</h2>
+      <p>Authentication Context Class Reference acr</p>
+    </a>
+    
+    <a href="/guides/jwt-auth-time-claim.html" class="card card-link hub-card">
+      <h2>JWT auth_time Claim</h2>
+      <p>OpenID Connect auth_time claim explained</p>
+    </a>
+    
+    <a href="/guides/jwt-nonce-claim.html" class="card card-link hub-card">
+      <h2>JWT nonce Claim OIDC</h2>
+      <p>OpenID Connect nonce claim for replay prevention</p>
+    </a>
+    
+    <a href="/guides/jwt-at-hash-claim.html" class="card card-link hub-card">
+      <h2>JWT at_hash Claim</h2>
+      <p>Access token hash claim in OIDC ID tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-c-hash-claim.html" class="card card-link hub-card">
+      <h2>JWT c_hash Claim</h2>
+      <p>Code hash claim in OpenID Connect</p>
+    </a>
+    
+    <a href="/guides/jwt-s_hash-claim.html" class="card card-link hub-card">
+      <h2>JWT s_hash Claim</h2>
+      <p>State hash claim OpenID Connect</p>
+    </a>
+    
+    <a href="/guides/jwt-claim-test.html" class="card card-link hub-card">
+      <h2>JWT Claim Test</h2>
+      <p>Test JWT custom claims validation</p>
+    </a>
+    
+    <a href="/guides/jwt-exp-test.html" class="card card-link hub-card">
+      <h2>JWT Exp Claim Test</h2>
+      <p>Test JWT expiration claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-aud-test.html" class="card card-link hub-card">
+      <h2>JWT Aud Claim Test</h2>
+      <p>Test JWT audience claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-iss-test.html" class="card card-link hub-card">
+      <h2>JWT Iss Claim Test</h2>
+      <p>Test JWT issuer claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-sub-test.html" class="card card-link hub-card">
+      <h2>JWT Sub Claim Test</h2>
+      <p>Test JWT subject claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-nbf-test.html" class="card card-link hub-card">
+      <h2>JWT Nbf Claim Test</h2>
+      <p>Test JWT not-before claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-iat-test.html" class="card card-link hub-card">
+      <h2>JWT Iat Claim Test</h2>
+      <p>Test JWT issued-at claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-jti-test.html" class="card card-link hub-card">
+      <h2>JWT Jti Claim Test</h2>
+      <p>Test JWT unique ID claim validation</p>
+    </a>
+    
+    <a href="/guides/jwt-scope-test.html" class="card card-link hub-card">
+      <h2>JWT Scope Test</h2>
+      <p>Test OAuth scope claims in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-role-test.html" class="card card-link hub-card">
+      <h2>JWT Role Claim Test</h2>
+      <p>Test role claims in JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-permission-test.html" class="card card-link hub-card">
+      <h2>JWT Permission Test</h2>
+      <p>Test permission claims in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-tenant-test.html" class="card card-link hub-card">
+      <h2>JWT Tenant Test</h2>
+      <p>Test tenant claims in multi-tenant JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-custom-claim-test.html" class="card card-link hub-card">
+      <h2>JWT Custom Claim Test</h2>
+      <p>Test custom JWT claims validation</p>
+    </a>
+    
+    <a href="/claims/exp.html" class="card card-link hub-card">
+      <h2>JWT EXP Claim Explained</h2>
+      <p>What is the JWT exp claim? Learn Expiration Time meaning, examples, and validation rules for exp in JSON Web Tokens.</p>
+    </a>
+    
+    <a href="/claims/sub.html" class="card card-link hub-card">
+      <h2>JWT SUB Claim Explained</h2>
+      <p>What is the JWT sub claim? Learn Subject meaning, examples, and validation rules for sub in JSON Web Tokens.</p>
+    </a>
+    
+    <a href="/claims/iss.html" class="card card-link hub-card">
+      <h2>JWT ISS Claim Explained</h2>
+      <p>What is the JWT iss claim? Learn Issuer meaning, examples, and validation rules for iss in JSON Web Tokens.</p>
+    </a>
+    
+    <a href="/claims/aud.html" class="card card-link hub-card">
+      <h2>JWT AUD Claim Explained</h2>
+      <p>What is the JWT aud claim? Learn Audience meaning, examples, and validation rules for aud in JSON Web Tokens.</p>
+    </a>
+    
+    <a href="/claims/iat.html" class="card card-link hub-card">
+      <h2>JWT IAT Claim Explained</h2>
+      <p>What is the JWT iat claim? Learn Issued At meaning, examples, and validation rules for iat in JSON Web Tokens.</p>
+    </a>
+    
+    <a href="/claims/nbf.html" class="card card-link hub-card">
+      <h2>JWT NBF Claim Explained</h2>
+      <p>What is the JWT nbf claim? Learn Not Before meaning, examples, and validation rules for nbf in JSON Web Tokens.</p>
+    </a>
+    
+    <a href="/claims/jti.html" class="card card-link hub-card">
+      <h2>JWT JTI Claim Explained</h2>
+      <p>What is the JWT jti claim? Learn JWT ID meaning, examples, and validation rules for jti in JSON Web Tokens.</p>
+    </a>
+    
+  </section>
+
+  <nav class="trust-links card" aria-label="Related resources">
+  <h2>Explore JWT Tools &amp; Guides</h2>
+  <ul class="trust-links-list">
+    <li><a href="/tools/jwt-decoder.html">JWT Decoder</a></li>
+    <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+    <li><a href="/guides/jwt-basics.html">JWT Basics Guide</a></li>
+    <li><a href="/guides/">All Guides</a></li>
+    <li><a href="/about.html">About JWTValidator.org</a></li>
+  </ul>
+</nav>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

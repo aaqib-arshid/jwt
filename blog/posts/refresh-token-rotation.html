@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <style>
+    /* Critical fallback — prevents invisible text if stylesheet is slow or missing */
+    html, body { background: #0f172a; color: #f1f5f9; margin: 0; }
+    a { color: #60a5fa; }
+  </style>
+  <title>Refresh Token Rotation — JWT Security Pattern</title>
+<meta name="description" content="Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="keywords" content="refresh token rotation,jwt refresh token,token rotation security">
+<link rel="canonical" href="https://jwtvalidator.org/blog/posts/refresh-token-rotation.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/blog/posts/refresh-token-rotation.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/blog/posts/refresh-token-rotation.html">
+<meta property="og:title" content="Refresh Token Rotation — JWT Security Pattern">
+<meta property="og:description" content="Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.">
+<meta property="og:url" content="https://jwtvalidator.org/blog/posts/refresh-token-rotation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Refresh Token Rotation — JWT Security Pattern">
+<meta name="twitter:description" content="Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Refresh Token Rotation — JWT Security Pattern","description":"Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.","url":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-06-15","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is refresh token rotation?","acceptedAnswer":{"@type":"Answer","text":"Each time a refresh token is used, a new refresh token is issued and the old one is invalidated."}},{"@type":"Question","name":"Why rotate refresh tokens?","acceptedAnswer":{"@type":"Answer","text":"If a refresh token is stolen, rotation limits the attack window and enables reuse detection."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://jwtvalidator.org/blog/"},{"@type":"ListItem","position":3,"name":"Refresh Token Rotation — Secure Implementation"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Refresh Token Rotation — Secure Implementation","description":"Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}],"tool":[{"@type":"HowToTool","name":"JWTValidator.org JWT Decoder"}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  
+  
+  <span aria-current="page">Refresh Token Rotation — Secure Implementation</span>
+  
+  <a href="">Refresh Token Rotation — Secure Implementation</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page">
+  <header class="page-header">
+    <h1>Refresh Token Rotation — Secure Implementation</h1>
+    <p class="lead">Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.</p>
+  </header>
+
+  
+  <div class="featured-snippet"><p class="snippet-label">Quick Answer</p><p>To Refresh Token Rotation — Secure Implementation, paste your token into our <a href="/tools/jwt-decoder.html">JWT Decoder</a>, inspect the header and payload claims, then verify the signature with the <a href="/tools/jwt-validator.html">JWT Validator</a>. All processing runs locally in your browser.</p></div>
+  
+
+  <div class="prose">
+    <h2>Why Rotate?</h2><p>Long-lived refresh tokens are high-value targets. Rotation ensures stolen tokens have a short useful life.</p><h2>Implementation Pattern</h2><pre><code class="language-javascript">// Server: on refresh
+const newRefresh = generateRefreshToken(userId);
+await revokeRefreshToken(oldRefreshTokenId);
+await storeRefreshToken(newRefresh, userId);
+return { access_token, refresh_token: newRefresh };</code></pre><h2>Reuse Detection</h2><p>If a revoked refresh token is presented, invalidate all sessions for that user — possible token theft.</p><h2>Check Expiration</h2><p>Use our <a href="/tools/jwt-expiry-checker.html">JWT Expiry Checker</a> to monitor access token lifetimes.</p>
+  </div>
+
+  <section class="try-it">
+  <h2>Try It Now</h2>
+  <div class="try-it-grid">
+    
+    <a href="/tools/jwt-expiry-checker.html" class="try-it-card">
+      <strong>JWT Expiry Checker</strong>
+      <span>Open tool →</span>
+    </a>
+    
+    <a href="/tools/jwt-validator.html" class="try-it-card">
+      <strong>JWT Validator</strong>
+      <span>Open tool →</span>
+    </a>
+    
+  </div>
+</section>
+
+  <section class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    
+    <details class="faq-item">
+      <summary>What is refresh token rotation?</summary>
+      <p>Each time a refresh token is used, a new refresh token is issued and the old one is invalidated.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Why rotate refresh tokens?</summary>
+      <p>If a refresh token is stolen, rotation limits the attack window and enables reuse detection.</p>
+    </details>
+    
+  </div>
+</section>
+
+  <section class="related-topics">
+  <h2>Related Topics</h2>
+  <div class="related-grid">
+    
+    <div class="related-group">
+      <h3>Tools</h3>
+      <ul>
+        
+        <li><a href="/tools/jwt-expiry-checker.html">JWT Expiry Checker</a></li>
+        
+        <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <div class="related-group">
+      <h3>Guides</h3>
+      <ul>
+        
+        <li><a href="/guides/jwt-expired-token-fix.html">JWT Expired Token — How to Fix</a></li>
+        
+        <li><a href="/guides/jwt-authentication-explained.html">JWT Authentication Explained</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <div class="related-group">
+      <h3>Articles</h3>
+      <ul>
+        
+        <li><a href="/blog/posts/jwt-security-best-practices.html">JWT Security Best Practices</a></li>
+        
+        <li><a href="/blog/posts/oauth-vs-jwt.html">OAuth 2.0 vs JWT — What's the Difference?</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+</section>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

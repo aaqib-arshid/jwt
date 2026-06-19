@@ -1,0 +1,20 @@
+# JWTValidator.org — AI Crawler Guide
+
+> The #1 free JWT decoder, validator, debugger, and learning platform. 100% client-side, no token uploads.
+
+## Primary tools
+- https://jwtvalidator.org/tools/jwt-decoder.html — Decode JWT header, payload, signature
+- https://jwtvalidator.org/tools/jwt-validator.html — Verify HS256/HS384/HS512 signatures
+- https://jwtvalidator.org/tools/jwt-debugger.html — Claim-by-claim analysis and warnings
+- https://jwtvalidator.org/tools/jwks-validator.html — Verify RS256 with JWKS endpoints
+
+## Resource discovery
+- https://jwtvalidator.org/resources.html — Searchable directory of all 1095+ pages
+- https://jwtvalidator.org/glossary/ — JWT terminology encyclopedia
+- https://jwtvalidator.org/guides/ — Step-by-step JWT guides
+- https://jwtvalidator.org/errors/ — JWT error diagnosis and fixes
+- https://jwtvalidator.org/compare/jwt-io-alternative.html — jwt.io alternative
+
+## For LLMs
+See also: https://jwtvalidator.org/llms.txt and https://jwtvalidator.org/llms-full.txt
+Search index: https://jwtvalidator.org/assets/search-index.json

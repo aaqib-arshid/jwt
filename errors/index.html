@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <style>
+    /* Critical fallback — prevents invisible text if stylesheet is slow or missing */
+    html, body { background: #0f172a; color: #f1f5f9; margin: 0; }
+    a { color: #60a5fa; }
+  </style>
+  <title>JWT Errors | JWTValidator.org</title>
+<meta name="description" content="Browse JWT Errors on JWTValidator.org.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<link rel="canonical" href="https://jwtvalidator.org/errors/">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/errors/">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/errors/">
+<meta property="og:title" content="JWT Errors | JWTValidator.org">
+<meta property="og:description" content="Browse JWT Errors on JWTValidator.org.">
+<meta property="og:url" content="https://jwtvalidator.org/errors/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JWT Errors | JWTValidator.org">
+<meta name="twitter:description" content="Browse JWT Errors on JWTValidator.org.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  <span aria-current="page">JWT Errors</span>
+  
+  <a href="">JWT Errors</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page">
+  <header class="page-header">
+    <h1>JWT Errors</h1>
+  </header>
+  <ul class="index-list">
+    
+    <li class="index-item card">
+      <a href="/errors/invalid-signature.html"><h2>Invalid Signature Error</h2></a>
+      <p>JWT invalid signature error explained. Diagnose wrong secret, algorithm mismatch, and token tampering.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/token-expired.html"><h2>Token Expired Error</h2></a>
+      <p>JWT token expired error explained. Check exp claim, implement refresh tokens, and handle expiration gracefully.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/malformed-jwt.html"><h2>Malformed JWT Error</h2></a>
+      <p>Malformed JWT error explained. Fix invalid token structure, encoding issues, and missing segments.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-verification-failed.html"><h2>JWT Verification Failed</h2></a>
+      <p>JWT signature verification failed — causes and fixes</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-decode-error.html"><h2>JWT Decode Error</h2></a>
+      <p>Cannot decode JWT token — format and encoding issues</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-unauthorized-401.html"><h2>JWT Unauthorized 401</h2></a>
+      <p>API returns 401 with JWT token — debugging guide</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-forbidden-403.html"><h2>JWT Forbidden 403</h2></a>
+      <p>JWT valid but access denied — role and scope issues</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-audience-mismatch.html"><h2>JWT Audience Mismatch</h2></a>
+      <p>aud claim does not match expected audience</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-issuer-mismatch.html"><h2>JWT Issuer Mismatch</h2></a>
+      <p>iss claim validation failure</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-clock-skew.html"><h2>JWT Clock Skew Error</h2></a>
+      <p>Token appears expired due to server clock difference</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-wrong-algorithm.html"><h2>JWT Wrong Algorithm Error</h2></a>
+      <p>Algorithm in header does not match verification method</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-key-not-found.html"><h2>JWT Key Not Found</h2></a>
+      <p>JWKS key ID not found in key set</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-too-long.html"><h2>JWT Token Too Long</h2></a>
+      <p>Handling oversized JWT tokens</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-missing-claim.html"><h2>JWT Missing Required Claim</h2></a>
+      <p>Required claim absent from token payload</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-issuer.html"><h2>JWT Invalid Issuer</h2></a>
+      <p>Issuer claim validation failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-audience.html"><h2>JWT Invalid Audience</h2></a>
+      <p>Audience claim validation failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-not-active.html"><h2>JWT Not Yet Active</h2></a>
+      <p>Token rejected because nbf is in the future</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-revoked-token.html"><h2>JWT Revoked Token</h2></a>
+      <p>Token has been revoked or blocklisted</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-decode-base64-error.html"><h2>JWT Base64 Decode Error</h2></a>
+      <p>Base64URL decoding failed for JWT segment</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-json-parse-error.html"><h2>JWT JSON Parse Error</h2></a>
+      <p>Invalid JSON in JWT header or payload</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-secret-too-short.html"><h2>JWT Secret Too Short</h2></a>
+      <p>HS256 secret does not meet minimum length</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-rs256-verify-failed.html"><h2>RS256 Verification Failed</h2></a>
+      <p>RSA signature verification failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-hs256-verify-failed.html"><h2>HS256 Verification Failed</h2></a>
+      <p>HMAC signature verification failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-replay.html"><h2>JWT Token Replay Detected</h2></a>
+      <p>Same token used multiple times — replay attack</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-cors-error.html"><h2>JWT CORS Error</h2></a>
+      <p>CORS issues when sending JWT in Authorization header</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-cookie-not-sent.html"><h2>JWT Cookie Not Sent</h2></a>
+      <p>httpOnly JWT cookie not included in request</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-axios.html"><h2>JWT Expired Axios Error</h2></a>
+      <p>Axios interceptor handling expired JWT 401 errors</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-fetch.html"><h2>JWT Expired Fetch Error</h2></a>
+      <p>Handle expired JWT in Fetch API responses</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-apollo.html"><h2>JWT Expired Apollo Client</h2></a>
+      <p>Refresh expired JWT in Apollo GraphQL client</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-tanstack-query.html"><h2>JWT Expired TanStack Query</h2></a>
+      <p>Handle JWT expiry with TanStack Query retry</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-rtk-query.html"><h2>JWT Expired RTK Query</h2></a>
+      <p>RTK Query JWT token refresh on 401</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-swr.html"><h2>JWT Expired SWR Error</h2></a>
+      <p>Handle expired JWT with SWR data fetching</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-nestjs.html"><h2>JWT Expired NestJS Guard</h2></a>
+      <p>NestJS JWT guard expired token exception</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-fastify.html"><h2>JWT Expired Fastify</h2></a>
+      <p>Handle expired JWT in Fastify JWT plugin</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-koa.html"><h2>JWT Expired Koa.js</h2></a>
+      <p>Expired JWT handling in Koa middleware</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-hapi.html"><h2>JWT Expired Hapi.js</h2></a>
+      <p>Fix expired JWT in Hapi auth strategy</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-micronaut.html"><h2>JWT Expired Micronaut</h2></a>
+      <p>Micronaut JWT expired token exception</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-quarkus.html"><h2>JWT Expired Quarkus</h2></a>
+      <p>Quarkus MicroProfile JWT expired error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-gin.html"><h2>JWT Expired Gin Go</h2></a>
+      <p>Handle expired JWT in Gin Go middleware</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-echo.html"><h2>JWT Expired Echo Go</h2></a>
+      <p>Expired JWT error in Echo Go framework</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-fiber.html"><h2>JWT Expired Fiber Go</h2></a>
+      <p>Handle expired JWT in Fiber Go middleware</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-actix.html"><h2>JWT Expired Actix Rust</h2></a>
+      <p>Expired JWT in Actix Web Rust handler</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-rocket.html"><h2>JWT Expired Rocket Rust</h2></a>
+      <p>Rocket Rust JWT expired token error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-phoenix.html"><h2>JWT Expired Phoenix Elixir</h2></a>
+      <p>Handle expired JWT in Phoenix Elixir</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-ktor.html"><h2>JWT Expired Ktor Kotlin</h2></a>
+      <p>Ktor JWT expired token handling</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-expired-spring-security.html"><h2>JWT Expired Spring Security</h2></a>
+      <p>Spring Security JWT expired exception handler</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-nestjs.html"><h2>JWT Invalid Signature NestJS</h2></a>
+      <p>NestJS JWT invalid signature Passport error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-fastify.html"><h2>JWT Invalid Signature Fastify</h2></a>
+      <p>Fastify JWT signature verification failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-fastapi.html"><h2>JWT Invalid Signature FastAPI</h2></a>
+      <p>FastAPI JWT invalid signature HTTPException</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-django.html"><h2>JWT Invalid Signature Django</h2></a>
+      <p>Django REST JWT invalid signature error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-laravel.html"><h2>JWT Invalid Signature Laravel</h2></a>
+      <p>Laravel JWT invalid signature exception</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-spring.html"><h2>JWT Invalid Signature Spring</h2></a>
+      <p>Spring Boot JWT signature validation failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-auth0.html"><h2>JWT Invalid Signature Auth0</h2></a>
+      <p>Auth0 SDK invalid JWT signature error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-firebase-admin.html"><h2>JWT Invalid Signature Firebase Admin</h2></a>
+      <p>Firebase Admin SDK invalid ID token signature</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-cognito-sdk.html"><h2>JWT Invalid Signature Cognito SDK</h2></a>
+      <p>AWS Cognito JWT verifier signature error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-invalid-signature-jwks.html"><h2>JWT Invalid Signature JWKS</h2></a>
+      <p>JWKS key mismatch invalid signature error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-malformed-axios.html"><h2>JWT Malformed Axios</h2></a>
+      <p>Malformed JWT error in Axios request interceptor</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-malformed-react-native.html"><h2>JWT Malformed React Native</h2></a>
+      <p>Fix malformed JWT in React Native apps</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-malformed-flutter.html"><h2>JWT Malformed Flutter</h2></a>
+      <p>Malformed JWT token error in Flutter apps</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-malformed-postman.html"><h2>JWT Malformed Postman</h2></a>
+      <p>Fix malformed JWT when testing in Postman</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-malformed-swagger.html"><h2>JWT Malformed Swagger</h2></a>
+      <p>Malformed JWT in Swagger UI authorize button</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-audience-error-nodejs.html"><h2>JWT Audience Error Node.js</h2></a>
+      <p>Fix JWT audience aud validation error Node.js</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-audience-error-python.html"><h2>JWT Audience Error Python</h2></a>
+      <p>Fix JWT aud claim mismatch in PyJWT</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-issuer-error-nodejs.html"><h2>JWT Issuer Error Node.js</h2></a>
+      <p>Fix JWT iss issuer validation error Node.js</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-issuer-error-python.html"><h2>JWT Issuer Error Python</h2></a>
+      <p>Fix JWT issuer mismatch in PyJWT</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-not-before-nodejs.html"><h2>JWT Not Before Node.js</h2></a>
+      <p>Fix JWT nbf not before error Node.js</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-not-before-python.html"><h2>JWT Not Before Python</h2></a>
+      <p>Handle JWT nbf claim error in PyJWT</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-kid-mismatch.html"><h2>JWT kid Mismatch Error</h2></a>
+      <p>JWT header kid does not match any JWKS key</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-jwks-fetch-failed.html"><h2>JWT JWKS Fetch Failed</h2></a>
+      <p>Failed to fetch JWKS endpoint for JWT verification</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-jwks-timeout.html"><h2>JWT JWKS Timeout Error</h2></a>
+      <p>JWKS endpoint timeout during JWT verification</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-jwks-cache.html"><h2>JWT JWKS Cache Error</h2></a>
+      <p>JWKS cache stale key JWT verification failure</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-decode-base64-nodejs.html"><h2>JWT Base64 Decode Node.js</h2></a>
+      <p>Fix Base64 decode error JWT Node.js Buffer</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-decode-base64-browser.html"><h2>JWT Base64 Decode Browser</h2></a>
+      <p>Fix browser atob JWT decode errors</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-truncated.html"><h2>JWT Token Truncated Error</h2></a>
+      <p>Fix truncated JWT token copy paste error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-double-encoded.html"><h2>JWT Double Encoded Error</h2></a>
+      <p>Fix double Base64 encoded JWT token</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-wrong-format.html"><h2>JWT Wrong Format Error</h2></a>
+      <p>JWT token in wrong format not three segments</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-bearer-prefix-missing.html"><h2>JWT Bearer Prefix Missing</h2></a>
+      <p>Fix missing Bearer prefix in Authorization header</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-authorization-header-missing.html"><h2>JWT Authorization Header Missing</h2></a>
+      <p>Fix missing Authorization header JWT API call</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-secret-env-not-set.html"><h2>JWT Secret Env Not Set</h2></a>
+      <p>Fix JWT secret environment variable not configured</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-secret-rotation-failed.html"><h2>JWT Secret Rotation Failed</h2></a>
+      <p>JWT verification failed after secret rotation</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-public-key-parse-error.html"><h2>JWT Public Key Parse Error</h2></a>
+      <p>Failed to parse PEM public key for JWT verify</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-private-key-parse-error.html"><h2>JWT Private Key Parse Error</h2></a>
+      <p>Failed to parse PEM private key for JWT sign</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-openssl-key-error.html"><h2>JWT OpenSSL Key Error</h2></a>
+      <p>OpenSSL error generating JWT signing keys</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-crypto-subtle-error.html"><h2>JWT Web Crypto Subtle Error</h2></a>
+      <p>Web Crypto API JWT sign verify error browser</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-alg-not-allowed-nodejs.html"><h2>JWT Algorithm Not Allowed Node.js</h2></a>
+      <p>Fix JWT algorithm not in allowed list Node.js</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-alg-not-allowed-python.html"><h2>JWT Algorithm Not Allowed Python</h2></a>
+      <p>Fix PyJWT algorithm not allowed error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-none-algorithm-rejected.html"><h2>JWT None Algorithm Rejected</h2></a>
+      <p>Reject JWT with alg none algorithm attack</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-rs256-hs256-confusion.html"><h2>JWT RS256 HS256 Confusion</h2></a>
+      <p>Algorithm confusion RS256 verified as HS256</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-revoked-error.html"><h2>JWT Token Revoked Error</h2></a>
+      <p>JWT rejected because token is revoked blocklisted</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-jti-revoked.html"><h2>JWT jti Revoked Error</h2></a>
+      <p>JWT jti claim found in revocation list</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-session-expired-frontend.html"><h2>JWT Session Expired Frontend</h2></a>
+      <p>Handle JWT session expired in frontend SPA</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-auto-refresh-failed.html"><h2>JWT Auto Refresh Failed</h2></a>
+      <p>Automatic JWT refresh token request failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-refresh-token-expired.html"><h2>JWT Refresh Token Expired</h2></a>
+      <p>Refresh token also expired re-authenticate user</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-refresh-token-revoked.html"><h2>JWT Refresh Token Revoked</h2></a>
+      <p>Refresh token revoked due to reuse detection</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-concurrent-session.html"><h2>JWT Concurrent Session Error</h2></a>
+      <p>JWT rejected due to concurrent session limit</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-ip-mismatch-error.html"><h2>JWT IP Mismatch Error</h2></a>
+      <p>JWT rejected IP address does not match claim</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-device-mismatch-error.html"><h2>JWT Device Mismatch Error</h2></a>
+      <p>JWT device fingerprint claim mismatch error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-scope-insufficient.html"><h2>JWT Insufficient Scope Error</h2></a>
+      <p>JWT valid but insufficient OAuth scope for action</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-role-insufficient.html"><h2>JWT Insufficient Role Error</h2></a>
+      <p>JWT valid but user role claim insufficient</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-tenant-mismatch.html"><h2>JWT Tenant Mismatch Error</h2></a>
+      <p>JWT tenant_id claim does not match request</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-org-mismatch.html"><h2>JWT Organization Mismatch</h2></a>
+      <p>JWT org claim mismatch multi-tenant error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-graphql-unauthorized.html"><h2>JWT GraphQL Unauthorized Error</h2></a>
+      <p>GraphQL 401 unauthorized JWT authentication error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-grpc-unauthenticated.html"><h2>JWT gRPC Unauthenticated Error</h2></a>
+      <p>gRPC Unauthenticated JWT metadata missing</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-websocket-unauthorized.html"><h2>JWT WebSocket Unauthorized</h2></a>
+      <p>WebSocket connection rejected JWT auth failed</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-serverless-unauthorized.html"><h2>JWT Serverless Unauthorized</h2></a>
+      <p>JWT 401 in AWS Lambda serverless function</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-edge-unauthorized.html"><h2>JWT Edge Function Unauthorized</h2></a>
+      <p>JWT auth failure Vercel Cloudflare edge</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-cdn-unauthorized.html"><h2>JWT CDN Unauthorized</h2></a>
+      <p>JWT validation failed at CDN edge layer</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-api-version-mismatch.html"><h2>JWT API Version Mismatch</h2></a>
+      <p>JWT valid but API version claim mismatch</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-custom-claim-missing.html"><h2>JWT Custom Claim Missing Error</h2></a>
+      <p>Required custom JWT claim missing from token</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-custom-claim-invalid.html"><h2>JWT Custom Claim Invalid</h2></a>
+      <p>Custom JWT claim value failed validation</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-payload-too-large-error.html"><h2>JWT Payload Too Large</h2></a>
+      <p>JWT payload exceeds size limit error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-header-too-large.html"><h2>JWT Header Too Large</h2></a>
+      <p>JWT header exceeds maximum size limit</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-token-size-limit.html"><h2>JWT Token Size Limit Exceeded</h2></a>
+      <p>JWT token exceeds HTTP header size limit</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-cookie-size-limit.html"><h2>JWT Cookie Size Limit</h2></a>
+      <p>JWT too large to store in httpOnly cookie</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-localstorage-quota.html"><h2>JWT localStorage Quota Error</h2></a>
+      <p>JWT too large for localStorage quota</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-indexeddb-storage.html"><h2>JWT IndexedDB Storage Error</h2></a>
+      <p>Store large JWT tokens in IndexedDB browser</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-memory-storage-spa.html"><h2>JWT Memory Storage SPA</h2></a>
+      <p>In-memory JWT storage pattern for SPAs</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-tab-sync-error.html"><h2>JWT Tab Sync Error</h2></a>
+      <p>Sync JWT token state across browser tabs</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-ssr-hydration-error.html"><h2>JWT SSR Hydration Error</h2></a>
+      <p>JWT auth state mismatch SSR hydration error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-nextjs-middleware-error.html"><h2>JWT Next.js Middleware Error</h2></a>
+      <p>Next.js middleware JWT validation error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-remix-loader-error.html"><h2>JWT Remix Loader Error</h2></a>
+      <p>JWT authentication error in Remix loader</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-nuxt-middleware-error.html"><h2>JWT Nuxt Middleware Error</h2></a>
+      <p>Nuxt route middleware JWT auth error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-sveltekit-hooks-error.html"><h2>JWT SvelteKit Hooks Error</h2></a>
+      <p>SvelteKit server hooks JWT validation error</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-test-env-error.html"><h2>JWT Test Environment Error</h2></a>
+      <p>JWT auth failing in test environment CI</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-mock-auth-error.html"><h2>JWT Mock Auth Test Error</h2></a>
+      <p>Mock JWT authentication failing in unit tests</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-e2e-auth-error.html"><h2>JWT E2E Test Auth Error</h2></a>
+      <p>JWT authentication failing in E2E Cypress tests</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/errors/jwt-playwright-auth-error.html"><h2>JWT Playwright Auth Error</h2></a>
+      <p>Playwright E2E JWT authentication setup error</p>
+    </li>
+    
+  </ul>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>
