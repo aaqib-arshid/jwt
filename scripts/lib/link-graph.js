@@ -27,9 +27,11 @@ export function assignLinks(page, type, clusterId) {
 
   return {
     ...page,
-    relatedTools: page.relatedTools || tools.slice(0, 3),
-    relatedGuides: page.relatedGuides || guides.slice(0, 3),
+    relatedTools: page.relatedTools || tools.slice(0, 4),
+    relatedGuides: page.relatedGuides || guides.slice(0, 4),
     relatedArticles: page.relatedArticles || ['jwt-beginner-guide', 'jwt-security-best-practices'],
+    relatedAlgorithms: page.relatedAlgorithms || ['hs256-vs-rs256', 'jwt-algorithm-selection'],
+    relatedErrors: page.relatedErrors || ['invalid-signature', 'token-expired'],
     cluster: clusterId,
     pageType: type,
   };

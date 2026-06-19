@@ -39,7 +39,7 @@ ${fixBlock}
 </ol>
 ${langBlock}
 <h2>Related Resources</h2>
-<p>Start with our <a href="/guides/jwt-basics.html">JWT Basics</a> guide or follow the <a href="/learning-path.html">JWT Learning Path</a>.</p>`;
+<p>Start with our <a href="/guides/jwt-basics.html">JWT Basics</a> guide or follow the <a href="/learning-path.html">JWT Learning Path</a>. See also <a href="/compare/jwt-io-alternative.html">JWTValidator vs jwt.io</a>, <a href="/hubs/security.html">JWT Security Hub</a>, and <a href="/resources.html">full resource directory</a>.</p>`;
 }
 
 export function errorContent({ title, keyword, errorCode }) {
@@ -245,4 +245,33 @@ export function buildFaq(keyword, type = 'guide') {
     ],
   };
   return faqs[type] || faqs.guide;
+}
+
+/** Extra on-page copy for thin programmatic pages (word count + internal links) */
+export function contentSupplement({ keyword, type = 'guide' }) {
+  const links = `<p>Browse related resources: <a href="/tools/jwt-decoder.html">JWT Decoder</a>, <a href="/tools/jwt-validator.html">JWT Validator</a>, <a href="/guides/jwt-basics.html">JWT Basics</a>, <a href="/guides/jwt-authentication-explained.html">JWT Authentication</a>, <a href="/errors/">JWT Errors</a>, <a href="/algorithms/">Algorithms</a>, <a href="/glossary/">Glossary</a>, and <a href="/learning-path.html">Learning Path</a>.</p>`;
+
+  const blocks = {
+    guide: `<h2>Understanding ${keyword} in Production</h2>
+<p>Developers search for <strong>${keyword}</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side.</p>
+<h2>Common Pitfalls</h2>
+<ul><li>Algorithm confusion (<code>none</code> attack)</li><li>Secrets in the payload</li><li>Ignoring clock skew on <code>exp</code></li><li>Weak HMAC secrets</li><li>Skipping signature verification</li></ul>
+${links}`,
+    error: `<h2>Debugging ${keyword}</h2>
+<p>The error <strong>${keyword}</strong> means JWT verification failed. Decode the token, check <code>alg</code>, verify <code>exp</code> is not past, and confirm the secret or JWKS URL matches your auth provider.</p>
+${links}`,
+    glossary: `<h2>${keyword} in JWT Authentication</h2>
+<p>Understanding <strong>${keyword}</strong> helps you read RFC 7519, debug tokens, and design secure authentication. JWTs combine header, payload claims, and a cryptographic signature.</p>
+${links}`,
+    algorithm: `<h2>Using ${keyword} Safely</h2>
+<p>Algorithm <strong>${keyword}</strong> defines JWT signing. Validate the header <code>alg</code> matches expectations. Use JWKS for asymmetric keys; protect HMAC secrets.</p>
+${links}`,
+    claim: `<h2>Validating the Claim</h2>
+<p>Always verify JWT claims during token validation. Use our <a href="/tools/jwt-claims-viewer.html">Claims Viewer</a> and <a href="/tools/jwt-debugger.html">Debugger</a> to inspect claim values in real tokens.</p>
+${links}`,
+    compare: `<h2>Choosing the Right Approach</h2>
+<p>Compare trade-offs carefully for your architecture. See <a href="/guides/jwt-authentication-explained.html">JWT Authentication Explained</a> and <a href="/hubs/security.html">Security Hub</a> for deeper guidance.</p>
+${links}`,
+  };
+  return blocks[type] || blocks.guide;
 }

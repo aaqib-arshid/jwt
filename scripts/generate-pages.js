@@ -12,11 +12,11 @@ import {
   buildHowToSchema,
   buildOrganizationSchema,
   buildWebSiteSchema,
-  buildDefinedTermSchema,
   buildItemListSchema,
+  buildDefinedTermSchema,
   defaultHowToSteps,
 } from './lib/seo.js';
-import { quickAnswerSnippet } from './lib/content-templates.js';
+import { quickAnswerSnippet, contentSupplement } from './lib/content-templates.js';
 import { buildSearchIndex } from './lib/search-index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -144,18 +144,21 @@ function generateGlossaryPages(ctx) {
       path,
       metaHtml: renderHeadPartial(meta, [
         buildDefinedTermSchema(term, site),
-        buildBreadcrumbSchema(breadcrumbs, site),
+        buildBreadcrumbSchema(breadcrumbs, site, path),
       ]),
       breadcrumbsHtml: renderBreadcrumbsPartial(breadcrumbs),
-      relatedHtml: '',
       faqHtml: '',
       tryItHtml: renderTryItPartial(resolveLinks(['jwt-decoder'], ctx.toolsMap, '/tools')),
-      contentHtml: content,
+      contentHtml: content + contentSupplement({ keyword: term.term, type: 'glossary' }),
       quickAnswerHtml,
       year: new Date().getFullYear(),
-      hasRelatedTools: false, hasRelatedGuides: false, hasRelatedArticles: false,
-      hasRelatedAlgorithms: false, hasRelatedErrors: false, hasRelatedComparisons: false,
-      hasRelatedClaims: false, hasRelatedProviders: false,
+      relatedHtml: renderRelatedPartial({
+        relatedTools: resolveLinks(['jwt-decoder', 'jwt-debugger'], ctx.toolsMap, '/tools'),
+        relatedGuides: resolveLinks(['jwt-basics'], ctx.guidesMap, '/guides'),
+        hasRelatedTools: true, hasRelatedGuides: true,
+        hasRelatedArticles: false, hasRelatedAlgorithms: false, hasRelatedErrors: false,
+        hasRelatedComparisons: false, hasRelatedClaims: false, hasRelatedProviders: false,
+      }),
     }));
 
     ctx.allPages.push({ path, lastmod: today(), priority: '0.65' });
@@ -238,10 +241,11 @@ function generateContentPages(ctx, items, config) {
     const schemas = [
       buildArticleSchema(item, site),
       buildFaqSchema(item.faq),
-      buildBreadcrumbSchema(breadcrumbs, site),
+      buildBreadcrumbSchema(breadcrumbs, site, path),
       buildHowToSchema({ ...item, howToSteps }, site),
-    ].filter(s => s && s !== '""');
+    ].filter(s => s && s.length > 2);
 
+    const supplementType = snippetType || 'guide';
     const html = renderPage('content', {
       site,
       page: item,
@@ -251,7 +255,7 @@ function generateContentPages(ctx, items, config) {
       relatedHtml: renderRelatedPartial(related),
       faqHtml: renderFaqPartial(item.faq),
       tryItHtml: renderTryItPartial(tryTools),
-      contentHtml: item.content,
+      contentHtml: item.content + contentSupplement({ keyword: item.primaryKeyword || item.title, type: supplementType }),
       quickAnswerHtml,
       year: new Date().getFullYear(),
       ...related,
@@ -284,7 +288,7 @@ function generateLearnPages(ctx, items) {
     ];
     const meta = buildMeta({ ...item, path }, site);
     const tryTools = resolveLinks(item.relatedTools?.slice(0, 2), ctx.toolsMap, '/tools');
-    const schemas = [buildArticleSchema(item, site), buildFaqSchema(item.faq), buildBreadcrumbSchema(breadcrumbs, site)];
+    const schemas = [buildArticleSchema(item, site), buildFaqSchema(item.faq), buildBreadcrumbSchema(breadcrumbs, site, path)];
 
     const html = renderPage('content', {
       site, page: item, path,
@@ -361,7 +365,7 @@ function generateHubPages(ctx) {
       site,
       page: { title: cluster.name, description: cluster.description },
       path,
-      metaHtml: renderHeadPartial(meta, [buildBreadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Topics', href: '/hubs/' }, { label: cluster.name }], site)]),
+      metaHtml: renderHeadPartial(meta, [buildBreadcrumbSchema([{ label: 'Home', href: '/' }, { label: 'Topics', href: '/hubs/' }, { label: cluster.name }], site, path)]),
       breadcrumbsHtml: renderBreadcrumbsPartial([{ label: 'Home', href: '/' }, { label: 'Topics', href: '/hubs/' }, { label: cluster.name }]),
       hubPages: clusterPages.map(p => ({ title: p.title, description: p.description, href: p.path })),
       trustLinksHtml,
@@ -408,9 +412,10 @@ function generateSectionIndexes(ctx, sections) {
 
     const html = renderPage('index-list', {
       site,
-      page: { title: section.title },
+      page: { title: section.title, description: section.description },
       path,
-      metaHtml: renderHeadPartial(meta, []),
+      introHtml: section.introHtml || `<p class="lead">Browse ${section.items.length} ${section.title.toLowerCase()} on JWTValidator.org — free JWT decoder, validator, and learning resources.</p>`,
+      metaHtml: renderHeadPartial(meta, section.items.length ? [buildItemListSchema(section.title, section.items, site)] : []),
       breadcrumbsHtml: renderBreadcrumbsPartial([{ label: 'Home', href: '/' }, { label: section.title }]),
       listItems: section.items,
       year: new Date().getFullYear(),
@@ -466,7 +471,7 @@ export function generateAll() {
     const related = buildRelatedSections(tool, ctx);
     const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'Tools', href: '/#tools' }, { label: tool.title }];
     const meta = buildMeta({ ...tool, path }, site);
-    const schemas = [buildSoftwareAppSchema(tool, site), buildFaqSchema(tool.faq), buildBreadcrumbSchema(breadcrumbs, site)];
+    const schemas = [buildSoftwareAppSchema(tool, site), buildFaqSchema(tool.faq), buildBreadcrumbSchema(breadcrumbs, site, path)];
 
     writePage(`tools/${tool.slug}.html`, renderPage('tool', {
       site, page: tool, path,
@@ -558,7 +563,7 @@ export function generateAll() {
     writePage(`${page.slug}.html`, renderPage(template, {
       site, page, path: tPath,
       contactEmail: site.contactEmail || 'support@ratpdf.com',
-      metaHtml: renderHeadPartial(meta, [buildBreadcrumbSchema(breadcrumbs, site), page.faq?.length ? buildFaqSchema(page.faq) : null].filter(Boolean)),
+      metaHtml: renderHeadPartial(meta, [buildBreadcrumbSchema(breadcrumbs, site, tPath), page.faq?.length ? buildFaqSchema(page.faq) : null].filter(Boolean)),
       breadcrumbsHtml: renderBreadcrumbsPartial(breadcrumbs),
       contentHtml: page.content || '',
       faqHtml: renderFaqPartial(page.faq),

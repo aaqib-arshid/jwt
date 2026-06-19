@@ -71,10 +71,13 @@ export function buildHowToSchema(page, site) {
     '@type': 'HowTo',
     name: page.title,
     description: page.description,
+    url: `${site.domain}${page.path}`,
     step: page.howToSteps.map((s, i) => ({
-      '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text,
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
     })),
-    tool: [{ '@type': 'HowToTool', name: 'JWTValidator.org JWT Decoder' }],
   });
 }
 
@@ -98,32 +101,35 @@ export function buildArticleSchema(page, site) {
 }
 
 export function buildSoftwareAppSchema(tool, site) {
+  const url = `${site.domain}/tools/${tool.slug}.html`;
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebApplication',
     name: tool.title,
     description: tool.description,
-    url: `${site.domain}/tools/${tool.slug}.html`,
+    url,
     applicationCategory: 'DeveloperApplication',
-    applicationSubCategory: 'SecurityApplication',
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    aggregateRating: {
-      '@type': 'AggregateRating', ratingValue: '4.9', ratingCount: '1200', bestRating: '5',
-    },
-    featureList: 'JWT decode, encode, validate, debug, offline capable, no upload',
+    featureList: ['JWT decode', 'encode', 'validate', 'debug', 'offline capable', 'no upload'],
   });
 }
 
-export function buildBreadcrumbSchema(breadcrumbs, site) {
+export function buildBreadcrumbSchema(breadcrumbs, site, pagePath = '') {
+  const pageUrl = pagePath ? `${site.domain}${pagePath}` : undefined;
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((b, i) => ({
-      '@type': 'ListItem', position: i + 1, name: b.label,
-      item: b.href ? `${site.domain}${b.href}` : undefined,
-    })),
+    itemListElement: breadcrumbs.map((b, i) => {
+      const itemUrl = b.href ? `${site.domain}${b.href}` : (pageUrl || `${site.domain}/`);
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.label,
+        item: itemUrl,
+      };
+    }),
   });
 }
 
@@ -174,7 +180,11 @@ export function buildDefinedTermSchema(term, site) {
     '@type': 'DefinedTerm',
     name: term.term,
     description: term.definition,
-    inDefinedTermSet: `${site.domain}/glossary/`,
+    inDefinedTermSet: {
+      '@type': 'DefinedTermSet',
+      name: 'JWT Glossary',
+      url: `${site.domain}/glossary/`,
+    },
     url: `${site.domain}/glossary/${term.slug}.html`,
   });
 }

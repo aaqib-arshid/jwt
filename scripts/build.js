@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, cpSync, mkdirSync, existsSync, readdirSync
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { generateAll } from './generate-pages.js';
+import { minifyAssets } from './minify-assets.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -179,6 +180,7 @@ mkdirSync(DIST, { recursive: true });
 await runProgrammatic();
 const pages = generateAll();
 copyStaticAssets();
+await minifyAssets(join(DIST, 'assets'));
 generateSitemap(pages);
 generateLlmsTxt(pages, JSON.parse(readFileSync(join(ROOT, 'data', 'site.json'), 'utf-8')));
 generateAiTxt(pages, JSON.parse(readFileSync(join(ROOT, 'data', 'site.json'), 'utf-8')));

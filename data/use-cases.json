@@ -34,6 +34,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -71,6 +79,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -108,6 +124,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -145,6 +169,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -182,6 +214,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -219,6 +259,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -256,6 +304,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   },
   {
@@ -293,6 +349,14 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
+    ],
+    "relatedAlgorithms": [
+      "hs256-vs-rs256",
+      "jwt-algorithm-selection"
+    ],
+    "relatedErrors": [
+      "invalid-signature",
+      "token-expired"
     ]
   }
 ]
