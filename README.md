@@ -60,9 +60,16 @@ Add a JSON entry → run `npm run build` → deploy. No runtime rendering.
 
 ## GitHub Pages Setup
 
-1. Enable **GitHub Pages** → Source: **GitHub Actions**
-2. Push to `main` — workflow deploys `dist/` automatically
-3. Custom domain: `CNAME` file included in build
+1. Push to `main` — the deploy workflow builds `dist/` and publishes it to the **`gh-pages`** branch
+2. In repo **Settings → Pages**:
+   - **Source:** Deploy from a branch
+   - **Branch:** `gh-pages` / `/ (root)`
+   - **Custom domain:** `jwtvalidator.org` (CNAME is included in the build)
+3. After deploy, verify:
+   - `https://jwtvalidator.org/` shows the JWT tools homepage (not README)
+   - `https://jwtvalidator.org/sitemap.xml` returns XML with ~1,095 URLs
+
+> **Important:** Do **not** use "main" branch as the Pages source — that serves README.md instead of the built site.
 
 ## Constraints
 

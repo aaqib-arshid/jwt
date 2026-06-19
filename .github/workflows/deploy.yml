@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -24,24 +24,21 @@ jobs:
         with:
           node-version: '20'
 
-      - run: npm run build
+      - name: Build site
+        run: npm run build
 
-      - name: Verify sitemap
+      - name: Verify build output
         run: |
-          test -f dist/sitemap.xml
-          echo "URLs in sitemap:" $(grep -c '<loc>' dist/sitemap.xml)
-          ls -la dist/sitemap*.xml 2>/dev/null || true
+          test -f dist/index.html || (echo "Missing dist/index.html" && exit 1)
+          test -f dist/sitemap.xml || (echo "Missing dist/sitemap.xml" && exit 1)
+          test -f dist/CNAME || (echo "Missing dist/CNAME" && exit 1)
+          echo "HTML pages: $(find dist -name '*.html' | wc -l)"
+          echo "Sitemap URLs: $(grep -c '<loc>' dist/sitemap.xml)"
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
