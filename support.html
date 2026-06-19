@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>JWT Tools Support — Help Decoding &amp; Validating Tokens</title>
+<meta name="description" content="JWT tools support and FAQ. Fix JWT not decoding, invalid signature errors, and expired token issues. Links to decoder, validator, and guides.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="keywords" content="jwt tools support,jwt not decoding,invalid signature help,jwt expired">
+<link rel="canonical" href="https://jwtvalidator.org/support.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/support.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/support.html">
+<meta property="og:title" content="JWT Tools Support — Help Decoding &amp; Validating Tokens">
+<meta property="og:description" content="JWT tools support and FAQ. Fix JWT not decoding, invalid signature errors, and expired token issues. Links to decoder, validator, and guides.">
+<meta property="og:url" content="https://jwtvalidator.org/support.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JWT Tools Support — Help Decoding &amp; Validating Tokens">
+<meta name="twitter:description" content="JWT tools support and FAQ. Fix JWT not decoding, invalid signature errors, and expired token issues. Links to decoder, validator, and guides.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Support & Help"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is my JWT not decoding?","acceptedAnswer":{"@type":"Answer","text":"A valid JWT must have exactly three Base64URL segments separated by dots (header.payload.signature). Check for truncation, extra whitespace, or non-JWT strings. Use our JWT Decoder tool and see our malformed JWT error guide."}},{"@type":"Question","name":"How do I fix an invalid signature error?","acceptedAnswer":{"@type":"Answer","text":"Verify you're using the correct secret or public key, matching the algorithm in the token header (alg claim). For RS256, use the JWKS Validator with your issuer's JWKS endpoint."}},{"@type":"Question","name":"My token is expired — what now?","acceptedAnswer":{"@type":"Answer","text":"The exp claim indicates expiration. You cannot extend it client-side. Use a refresh token to obtain a new access token from your auth server. See our JWT Expired Token Fix guide."}},{"@type":"Question","name":"Are my tokens safe on this site?","acceptedAnswer":{"@type":"Answer","text":"Yes. All processing happens in your browser. Tokens are never uploaded to our servers. See our Privacy Policy for details."}},{"@type":"Question","name":"Can I use these tools offline?","acceptedAnswer":{"@type":"Answer","text":"Once loaded, most tools work offline since they require no server API calls (except optional JWKS fetch)."}}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  <span aria-current="page">Support &amp; Help</span>
+  
+  <a href="">Support &amp; Help</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page trust-page">
+  <header class="page-header">
+    <h1>Support &amp; Help</h1>
+    <p class="lead">JWT tools support and FAQ. Fix JWT not decoding, invalid signature errors, and expired token issues. Links to decoder, validator, and guides.</p>
+  </header>
+
+  <div class="prose">
+    <p>Find answers to common JWT problems below. For anything else, email <a href="mailto:support@ratpdf.com">support@ratpdf.com</a>.</p>
+  </div>
+
+  <section class="support-quick-links card">
+    <h2>Quick Links</h2>
+    <div class="support-links-grid">
+      <a href="/tools/jwt-decoder.html" class="support-link-card">
+        <strong>JWT Decoder</strong>
+        <span>Decode tokens instantly</span>
+      </a>
+      <a href="/tools/jwt-validator.html" class="support-link-card">
+        <strong>JWT Validator</strong>
+        <span>Verify signatures</span>
+      </a>
+      <a href="/guides/jwt-basics.html" class="support-link-card">
+        <strong>JWT Basics Guide</strong>
+        <span>Learn token structure</span>
+      </a>
+      <a href="/errors/malformed-jwt.html" class="support-link-card">
+        <strong>Malformed JWT</strong>
+        <span>Fix decode errors</span>
+      </a>
+      <a href="/guides/jwt-invalid-signature.html" class="support-link-card">
+        <strong>Invalid Signature</strong>
+        <span>Diagnose verify failures</span>
+      </a>
+      <a href="/guides/jwt-expired-token-fix.html" class="support-link-card">
+        <strong>Expired Token Fix</strong>
+        <span>Handle exp errors</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq-list">
+    
+    <details class="faq-item">
+      <summary>Why is my JWT not decoding?</summary>
+      <p>A valid JWT must have exactly three Base64URL segments separated by dots (header.payload.signature). Check for truncation, extra whitespace, or non-JWT strings. Use our JWT Decoder tool and see our malformed JWT error guide.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>How do I fix an invalid signature error?</summary>
+      <p>Verify you're using the correct secret or public key, matching the algorithm in the token header (alg claim). For RS256, use the JWKS Validator with your issuer's JWKS endpoint.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>My token is expired — what now?</summary>
+      <p>The exp claim indicates expiration. You cannot extend it client-side. Use a refresh token to obtain a new access token from your auth server. See our JWT Expired Token Fix guide.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Are my tokens safe on this site?</summary>
+      <p>Yes. All processing happens in your browser. Tokens are never uploaded to our servers. See our Privacy Policy for details.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Can I use these tools offline?</summary>
+      <p>Once loaded, most tools work offline since they require no server API calls (except optional JWKS fetch).</p>
+    </details>
+    
+  </div>
+</section>
+
+
+  <section class="support-email card">
+    <h2>Still Need Help?</h2>
+    <p>Email our support team at <a href="mailto:support@ratpdf.com">support@ratpdf.com</a>. We respond within 2–3 business days.</p>
+  </section>
+
+  <nav class="trust-links card" aria-label="Related resources">
+  <h2>Explore JWT Tools &amp; Guides</h2>
+  <ul class="trust-links-list">
+    <li><a href="/tools/jwt-decoder.html">JWT Decoder</a></li>
+    <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+    <li><a href="/guides/jwt-basics.html">JWT Basics Guide</a></li>
+    <li><a href="/guides/">All Guides</a></li>
+    <li><a href="/about.html">About JWTValidator.org</a></li>
+  </ul>
+</nav>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

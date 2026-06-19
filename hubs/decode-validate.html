@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Decode &amp; Validate — JWT Topic Hub | JWTValidator.org</title>
+<meta name="description" content="How to decode, validate, and debug JWT tokens.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<link rel="canonical" href="https://jwtvalidator.org/hubs/decode-validate.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/hubs/decode-validate.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/hubs/decode-validate.html">
+<meta property="og:title" content="Decode &amp; Validate — JWT Topic Hub | JWTValidator.org">
+<meta property="og:description" content="How to decode, validate, and debug JWT tokens.">
+<meta property="og:url" content="https://jwtvalidator.org/hubs/decode-validate.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Decode &amp; Validate — JWT Topic Hub | JWTValidator.org">
+<meta name="twitter:description" content="How to decode, validate, and debug JWT tokens.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Topics","item":"https://jwtvalidator.org/hubs/"},{"@type":"ListItem","position":3,"name":"Decode & Validate"}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  
+  
+  <span aria-current="page">Decode &amp; Validate</span>
+  
+  <a href="">Decode &amp; Validate</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page hub-page">
+  <header class="page-header">
+    <h1>Decode &amp; Validate</h1>
+    <p class="lead">How to decode, validate, and debug JWT tokens.</p>
+  </header>
+
+  <section class="hub-grid">
+    
+    <a href="/guides/jwt-basics.html" class="card card-link hub-card">
+      <h2>JWT Basics — Quick Start Guide</h2>
+      <p>JWT basics explained: token structure, header, payload, signature, and essential claims. Start here before using JWT decoder and validator tools.</p>
+    </a>
+    
+    <a href="/guides/jwt-authentication-explained.html" class="card card-link hub-card">
+      <h2>JWT Authentication Explained</h2>
+      <p>Learn how JWT authentication works: token structure, signing algorithms, claims, and best practices for secure API auth.</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-token-fix.html" class="card card-link hub-card">
+      <h2>JWT Expired Token — How to Fix</h2>
+      <p>Fix JWT expired token errors. Learn why tokens expire, how to refresh them, and implement token rotation securely.</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature — Causes &amp; Fixes</h2>
+      <p>Fix JWT invalid signature errors. Wrong secret, algorithm mismatch, tampered payload — diagnose and resolve signature verification failures.</p>
+    </a>
+    
+    <a href="/guides/what-is-jwt-token.html" class="card card-link hub-card">
+      <h2>What Is a JWT Token</h2>
+      <p>Complete explanation of JSON Web Tokens for beginners</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online.html" class="card card-link hub-card">
+      <h2>JWT Decode Online</h2>
+      <p>How to decode JWT tokens online safely in your browser</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-without-secret.html" class="card card-link hub-card">
+      <h2>Decode JWT Without Secret</h2>
+      <p>Can you decode a JWT without the secret key? Yes — here's how</p>
+    </a>
+    
+    <a href="/guides/jwt-verify-online.html" class="card card-link hub-card">
+      <h2>JWT Verify Online</h2>
+      <p>Verify JWT signatures online with HS256 and RS256</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-fix.html" class="card card-link hub-card">
+      <h2>JWT Expired Fix</h2>
+      <p>How to fix expired JWT tokens and implement refresh flows</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-fix.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Fix</h2>
+      <p>Diagnose and fix JWT signature verification failures</p>
+    </a>
+    
+    <a href="/guides/jwt-malformed-fix.html" class="card card-link hub-card">
+      <h2>JWT Malformed Fix</h2>
+      <p>Fix malformed JWT errors and invalid token format</p>
+    </a>
+    
+    <a href="/guides/jwt-not-valid-yet.html" class="card card-link hub-card">
+      <h2>JWT Not Valid Yet</h2>
+      <p>Understanding the nbf claim and not-yet-valid tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-claims-explained.html" class="card card-link hub-card">
+      <h2>JWT Claims Explained</h2>
+      <p>Complete guide to registered and custom JWT claims</p>
+    </a>
+    
+    <a href="/guides/jwt-header-explained.html" class="card card-link hub-card">
+      <h2>JWT Header Explained</h2>
+      <p>Understanding the JWT header alg and typ fields</p>
+    </a>
+    
+    <a href="/guides/jwt-payload-explained.html" class="card card-link hub-card">
+      <h2>JWT Payload Explained</h2>
+      <p>What data is stored in the JWT payload</p>
+    </a>
+    
+    <a href="/guides/jwt-signature-explained.html" class="card card-link hub-card">
+      <h2>JWT Signature Explained</h2>
+      <p>How JWT signatures work and why they matter</p>
+    </a>
+    
+    <a href="/guides/jwt-token-structure.html" class="card card-link hub-card">
+      <h2>JWT Token Structure</h2>
+      <p>The three parts of a JWT token explained with examples</p>
+    </a>
+    
+    <a href="/guides/how-to-create-jwt.html" class="card card-link hub-card">
+      <h2>How to Create a JWT Token</h2>
+      <p>Step-by-step guide to creating and signing JWT tokens</p>
+    </a>
+    
+    <a href="/guides/how-to-validate-jwt.html" class="card card-link hub-card">
+      <h2>How to Validate a JWT</h2>
+      <p>Server-side JWT validation checklist for developers</p>
+    </a>
+    
+    <a href="/guides/jwt-authentication-flow.html" class="card card-link hub-card">
+      <h2>JWT Authentication Flow</h2>
+      <p>Complete JWT login and API authentication flow diagram</p>
+    </a>
+    
+    <a href="/guides/jwt-authorization-bearer.html" class="card card-link hub-card">
+      <h2>JWT Bearer Token Authorization</h2>
+      <p>How to send JWT tokens in Authorization headers</p>
+    </a>
+    
+    <a href="/guides/jwt-oauth2-integration.html" class="card card-link hub-card">
+      <h2>JWT OAuth 2.0 Integration</h2>
+      <p>Use JWT as OAuth 2.0 access tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-openid-connect.html" class="card card-link hub-card">
+      <h2>JWT OpenID Connect</h2>
+      <p>JWT ID tokens in OpenID Connect explained</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-chrome-extension.html" class="card card-link hub-card">
+      <h2>JWT Decode Browser</h2>
+      <p>Decode JWT tokens in browser developer tools</p>
+    </a>
+    
+    <a href="/guides/jwt-online-tool-free.html" class="card card-link hub-card">
+      <h2>JWT Online Tool Free</h2>
+      <p>Best free online JWT decoder and validator tools</p>
+    </a>
+    
+    <a href="/guides/jwt-debugging-guide.html" class="card card-link hub-card">
+      <h2>JWT Debugging Guide</h2>
+      <p>Complete guide to debugging JWT authentication issues</p>
+    </a>
+    
+    <a href="/guides/jwt-interview-questions.html" class="card card-link hub-card">
+      <h2>JWT Interview Questions</h2>
+      <p>Common JWT authentication interview questions answered</p>
+    </a>
+    
+    <a href="/guides/jwt-rfc-7519.html" class="card card-link hub-card">
+      <h2>RFC 7519 JWT Standard</h2>
+      <p>Understanding the JWT RFC 7519 specification</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-postman.html" class="card card-link hub-card">
+      <h2>Decode JWT in Postman</h2>
+      <p>How to decode and inspect JWT tokens in Postman</p>
+    </a>
+    
+    <a href="/guides/jwt-insomnia-decode.html" class="card card-link hub-card">
+      <h2>Decode JWT in Insomnia</h2>
+      <p>Inspect JWT tokens in Insomnia REST client</p>
+    </a>
+    
+    <a href="/guides/jwt-swagger-auth.html" class="card card-link hub-card">
+      <h2>JWT Swagger Authentication</h2>
+      <p>Configure JWT bearer auth in Swagger/OpenAPI</p>
+    </a>
+    
+    <a href="/guides/jwt-postman-test.html" class="card card-link hub-card">
+      <h2>JWT Postman Pre-request Script</h2>
+      <p>Generate and attach JWT tokens in Postman scripts</p>
+    </a>
+    
+    <a href="/guides/jwt-curl-decode.html" class="card card-link hub-card">
+      <h2>Decode JWT with curl</h2>
+      <p>Send and decode JWT tokens using curl commands</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-base64.html" class="card card-link hub-card">
+      <h2>JWT Base64 Decode</h2>
+      <p>Decode JWT payload from Base64URL manually</p>
+    </a>
+    
+    <a href="/guides/jwt-three-parts.html" class="card card-link hub-card">
+      <h2>JWT Three Parts Explained</h2>
+      <p>Understanding header payload signature structure</p>
+    </a>
+    
+    <a href="/guides/jwt-compact-serialization.html" class="card card-link hub-card">
+      <h2>JWT Compact Serialization</h2>
+      <p>JWT compact vs JSON serialization formats</p>
+    </a>
+    
+    <a href="/guides/jwt-nested-jwt.html" class="card card-link hub-card">
+      <h2>Nested JWT Explained</h2>
+      <p>Understanding nested JWT and JWE tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-jwe-vs-jws.html" class="card card-link hub-card">
+      <h2>JWE vs JWS Difference</h2>
+      <p>Encrypted JWT vs signed JWT comparison</p>
+    </a>
+    
+    <a href="/guides/jwt-signed-token.html" class="card card-link hub-card">
+      <h2>JWT Signed Token</h2>
+      <p>How JWT signing protects token integrity</p>
+    </a>
+    
+    <a href="/guides/jwt-self-contained.html" class="card card-link hub-card">
+      <h2>JWT Self Contained Token</h2>
+      <p>Why JWTs are self-contained authentication tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-stateless-auth.html" class="card card-link hub-card">
+      <h2>JWT Stateless Authentication</h2>
+      <p>Stateless auth benefits and tradeoffs with JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-access-token.html" class="card card-link hub-card">
+      <h2>JWT Access Token Guide</h2>
+      <p>Access tokens in OAuth 2.0 and JWT format</p>
+    </a>
+    
+    <a href="/guides/jwt-id-token-guide.html" class="card card-link hub-card">
+      <h2>JWT ID Token Guide</h2>
+      <p>OpenID Connect ID token structure and validation</p>
+    </a>
+    
+    <a href="/guides/jwt-custom-claims.html" class="card card-link hub-card">
+      <h2>JWT Custom Claims</h2>
+      <p>Add and validate custom claims in JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-registered-claims.html" class="card card-link hub-card">
+      <h2>JWT Registered Claims List</h2>
+      <p>Complete list of RFC 7519 registered claims</p>
+    </a>
+    
+    <a href="/guides/jwt-scope-claim.html" class="card card-link hub-card">
+      <h2>JWT Scope Claim</h2>
+      <p>OAuth scope claim in JWT access tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-email-claim.html" class="card card-link hub-card">
+      <h2>JWT Email Claim</h2>
+      <p>Email and profile claims in JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-name-claim.html" class="card card-link hub-card">
+      <h2>JWT Name Claim</h2>
+      <p>Display name claims in JWT payloads</p>
+    </a>
+    
+    <a href="/guides/jwt-pkce-flow.html" class="card card-link hub-card">
+      <h2>JWT PKCE Flow</h2>
+      <p>PKCE authorization code flow with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-client-credentials.html" class="card card-link hub-card">
+      <h2>JWT Client Credentials Flow</h2>
+      <p>Machine-to-machine JWT with client credentials</p>
+    </a>
+    
+    <a href="/guides/jwt-device-code-flow.html" class="card card-link hub-card">
+      <h2>JWT Device Code Flow</h2>
+      <p>Device authorization flow JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-free.html" class="card card-link hub-card">
+      <h2>JWT Decode Online Free</h2>
+      <p>Best free online JWT decoder tools comparison</p>
+    </a>
+    
+    <a href="/guides/jwt-validator-online-free.html" class="card card-link hub-card">
+      <h2>JWT Validator Online Free</h2>
+      <p>Free online JWT signature validator</p>
+    </a>
+    
+    <a href="/guides/jwt-debug-online.html" class="card card-link hub-card">
+      <h2>JWT Debug Online</h2>
+      <p>Debug JWT tokens online without installing tools</p>
+    </a>
+    
+    <a href="/guides/jwt-parser-online.html" class="card card-link hub-card">
+      <h2>JWT Parser Online</h2>
+      <p>Parse JWT header payload signature online</p>
+    </a>
+    
+    <a href="/guides/jwt-reader-online.html" class="card card-link hub-card">
+      <h2>JWT Reader Online</h2>
+      <p>Read and inspect JWT token contents online</p>
+    </a>
+    
+    <a href="/guides/jwt-checker-online.html" class="card card-link hub-card">
+      <h2>JWT Checker Online</h2>
+      <p>Check JWT validity expiration and signature online</p>
+    </a>
+    
+    <a href="/guides/jwt-analyzer-online.html" class="card card-link hub-card">
+      <h2>JWT Analyzer Online</h2>
+      <p>Analyze JWT claims and security issues online</p>
+    </a>
+    
+    <a href="/guides/jwt-error-handling.html" class="card card-link hub-card">
+      <h2>JWT Error Handling Best Practices</h2>
+      <p>Proper JWT error responses for APIs</p>
+    </a>
+    
+    <a href="/guides/jwt-401-vs-403.html" class="card card-link hub-card">
+      <h2>JWT 401 vs 403 Error</h2>
+      <p>When to return 401 vs 403 for JWT failures</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-windows.html" class="card card-link hub-card">
+      <h2>jWT Decode on Windows</h2>
+      <p>Decode JWT tokens on Windows using browser tools and PowerShell</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-mac.html" class="card card-link hub-card">
+      <h2>JWT Decode on Mac</h2>
+      <p>Decode JWT tokens on macOS with free online tools</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-linux.html" class="card card-link hub-card">
+      <h2>JWT Decode Linux</h2>
+      <p>Decode JWT tokens on Linux command line and browser</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-vs-code.html" class="card card-link hub-card">
+      <h2>JWT Decode VS Code</h2>
+      <p>Decode JWT tokens in Visual Studio Code extensions</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-jetbrains.html" class="card card-link hub-card">
+      <h2>JWT Decode IntelliJ</h2>
+      <p>Inspect JWT tokens in JetBrains IDEs</p>
+    </a>
+    
+    <a href="/guides/jwt-chrome-devtools.html" class="card card-link hub-card">
+      <h2>JWT Chrome DevTools</h2>
+      <p>Find and decode JWT tokens in Chrome developer tools</p>
+    </a>
+    
+    <a href="/guides/jwt-firefox-devtools.html" class="card card-link hub-card">
+      <h2>JWT Firefox DevTools</h2>
+      <p>Inspect JWT cookies and tokens in Firefox</p>
+    </a>
+    
+    <a href="/guides/jwt-browser-extension.html" class="card card-link hub-card">
+      <h2>JWT Browser Extension</h2>
+      <p>Best browser extensions for JWT decoding</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-offline.html" class="card card-link hub-card">
+      <h2>JWT Decode Offline</h2>
+      <p>Decode JWT tokens offline without internet connection</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-large-token.html" class="card card-link hub-card">
+      <h2>JWT Decode Large Token</h2>
+      <p>Decode oversized or long JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-unicode.html" class="card card-link hub-card">
+      <h2>JWT Unicode Claims</h2>
+      <p>Handle Unicode characters in JWT payload claims</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-nested-json.html" class="card card-link hub-card">
+      <h2>JWT Nested JSON Claims</h2>
+      <p>Decode JWT with nested JSON object claims</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-array-claims.html" class="card card-link hub-card">
+      <h2>JWT Array Claims</h2>
+      <p>Understanding array values in JWT payload claims</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-binary-claims.html" class="card card-link hub-card">
+      <h2>JWT Binary Claims</h2>
+      <p>Handle binary and base64 claims in JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-compressed.html" class="card card-link hub-card">
+      <h2>JWT Compressed Payload</h2>
+      <p>Compressed JWT payloads and decompression</p>
+    </a>
+    
+    <a href="/guides/jwt-url-safe.html" class="card card-link hub-card">
+      <h2>JWT URL Safe Encoding</h2>
+      <p>Base64URL encoding in JWT tokens explained</p>
+    </a>
+    
+    <a href="/guides/jwt-padding.html" class="card card-link hub-card">
+      <h2>JWT Base64 Padding</h2>
+      <p>Base64 padding in JWT segments explained</p>
+    </a>
+    
+    <a href="/guides/jwt-segment-decode.html" class="card card-link hub-card">
+      <h2>JWT Segment Decode</h2>
+      <p>Decode individual JWT header payload signature segments</p>
+    </a>
+    
+    <a href="/guides/jwt-payload-only.html" class="card card-link hub-card">
+      <h2>JWT Payload Only Decode</h2>
+      <p>Decode only the JWT payload without full token</p>
+    </a>
+    
+    <a href="/guides/jwt-signature-only.html" class="card card-link hub-card">
+      <h2>JWT Signature Explained Online</h2>
+      <p>Inspect JWT signature segment separately</p>
+    </a>
+    
+    <a href="/guides/jwt-typ-header.html" class="card card-link hub-card">
+      <h2>JWT typ Header Claim</h2>
+      <p>Understanding typ JWT in header claim</p>
+    </a>
+    
+    <a href="/guides/jwt-cty-header.html" class="card card-link hub-card">
+      <h2>JWT cty Header Claim</h2>
+      <p>Content type cty claim in JWT header</p>
+    </a>
+    
+    <a href="/guides/jwt-critical-header.html" class="card card-link hub-card">
+      <h2>JWT crit Header Parameter</h2>
+      <p>Critical header parameters in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-auth0.html" class="card card-link hub-card">
+      <h2>JWT Expired Auth0 Token</h2>
+      <p>Fix expired Auth0 access tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-firebase.html" class="card card-link hub-card">
+      <h2>JWT Expired Firebase Token</h2>
+      <p>Handle expired Firebase ID tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-cognito.html" class="card card-link hub-card">
+      <h2>JWT Expired Cognito Token</h2>
+      <p>Refresh expired AWS Cognito tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-auth0.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Auth0</h2>
+      <p>Fix Auth0 JWT signature verification errors</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-firebase.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Firebase</h2>
+      <p>Fix Firebase JWT signature verification</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-test-token.html" class="card card-link hub-card">
+      <h2>JWT Decode Test Token</h2>
+      <p>Generate and decode test JWT tokens for development</p>
+    </a>
+    
+    <a href="/guides/jwt-mock-token.html" class="card card-link hub-card">
+      <h2>JWT Mock Token Development</h2>
+      <p>Create mock JWT tokens for testing APIs</p>
+    </a>
+    
+    <a href="/guides/jwt-fake-token.html" class="card card-link hub-card">
+      <h2>JWT Fake Token Testing</h2>
+      <p>Fake JWT tokens for unit test mocking</p>
+    </a>
+    
+    <a href="/guides/jwt-read-only-decode.html" class="card card-link hub-card">
+      <h2>JWT Read Only Decode</h2>
+      <p>Decode JWT without verification for read-only inspection</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-no-verify.html" class="card card-link hub-card">
+      <h2>JWT Decode Without Verify</h2>
+      <p>Decode JWT payload without signature verification</p>
+    </a>
+    
+    <a href="/guides/jwt-authentication-2024.html" class="card card-link hub-card">
+      <h2>JWT Authentication Guide 2025</h2>
+      <p>Complete JWT authentication guide updated 2025</p>
+    </a>
+    
+    <a href="/guides/jwt-oidc-specification.html" class="card card-link hub-card">
+      <h2>JWT OpenID Connect Specification</h2>
+      <p>OpenID Connect JWT token specification guide</p>
+    </a>
+    
+    <a href="/guides/jwt-introspection-endpoint.html" class="card card-link hub-card">
+      <h2>JWT Token Introspection</h2>
+      <p>OAuth 2.0 token introspection vs JWT validation</p>
+    </a>
+    
+    <a href="/guides/jwt-token-exchange.html" class="card card-link hub-card">
+      <h2>JWT Token Exchange RFC 8693</h2>
+      <p>OAuth 2.0 token exchange with JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-client-assertion.html" class="card card-link hub-card">
+      <h2>JWT Client Assertion</h2>
+      <p>OAuth 2.0 client assertion JWT authentication</p>
+    </a>
+    
+    <a href="/guides/jwt-par-flow.html" class="card card-link hub-card">
+      <h2>JWT Pushed Authorization Request</h2>
+      <p>PAR OAuth flow with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-ciba-flow.html" class="card card-link hub-card">
+      <h2>JWT CIBA Flow Authentication</h2>
+      <p>Client Initiated Backchannel Authentication JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-deutsch.html" class="card card-link hub-card">
+      <h2>JWT Decoder Deutsch</h2>
+      <p>JWT Token online dekodieren — kostenloser JWT Decoder auf Deutsch</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-francais.html" class="card card-link hub-card">
+      <h2>JWT Décodeur Français</h2>
+      <p>Décoder un token JWT en ligne gratuitement en français</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-espanol.html" class="card card-link hub-card">
+      <h2>JWT Decoder Español</h2>
+      <p>Decodificar tokens JWT online gratis en español</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-portugues.html" class="card card-link hub-card">
+      <h2>JWT Decoder Português</h2>
+      <p>Decodificar JWT online grátis em português</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-italiano.html" class="card card-link hub-card">
+      <h2>JWT Decoder Italiano</h2>
+      <p>Decodificare token JWT online gratis in italiano</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-nederlands.html" class="card card-link hub-card">
+      <h2>JWT Decoder Nederlands</h2>
+      <p>JWT token online decoderen gratis in het Nederlands</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-polski.html" class="card card-link hub-card">
+      <h2>JWT Decoder Polski</h2>
+      <p>Dekodowanie tokenów JWT online za darmo po polsku</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-turkce.html" class="card card-link hub-card">
+      <h2>JWT Decoder Türkçe</h2>
+      <p>JWT token çözme aracı ücretsiz Türkçe</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-russian.html" class="card card-link hub-card">
+      <h2>JWT Decoder Russian</h2>
+      <p>Декодировать JWT токен онлайн бесплатно</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-japanese.html" class="card card-link hub-card">
+      <h2>JWT Decoder Japanese</h2>
+      <p>JWTトークンをオンラインでデコード</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-korean.html" class="card card-link hub-card">
+      <h2>JWT Decoder Korean</h2>
+      <p>JWT 토큰 온라인 디코더 무료</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-chinese.html" class="card card-link hub-card">
+      <h2>JWT Decoder Chinese</h2>
+      <p>JWT令牌在线解码器免费</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-hindi.html" class="card card-link hub-card">
+      <h2>JWT Decoder Hindi</h2>
+      <p>JWT टोकन ऑनलाइन डिकोडर मुफ्त</p>
+    </a>
+    
+    <a href="/guides/jwt-decoder-arabic.html" class="card card-link hub-card">
+      <h2>JWT Decoder Arabic</h2>
+      <p>فك تشفير JWT مجاناً عبر الإنترنت</p>
+    </a>
+    
+    <a href="/guides/jwt-validator-deutsch.html" class="card card-link hub-card">
+      <h2>JWT Validator Deutsch</h2>
+      <p>JWT Signatur online verifizieren kostenlos</p>
+    </a>
+    
+    <a href="/guides/jwt-validator-francais.html" class="card card-link hub-card">
+      <h2>JWT Validateur Français</h2>
+      <p>Vérifier la signature JWT en ligne gratuitement</p>
+    </a>
+    
+    <a href="/guides/jwt-validator-espanol.html" class="card card-link hub-card">
+      <h2>JWT Validador Español</h2>
+      <p>Validar firma JWT online gratis</p>
+    </a>
+    
+    <a href="/guides/jwt-was-ist-das.html" class="card card-link hub-card">
+      <h2>JWT Was ist das</h2>
+      <p>Was ist ein JWT Token — Erklärung auf Deutsch</p>
+    </a>
+    
+    <a href="/guides/jwt-qu-est-ce.html" class="card card-link hub-card">
+      <h2>JWT Qu'est-ce que c'est</h2>
+      <p>Qu'est-ce qu'un token JWT — guide en français</p>
+    </a>
+    
+    <a href="/guides/jwt-que-es.html" class="card card-link hub-card">
+      <h2>JWT Qué es</h2>
+      <p>Qué es un token JWT — guía en español</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Expired Node.js Fix</h2>
+      <p>Fix expired JWT error in Node.js applications</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-python.html" class="card card-link hub-card">
+      <h2>JWT Expired Python Fix</h2>
+      <p>Handle expired JWT in Python PyJWT</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-java.html" class="card card-link hub-card">
+      <h2>JWT Expired Java Fix</h2>
+      <p>Fix expired JWT exception in Java Spring</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-go.html" class="card card-link hub-card">
+      <h2>JWT Expired Go Fix</h2>
+      <p>Handle expired JWT in Go golang-jwt</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-react.html" class="card card-link hub-card">
+      <h2>JWT Expired React Fix</h2>
+      <p>Handle expired JWT tokens in React apps</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-angular.html" class="card card-link hub-card">
+      <h2>JWT Expired Angular Fix</h2>
+      <p>Fix expired JWT in Angular HttpInterceptor</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-vue.html" class="card card-link hub-card">
+      <h2>JWT Expired Vue Fix</h2>
+      <p>Handle JWT expiration in Vue.js applications</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-nextjs.html" class="card card-link hub-card">
+      <h2>JWT Expired Next.js Fix</h2>
+      <p>Fix expired JWT in Next.js API routes</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-express.html" class="card card-link hub-card">
+      <h2>JWT Expired Express Fix</h2>
+      <p>Handle expired JWT in Express.js middleware</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-spring-boot.html" class="card card-link hub-card">
+      <h2>JWT Expired Spring Boot Fix</h2>
+      <p>Fix expired JWT in Spring Boot applications</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-fastapi.html" class="card card-link hub-card">
+      <h2>JWT Expired FastAPI Fix</h2>
+      <p>Handle expired JWT in FastAPI Python</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-django.html" class="card card-link hub-card">
+      <h2>JWT Expired Django Fix</h2>
+      <p>Fix expired JWT in Django REST framework</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-flask.html" class="card card-link hub-card">
+      <h2>JWT Expired Flask Fix</h2>
+      <p>Handle expired JWT tokens in Flask</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-laravel.html" class="card card-link hub-card">
+      <h2>JWT Expired Laravel Fix</h2>
+      <p>Fix expired JWT in Laravel Passport</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-auth0-react.html" class="card card-link hub-card">
+      <h2>JWT Expired Auth0 React</h2>
+      <p>Handle expired Auth0 tokens in React</p>
+    </a>
+    
+    <a href="/guides/jwt-expired-firebase-js.html" class="card card-link hub-card">
+      <h2>JWT Expired Firebase JS</h2>
+      <p>Refresh expired Firebase ID tokens JavaScript</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Node.js</h2>
+      <p>Fix JWT invalid signature in Node.js jsonwebtoken</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-python.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Python</h2>
+      <p>Fix JWT signature error in Python PyJWT</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-java.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Java</h2>
+      <p>Fix invalid JWT signature in Java JJWT</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-go.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Go</h2>
+      <p>Fix JWT signature verification in Go</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-php.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature PHP</h2>
+      <p>Fix JWT signature error in PHP firebase/jwt</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-csharp.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature C#</h2>
+      <p>Fix JWT signature validation in .NET</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-rs256.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature RS256</h2>
+      <p>Fix RS256 JWT signature verification errors</p>
+    </a>
+    
+    <a href="/guides/jwt-invalid-signature-hs256.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature HS256</h2>
+      <p>Fix HS256 JWT secret mismatch signature error</p>
+    </a>
+    
+    <a href="/guides/jwt-malformed-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Malformed Node.js</h2>
+      <p>Fix malformed JWT error in Node.js</p>
+    </a>
+    
+    <a href="/guides/jwt-malformed-python.html" class="card card-link hub-card">
+      <h2>JWT Malformed Python</h2>
+      <p>Fix malformed JWT parse error in Python</p>
+    </a>
+    
+    <a href="/guides/jwt-unauthorized-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Unauthorized Node.js</h2>
+      <p>Fix 401 unauthorized JWT in Node.js Express</p>
+    </a>
+    
+    <a href="/guides/jwt-unauthorized-spring.html" class="card card-link hub-card">
+      <h2>JWT Unauthorized Spring Boot</h2>
+      <p>Fix 401 JWT unauthorized in Spring Security</p>
+    </a>
+    
+    <a href="/guides/jwt-token-undefined.html" class="card card-link hub-card">
+      <h2>JWT Token Undefined Error</h2>
+      <p>Fix undefined JWT token in frontend applications</p>
+    </a>
+    
+    <a href="/guides/jwt-token-null.html" class="card card-link hub-card">
+      <h2>JWT Token Null Error</h2>
+      <p>Handle null or missing JWT token errors</p>
+    </a>
+    
+    <a href="/guides/jwt-bearer-missing.html" class="card card-link hub-card">
+      <h2>JWT Bearer Token Missing</h2>
+      <p>Fix missing Authorization Bearer header</p>
+    </a>
+    
+    <a href="/guides/jwt-bearer-malformed.html" class="card card-link hub-card">
+      <h2>JWT Bearer Malformed Header</h2>
+      <p>Fix malformed Authorization Bearer header format</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-atob-error.html" class="card card-link hub-card">
+      <h2>JWT atob Decode Error</h2>
+      <p>Fix atob InvalidCharacterError decoding JWT in browser</p>
+    </a>
+    
+    <a href="/guides/jwt-jsonwebtoken-error.html" class="card card-link hub-card">
+      <h2>JWT jsonwebtoken Error</h2>
+      <p>Common jsonwebtoken library errors and fixes</p>
+    </a>
+    
+    <a href="/guides/jwt-pyjwt-error.html" class="card card-link hub-card">
+      <h2>JWT PyJWT Error</h2>
+      <p>Common PyJWT errors and how to fix them</p>
+    </a>
+    
+    <a href="/guides/jwt-jjwt-error.html" class="card card-link hub-card">
+      <h2>JWT JJWT Error</h2>
+      <p>Common Java JJWT library errors explained</p>
+    </a>
+    
+    <a href="/guides/jwt-golang-jwt-error.html" class="card card-link hub-card">
+      <h2>JWT golang-jwt Error</h2>
+      <p>Common golang-jwt library errors and fixes</p>
+    </a>
+    
+    <a href="/guides/jwt-401-unauthorized-fix.html" class="card card-link hub-card">
+      <h2>JWT 401 Unauthorized Fix</h2>
+      <p>Complete guide to fixing JWT 401 errors</p>
+    </a>
+    
+    <a href="/guides/jwt-403-forbidden-fix.html" class="card card-link hub-card">
+      <h2>JWT 403 Forbidden Fix</h2>
+      <p>Fix JWT authenticated but 403 forbidden errors</p>
+    </a>
+    
+    <a href="/guides/jwt-cors-token-error.html" class="card card-link hub-card">
+      <h2>JWT CORS Token Error</h2>
+      <p>Fix CORS errors when sending JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-preflight-auth-error.html" class="card card-link hub-card">
+      <h2>JWT Preflight Auth Error</h2>
+      <p>Fix JWT auth failing on CORS preflight requests</p>
+    </a>
+    
+    <a href="/guides/jwt-split-error.html" class="card card-link hub-card">
+      <h2>JWT Split Error</h2>
+      <p>Fix token.split is not a function JWT error</p>
+    </a>
+    
+    <a href="/guides/jwt-parse-error.html" class="card card-link hub-card">
+      <h2>JWT Parse Error</h2>
+      <p>Fix JSON parse error in JWT payload</p>
+    </a>
+    
+    <a href="/guides/jwt-unexpected-token.html" class="card card-link hub-card">
+      <h2>JWT Unexpected Token Error</h2>
+      <p>Fix unexpected token errors parsing JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-algorithm-mismatch-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Mismatch Node.js</h2>
+      <p>Fix algorithm mismatch JWT error Node.js</p>
+    </a>
+    
+    <a href="/guides/jwt-algorithm-mismatch-python.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Mismatch Python</h2>
+      <p>Fix algorithm not allowed error PyJWT</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-india.html" class="card card-link hub-card">
+      <h2>JWT Decoder India</h2>
+      <p>Free JWT decoder tool for developers in India</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-uk.html" class="card card-link hub-card">
+      <h2>JWT Decoder UK</h2>
+      <p>Free online JWT decoder for UK developers</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-usa.html" class="card card-link hub-card">
+      <h2>JWT Decoder USA</h2>
+      <p>Free JWT token decoder for US developers</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-australia.html" class="card card-link hub-card">
+      <h2>JWT Decoder Australia</h2>
+      <p>JWT decode online free for Australian developers</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-canada.html" class="card card-link hub-card">
+      <h2>JWT Decoder Canada</h2>
+      <p>Free JWT decoder for Canadian developers</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-online-singapore.html" class="card card-link hub-card">
+      <h2>JWT Decoder Singapore</h2>
+      <p>JWT tools for Singapore developers</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-postman-collection.html" class="card card-link hub-card">
+      <h2>JWT Postman Collection</h2>
+      <p>JWT authentication Postman collection setup</p>
+    </a>
+    
+    <a href="/guides/jwt-swagger-bearer-setup.html" class="card card-link hub-card">
+      <h2>JWT Swagger Bearer Setup</h2>
+      <p>Configure JWT bearer authentication in Swagger UI</p>
+    </a>
+    
+    <a href="/guides/jwt-openapi-security-scheme.html" class="card card-link hub-card">
+      <h2>JWT OpenAPI Security Scheme</h2>
+      <p>Define JWT bearer security scheme in OpenAPI 3</p>
+    </a>
+    
+    <a href="/guides/jwt-redoc-authentication.html" class="card card-link hub-card">
+      <h2>JWT Redoc Authentication</h2>
+      <p>JWT auth documentation with Redoc OpenAPI</p>
+    </a>
+    
+    <a href="/guides/jwt-insomnia-bearer.html" class="card card-link hub-card">
+      <h2>JWT Insomnia Bearer Token</h2>
+      <p>Set JWT bearer token in Insomnia client</p>
+    </a>
+    
+    <a href="/guides/jwt-hoppscotch-auth.html" class="card card-link hub-card">
+      <h2>JWT Hoppscotch Auth</h2>
+      <p>Configure JWT authentication in Hoppscotch API client</p>
+    </a>
+    
+    <a href="/guides/jwt-bruno-auth.html" class="card card-link hub-card">
+      <h2>JWT Bruno API Client Auth</h2>
+      <p>JWT authentication in Bruno API client</p>
+    </a>
+    
+    <a href="/guides/jwt-thunder-client.html" class="card card-link hub-card">
+      <h2>JWT Thunder Client VS Code</h2>
+      <p>JWT auth in Thunder Client VS Code extension</p>
+    </a>
+    
+    <a href="/guides/jwt-rest-client-intellij.html" class="card card-link hub-card">
+      <h2>JWT REST Client IntelliJ</h2>
+      <p>JWT authentication in IntelliJ HTTP client</p>
+    </a>
+    
+    <a href="/guides/jwt-curl-bearer-example.html" class="card card-link hub-card">
+      <h2>JWT curl Bearer Example</h2>
+      <p>curl command with JWT bearer token example</p>
+    </a>
+    
+    <a href="/guides/jwt-httpie-bearer.html" class="card card-link hub-card">
+      <h2>JWT HTTPie Bearer Token</h2>
+      <p>Send JWT token with HTTPie command line</p>
+    </a>
+    
+    <a href="/guides/jwt-wget-auth.html" class="card card-link hub-card">
+      <h2>JWT wget Authentication</h2>
+      <p>Send JWT authorization header with wget</p>
+    </a>
+    
+    <a href="/guides/jwt-protobuf-claims.html" class="card card-link hub-card">
+      <h2>JWT Protobuf Claims Encoding</h2>
+      <p>Encode JWT claims as protobuf messages</p>
+    </a>
+    
+    <a href="/guides/jwt-avro-claims.html" class="card card-link hub-card">
+      <h2>JWT Avro Claims Schema</h2>
+      <p>Avro schema for JWT claim serialization</p>
+    </a>
+    
+    <a href="/guides/jwt-msgpack-claims.html" class="card card-link hub-card">
+      <h2>JWT MessagePack Claims</h2>
+      <p>MessagePack encoded JWT claims</p>
+    </a>
+    
+    <a href="/guides/jwt-cbor-claims.html" class="card card-link hub-card">
+      <h2>JWT CBOR Claims Format</h2>
+      <p>CBOR encoded JWT claims format</p>
+    </a>
+    
+    <a href="/guides/jwt-cwt-iot.html" class="card card-link hub-card">
+      <h2>JWT CWT IoT Tokens</h2>
+      <p>CWT CBOR Web Token for IoT vs JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-social-login-jwt.html" class="card card-link hub-card">
+      <h2>JWT Social Login Auth</h2>
+      <p>Social OAuth login issuing JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-magic-link-jwt.html" class="card card-link hub-card">
+      <h2>JWT Magic Link Authentication</h2>
+      <p>Magic link login with JWT token issuance</p>
+    </a>
+    
+    <a href="/guides/jwt-passwordless-jwt.html" class="card card-link hub-card">
+      <h2>JWT Passwordless Authentication</h2>
+      <p>Passwordless auth flows with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-email-otp-jwt.html" class="card card-link hub-card">
+      <h2>JWT Email OTP Authentication</h2>
+      <p>Email OTP verification with JWT session</p>
+    </a>
+    
+    <a href="/guides/jwt-sms-otp-jwt.html" class="card card-link hub-card">
+      <h2>JWT SMS OTP Authentication</h2>
+      <p>SMS OTP auth issuing JWT access tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-tool.html" class="card card-link hub-card">
+      <h2>JWT Decode Tool</h2>
+      <p>Free JWT decode tool for developers</p>
+    </a>
+    
+    <a href="/guides/jwt-parse-tool.html" class="card card-link hub-card">
+      <h2>JWT Parse Tool</h2>
+      <p>Parse JWT token header and payload online</p>
+    </a>
+    
+    <a href="/guides/jwt-read-tool.html" class="card card-link hub-card">
+      <h2>JWT Read Tool</h2>
+      <p>Read JWT token contents online free</p>
+    </a>
+    
+    <a href="/guides/jwt-split-tool.html" class="card card-link hub-card">
+      <h2>JWT Split Tool</h2>
+      <p>Split JWT into header payload signature</p>
+    </a>
+    
+    <a href="/guides/jwt-unpack-tool.html" class="card card-link hub-card">
+      <h2>JWT Unpack Tool</h2>
+      <p>Unpack JWT token segments online</p>
+    </a>
+    
+    <a href="/guides/jwt-extract-payload.html" class="card card-link hub-card">
+      <h2>JWT Extract Payload</h2>
+      <p>Extract payload from JWT token online</p>
+    </a>
+    
+    <a href="/guides/jwt-extract-header.html" class="card card-link hub-card">
+      <h2>JWT Extract Header</h2>
+      <p>Extract header from JWT token online</p>
+    </a>
+    
+    <a href="/guides/jwt-extract-claims.html" class="card card-link hub-card">
+      <h2>JWT Extract Claims</h2>
+      <p>Extract all claims from JWT payload</p>
+    </a>
+    
+    <a href="/guides/jwt-view-claims.html" class="card card-link hub-card">
+      <h2>JWT View Claims</h2>
+      <p>View JWT claims in readable format</p>
+    </a>
+    
+    <a href="/guides/jwt-show-claims.html" class="card card-link hub-card">
+      <h2>JWT Show Claims</h2>
+      <p>Show all JWT token claims online</p>
+    </a>
+    
+    <a href="/guides/jwt-check-valid.html" class="card card-link hub-card">
+      <h2>JWT Check Valid</h2>
+      <p>Check if JWT token is valid and not expired</p>
+    </a>
+    
+    <a href="/guides/jwt-check-expired.html" class="card card-link hub-card">
+      <h2>JWT Check Expired</h2>
+      <p>Check if JWT token is expired online</p>
+    </a>
+    
+    <a href="/guides/jwt-check-signature.html" class="card card-link hub-card">
+      <h2>JWT Check Signature</h2>
+      <p>Check JWT signature validity online</p>
+    </a>
+    
+    <a href="/guides/jwt-test-token.html" class="card card-link hub-card">
+      <h2>JWT Test Token Generator</h2>
+      <p>Generate test JWT tokens online</p>
+    </a>
+    
+    <a href="/guides/jwt-sample-token.html" class="card card-link hub-card">
+      <h2>JWT Sample Token</h2>
+      <p>Sample JWT tokens for testing and learning</p>
+    </a>
+    
+    <a href="/guides/jwt-example-decode.html" class="card card-link hub-card">
+      <h2>JWT Example Decode</h2>
+      <p>Example JWT tokens to decode and learn</p>
+    </a>
+    
+    <a href="/guides/jwt-demo-token.html" class="card card-link hub-card">
+      <h2>JWT Demo Token</h2>
+      <p>Demo JWT token for authentication testing</p>
+    </a>
+    
+    <a href="/guides/jwt-sandbox.html" class="card card-link hub-card">
+      <h2>JWT Sandbox Tool</h2>
+      <p>Safe JWT sandbox for testing tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-playground.html" class="card card-link hub-card">
+      <h2>JWT Playground Online</h2>
+      <p>JWT playground for encode decode verify</p>
+    </a>
+    
+    <a href="/guides/jwt-lab.html" class="card card-link hub-card">
+      <h2>JWT Lab Tool</h2>
+      <p>Interactive JWT lab for developers</p>
+    </a>
+    
+    <a href="/guides/jwt-workbench.html" class="card card-link hub-card">
+      <h2>JWT Workbench</h2>
+      <p>JWT developer workbench online</p>
+    </a>
+    
+    <a href="/guides/jwt-console.html" class="card card-link hub-card">
+      <h2>JWT Console Tool</h2>
+      <p>Browser JWT console for token inspection</p>
+    </a>
+    
+    <a href="/guides/jwt-terminal.html" class="card card-link hub-card">
+      <h2>JWT Terminal Decode</h2>
+      <p>Decode JWT in terminal and browser</p>
+    </a>
+    
+    <a href="/guides/jwt-cli-online.html" class="card card-link hub-card">
+      <h2>JWT CLI Online</h2>
+      <p>Online JWT CLI tool for developers</p>
+    </a>
+    
+    <a href="/guides/jwt-api-test.html" class="card card-link hub-card">
+      <h2>JWT API Test Tool</h2>
+      <p>Test API endpoints with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-rest-test.html" class="card card-link hub-card">
+      <h2>JWT REST API Test</h2>
+      <p>Test REST APIs with JWT bearer tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-graphql-test.html" class="card card-link hub-card">
+      <h2>JWT GraphQL Test</h2>
+      <p>Test GraphQL APIs with JWT authentication</p>
+    </a>
+    
+    <a href="/guides/jwt-auth-test.html" class="card card-link hub-card">
+      <h2>JWT Auth Test Tool</h2>
+      <p>Test JWT authentication flows online</p>
+    </a>
+    
+    <a href="/guides/jwt-login-test.html" class="card card-link hub-card">
+      <h2>JWT Login Test</h2>
+      <p>Test JWT login and token issuance</p>
+    </a>
+    
+    <a href="/guides/jwt-token-test.html" class="card card-link hub-card">
+      <h2>JWT Token Test</h2>
+      <p>Test JWT token generation and validation</p>
+    </a>
+    
+    <a href="/guides/jwt-sign-test.html" class="card card-link hub-card">
+      <h2>JWT Sign Test</h2>
+      <p>Test JWT signing with different algorithms</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-api.html" class="card card-link hub-card">
+      <h2>JWT Decode API Pattern</h2>
+      <p>JWT decode pattern for API development</p>
+    </a>
+    
+    <a href="/guides/jwt-bearer-pattern.html" class="card card-link hub-card">
+      <h2>JWT Bearer Pattern</h2>
+      <p>JWT bearer token pattern REST API</p>
+    </a>
+    
+    <a href="/guides/jwt-header-pattern.html" class="card card-link hub-card">
+      <h2>JWT Authorization Header Pattern</h2>
+      <p>Authorization header JWT pattern</p>
+    </a>
+    
+    <a href="/guides/jwt-token-analyzer.html" class="card card-link hub-card">
+      <h2>JWT Token Analyzer</h2>
+      <p>Analyze JWT token structure and claims online</p>
+    </a>
+    
+    <a href="/guides/jwt-token-checker.html" class="card card-link hub-card">
+      <h2>JWT Token Checker</h2>
+      <p>Check JWT token validity and expiration</p>
+    </a>
+    
+    <a href="/guides/jwt-token-inspector.html" class="card card-link hub-card">
+      <h2>JWT Token Inspector</h2>
+      <p>Inspect JWT token header payload and signature</p>
+    </a>
+    
+    <a href="/guides/jwt-token-parser-online.html" class="card card-link hub-card">
+      <h2>JWT Token Parser Online</h2>
+      <p>Parse JWT tokens online free no signup</p>
+    </a>
+    
+    <a href="/guides/jwt-token-reader.html" class="card card-link hub-card">
+      <h2>JWT Token Reader</h2>
+      <p>Read and decode JWT token contents</p>
+    </a>
+    
+    <a href="/guides/jwt-token-verifier-online.html" class="card card-link hub-card">
+      <h2>JWT Token Verifier Online</h2>
+      <p>Verify JWT token signature online free</p>
+    </a>
+    
+    <a href="/guides/jwt-token-validator-free.html" class="card card-link hub-card">
+      <h2>JWT Token Validator Free</h2>
+      <p>Free JWT token validator no account required</p>
+    </a>
+    
+    <a href="/guides/jwt-online-tool.html" class="card card-link hub-card">
+      <h2>JWT Online Tool</h2>
+      <p>All-in-one JWT online tool for developers</p>
+    </a>
+    
+    <a href="/guides/jwt-web-tool.html" class="card card-link hub-card">
+      <h2>JWT Web Tool</h2>
+      <p>Web-based JWT decode and validate tool</p>
+    </a>
+    
+    <a href="/guides/jwt-browser-tool.html" class="card card-link hub-card">
+      <h2>JWT Browser Tool</h2>
+      <p>Browser-based JWT tool runs locally</p>
+    </a>
+    
+    <a href="/guides/jwt-client-side-decoder.html" class="card card-link hub-card">
+      <h2>JWT Client Side Decoder</h2>
+      <p>Client-side JWT decoder no server upload</p>
+    </a>
+    
+    <a href="/guides/jwt-local-decoder.html" class="card card-link hub-card">
+      <h2>JWT Local Decoder</h2>
+      <p>Decode JWT locally in browser offline</p>
+    </a>
+    
+    <a href="/guides/jwt-offline-decoder.html" class="card card-link hub-card">
+      <h2>JWT Offline Decoder</h2>
+      <p>Offline JWT decoder works without internet</p>
+    </a>
+    
+    <a href="/guides/jwt-payload-decoder.html" class="card card-link hub-card">
+      <h2>JWT Payload Decoder</h2>
+      <p>Decode JWT payload claims online</p>
+    </a>
+    
+    <a href="/guides/jwt-header-parser.html" class="card card-link hub-card">
+      <h2>JWT Header Parser</h2>
+      <p>Parse JWT header alg typ kid online</p>
+    </a>
+    
+    <a href="/guides/jwt-signature-checker.html" class="card card-link hub-card">
+      <h2>JWT Signature Checker</h2>
+      <p>Check JWT signature validity online</p>
+    </a>
+    
+    <a href="/errors/invalid-signature.html" class="card card-link hub-card">
+      <h2>Invalid Signature Error</h2>
+      <p>JWT invalid signature error explained. Diagnose wrong secret, algorithm mismatch, and token tampering.</p>
+    </a>
+    
+    <a href="/errors/token-expired.html" class="card card-link hub-card">
+      <h2>Token Expired Error</h2>
+      <p>JWT token expired error explained. Check exp claim, implement refresh tokens, and handle expiration gracefully.</p>
+    </a>
+    
+    <a href="/errors/malformed-jwt.html" class="card card-link hub-card">
+      <h2>Malformed JWT Error</h2>
+      <p>Malformed JWT error explained. Fix invalid token structure, encoding issues, and missing segments.</p>
+    </a>
+    
+    <a href="/errors/jwt-verification-failed.html" class="card card-link hub-card">
+      <h2>JWT Verification Failed</h2>
+      <p>JWT signature verification failed — causes and fixes</p>
+    </a>
+    
+    <a href="/errors/jwt-decode-error.html" class="card card-link hub-card">
+      <h2>JWT Decode Error</h2>
+      <p>Cannot decode JWT token — format and encoding issues</p>
+    </a>
+    
+    <a href="/errors/jwt-unauthorized-401.html" class="card card-link hub-card">
+      <h2>JWT Unauthorized 401</h2>
+      <p>API returns 401 with JWT token — debugging guide</p>
+    </a>
+    
+    <a href="/errors/jwt-forbidden-403.html" class="card card-link hub-card">
+      <h2>JWT Forbidden 403</h2>
+      <p>JWT valid but access denied — role and scope issues</p>
+    </a>
+    
+    <a href="/errors/jwt-audience-mismatch.html" class="card card-link hub-card">
+      <h2>JWT Audience Mismatch</h2>
+      <p>aud claim does not match expected audience</p>
+    </a>
+    
+    <a href="/errors/jwt-issuer-mismatch.html" class="card card-link hub-card">
+      <h2>JWT Issuer Mismatch</h2>
+      <p>iss claim validation failure</p>
+    </a>
+    
+    <a href="/errors/jwt-clock-skew.html" class="card card-link hub-card">
+      <h2>JWT Clock Skew Error</h2>
+      <p>Token appears expired due to server clock difference</p>
+    </a>
+    
+    <a href="/errors/jwt-wrong-algorithm.html" class="card card-link hub-card">
+      <h2>JWT Wrong Algorithm Error</h2>
+      <p>Algorithm in header does not match verification method</p>
+    </a>
+    
+    <a href="/errors/jwt-key-not-found.html" class="card card-link hub-card">
+      <h2>JWT Key Not Found</h2>
+      <p>JWKS key ID not found in key set</p>
+    </a>
+    
+    <a href="/errors/jwt-token-too-long.html" class="card card-link hub-card">
+      <h2>JWT Token Too Long</h2>
+      <p>Handling oversized JWT tokens</p>
+    </a>
+    
+    <a href="/errors/jwt-missing-claim.html" class="card card-link hub-card">
+      <h2>JWT Missing Required Claim</h2>
+      <p>Required claim absent from token payload</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-issuer.html" class="card card-link hub-card">
+      <h2>JWT Invalid Issuer</h2>
+      <p>Issuer claim validation failed</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-audience.html" class="card card-link hub-card">
+      <h2>JWT Invalid Audience</h2>
+      <p>Audience claim validation failed</p>
+    </a>
+    
+    <a href="/errors/jwt-not-active.html" class="card card-link hub-card">
+      <h2>JWT Not Yet Active</h2>
+      <p>Token rejected because nbf is in the future</p>
+    </a>
+    
+    <a href="/errors/jwt-revoked-token.html" class="card card-link hub-card">
+      <h2>JWT Revoked Token</h2>
+      <p>Token has been revoked or blocklisted</p>
+    </a>
+    
+    <a href="/errors/jwt-decode-base64-error.html" class="card card-link hub-card">
+      <h2>JWT Base64 Decode Error</h2>
+      <p>Base64URL decoding failed for JWT segment</p>
+    </a>
+    
+    <a href="/errors/jwt-json-parse-error.html" class="card card-link hub-card">
+      <h2>JWT JSON Parse Error</h2>
+      <p>Invalid JSON in JWT header or payload</p>
+    </a>
+    
+    <a href="/errors/jwt-secret-too-short.html" class="card card-link hub-card">
+      <h2>JWT Secret Too Short</h2>
+      <p>HS256 secret does not meet minimum length</p>
+    </a>
+    
+    <a href="/errors/jwt-rs256-verify-failed.html" class="card card-link hub-card">
+      <h2>RS256 Verification Failed</h2>
+      <p>RSA signature verification failed</p>
+    </a>
+    
+    <a href="/errors/jwt-hs256-verify-failed.html" class="card card-link hub-card">
+      <h2>HS256 Verification Failed</h2>
+      <p>HMAC signature verification failed</p>
+    </a>
+    
+    <a href="/errors/jwt-token-replay.html" class="card card-link hub-card">
+      <h2>JWT Token Replay Detected</h2>
+      <p>Same token used multiple times — replay attack</p>
+    </a>
+    
+    <a href="/errors/jwt-cors-error.html" class="card card-link hub-card">
+      <h2>JWT CORS Error</h2>
+      <p>CORS issues when sending JWT in Authorization header</p>
+    </a>
+    
+    <a href="/errors/jwt-cookie-not-sent.html" class="card card-link hub-card">
+      <h2>JWT Cookie Not Sent</h2>
+      <p>httpOnly JWT cookie not included in request</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-axios.html" class="card card-link hub-card">
+      <h2>JWT Expired Axios Error</h2>
+      <p>Axios interceptor handling expired JWT 401 errors</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-fetch.html" class="card card-link hub-card">
+      <h2>JWT Expired Fetch Error</h2>
+      <p>Handle expired JWT in Fetch API responses</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-apollo.html" class="card card-link hub-card">
+      <h2>JWT Expired Apollo Client</h2>
+      <p>Refresh expired JWT in Apollo GraphQL client</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-tanstack-query.html" class="card card-link hub-card">
+      <h2>JWT Expired TanStack Query</h2>
+      <p>Handle JWT expiry with TanStack Query retry</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-rtk-query.html" class="card card-link hub-card">
+      <h2>JWT Expired RTK Query</h2>
+      <p>RTK Query JWT token refresh on 401</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-swr.html" class="card card-link hub-card">
+      <h2>JWT Expired SWR Error</h2>
+      <p>Handle expired JWT with SWR data fetching</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-nestjs.html" class="card card-link hub-card">
+      <h2>JWT Expired NestJS Guard</h2>
+      <p>NestJS JWT guard expired token exception</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-fastify.html" class="card card-link hub-card">
+      <h2>JWT Expired Fastify</h2>
+      <p>Handle expired JWT in Fastify JWT plugin</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-koa.html" class="card card-link hub-card">
+      <h2>JWT Expired Koa.js</h2>
+      <p>Expired JWT handling in Koa middleware</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-hapi.html" class="card card-link hub-card">
+      <h2>JWT Expired Hapi.js</h2>
+      <p>Fix expired JWT in Hapi auth strategy</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-micronaut.html" class="card card-link hub-card">
+      <h2>JWT Expired Micronaut</h2>
+      <p>Micronaut JWT expired token exception</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-quarkus.html" class="card card-link hub-card">
+      <h2>JWT Expired Quarkus</h2>
+      <p>Quarkus MicroProfile JWT expired error</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-gin.html" class="card card-link hub-card">
+      <h2>JWT Expired Gin Go</h2>
+      <p>Handle expired JWT in Gin Go middleware</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-echo.html" class="card card-link hub-card">
+      <h2>JWT Expired Echo Go</h2>
+      <p>Expired JWT error in Echo Go framework</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-fiber.html" class="card card-link hub-card">
+      <h2>JWT Expired Fiber Go</h2>
+      <p>Handle expired JWT in Fiber Go middleware</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-actix.html" class="card card-link hub-card">
+      <h2>JWT Expired Actix Rust</h2>
+      <p>Expired JWT in Actix Web Rust handler</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-rocket.html" class="card card-link hub-card">
+      <h2>JWT Expired Rocket Rust</h2>
+      <p>Rocket Rust JWT expired token error</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-phoenix.html" class="card card-link hub-card">
+      <h2>JWT Expired Phoenix Elixir</h2>
+      <p>Handle expired JWT in Phoenix Elixir</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-ktor.html" class="card card-link hub-card">
+      <h2>JWT Expired Ktor Kotlin</h2>
+      <p>Ktor JWT expired token handling</p>
+    </a>
+    
+    <a href="/errors/jwt-expired-spring-security.html" class="card card-link hub-card">
+      <h2>JWT Expired Spring Security</h2>
+      <p>Spring Security JWT expired exception handler</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-nestjs.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature NestJS</h2>
+      <p>NestJS JWT invalid signature Passport error</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-fastify.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Fastify</h2>
+      <p>Fastify JWT signature verification failed</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-fastapi.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature FastAPI</h2>
+      <p>FastAPI JWT invalid signature HTTPException</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-django.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Django</h2>
+      <p>Django REST JWT invalid signature error</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-laravel.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Laravel</h2>
+      <p>Laravel JWT invalid signature exception</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-spring.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Spring</h2>
+      <p>Spring Boot JWT signature validation failed</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-auth0.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Auth0</h2>
+      <p>Auth0 SDK invalid JWT signature error</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-firebase-admin.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Firebase Admin</h2>
+      <p>Firebase Admin SDK invalid ID token signature</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-cognito-sdk.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature Cognito SDK</h2>
+      <p>AWS Cognito JWT verifier signature error</p>
+    </a>
+    
+    <a href="/errors/jwt-invalid-signature-jwks.html" class="card card-link hub-card">
+      <h2>JWT Invalid Signature JWKS</h2>
+      <p>JWKS key mismatch invalid signature error</p>
+    </a>
+    
+    <a href="/errors/jwt-malformed-axios.html" class="card card-link hub-card">
+      <h2>JWT Malformed Axios</h2>
+      <p>Malformed JWT error in Axios request interceptor</p>
+    </a>
+    
+    <a href="/errors/jwt-malformed-react-native.html" class="card card-link hub-card">
+      <h2>JWT Malformed React Native</h2>
+      <p>Fix malformed JWT in React Native apps</p>
+    </a>
+    
+    <a href="/errors/jwt-malformed-flutter.html" class="card card-link hub-card">
+      <h2>JWT Malformed Flutter</h2>
+      <p>Malformed JWT token error in Flutter apps</p>
+    </a>
+    
+    <a href="/errors/jwt-malformed-postman.html" class="card card-link hub-card">
+      <h2>JWT Malformed Postman</h2>
+      <p>Fix malformed JWT when testing in Postman</p>
+    </a>
+    
+    <a href="/errors/jwt-malformed-swagger.html" class="card card-link hub-card">
+      <h2>JWT Malformed Swagger</h2>
+      <p>Malformed JWT in Swagger UI authorize button</p>
+    </a>
+    
+    <a href="/errors/jwt-audience-error-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Audience Error Node.js</h2>
+      <p>Fix JWT audience aud validation error Node.js</p>
+    </a>
+    
+    <a href="/errors/jwt-audience-error-python.html" class="card card-link hub-card">
+      <h2>JWT Audience Error Python</h2>
+      <p>Fix JWT aud claim mismatch in PyJWT</p>
+    </a>
+    
+    <a href="/errors/jwt-issuer-error-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Issuer Error Node.js</h2>
+      <p>Fix JWT iss issuer validation error Node.js</p>
+    </a>
+    
+    <a href="/errors/jwt-issuer-error-python.html" class="card card-link hub-card">
+      <h2>JWT Issuer Error Python</h2>
+      <p>Fix JWT issuer mismatch in PyJWT</p>
+    </a>
+    
+    <a href="/errors/jwt-not-before-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Not Before Node.js</h2>
+      <p>Fix JWT nbf not before error Node.js</p>
+    </a>
+    
+    <a href="/errors/jwt-not-before-python.html" class="card card-link hub-card">
+      <h2>JWT Not Before Python</h2>
+      <p>Handle JWT nbf claim error in PyJWT</p>
+    </a>
+    
+    <a href="/errors/jwt-kid-mismatch.html" class="card card-link hub-card">
+      <h2>JWT kid Mismatch Error</h2>
+      <p>JWT header kid does not match any JWKS key</p>
+    </a>
+    
+    <a href="/errors/jwt-jwks-fetch-failed.html" class="card card-link hub-card">
+      <h2>JWT JWKS Fetch Failed</h2>
+      <p>Failed to fetch JWKS endpoint for JWT verification</p>
+    </a>
+    
+    <a href="/errors/jwt-jwks-timeout.html" class="card card-link hub-card">
+      <h2>JWT JWKS Timeout Error</h2>
+      <p>JWKS endpoint timeout during JWT verification</p>
+    </a>
+    
+    <a href="/errors/jwt-jwks-cache.html" class="card card-link hub-card">
+      <h2>JWT JWKS Cache Error</h2>
+      <p>JWKS cache stale key JWT verification failure</p>
+    </a>
+    
+    <a href="/errors/jwt-decode-base64-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Base64 Decode Node.js</h2>
+      <p>Fix Base64 decode error JWT Node.js Buffer</p>
+    </a>
+    
+    <a href="/errors/jwt-decode-base64-browser.html" class="card card-link hub-card">
+      <h2>JWT Base64 Decode Browser</h2>
+      <p>Fix browser atob JWT decode errors</p>
+    </a>
+    
+    <a href="/errors/jwt-token-truncated.html" class="card card-link hub-card">
+      <h2>JWT Token Truncated Error</h2>
+      <p>Fix truncated JWT token copy paste error</p>
+    </a>
+    
+    <a href="/errors/jwt-token-double-encoded.html" class="card card-link hub-card">
+      <h2>JWT Double Encoded Error</h2>
+      <p>Fix double Base64 encoded JWT token</p>
+    </a>
+    
+    <a href="/errors/jwt-token-wrong-format.html" class="card card-link hub-card">
+      <h2>JWT Wrong Format Error</h2>
+      <p>JWT token in wrong format not three segments</p>
+    </a>
+    
+    <a href="/errors/jwt-bearer-prefix-missing.html" class="card card-link hub-card">
+      <h2>JWT Bearer Prefix Missing</h2>
+      <p>Fix missing Bearer prefix in Authorization header</p>
+    </a>
+    
+    <a href="/errors/jwt-authorization-header-missing.html" class="card card-link hub-card">
+      <h2>JWT Authorization Header Missing</h2>
+      <p>Fix missing Authorization header JWT API call</p>
+    </a>
+    
+    <a href="/errors/jwt-secret-env-not-set.html" class="card card-link hub-card">
+      <h2>JWT Secret Env Not Set</h2>
+      <p>Fix JWT secret environment variable not configured</p>
+    </a>
+    
+    <a href="/errors/jwt-secret-rotation-failed.html" class="card card-link hub-card">
+      <h2>JWT Secret Rotation Failed</h2>
+      <p>JWT verification failed after secret rotation</p>
+    </a>
+    
+    <a href="/errors/jwt-public-key-parse-error.html" class="card card-link hub-card">
+      <h2>JWT Public Key Parse Error</h2>
+      <p>Failed to parse PEM public key for JWT verify</p>
+    </a>
+    
+    <a href="/errors/jwt-private-key-parse-error.html" class="card card-link hub-card">
+      <h2>JWT Private Key Parse Error</h2>
+      <p>Failed to parse PEM private key for JWT sign</p>
+    </a>
+    
+    <a href="/errors/jwt-openssl-key-error.html" class="card card-link hub-card">
+      <h2>JWT OpenSSL Key Error</h2>
+      <p>OpenSSL error generating JWT signing keys</p>
+    </a>
+    
+    <a href="/errors/jwt-crypto-subtle-error.html" class="card card-link hub-card">
+      <h2>JWT Web Crypto Subtle Error</h2>
+      <p>Web Crypto API JWT sign verify error browser</p>
+    </a>
+    
+    <a href="/errors/jwt-alg-not-allowed-nodejs.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Not Allowed Node.js</h2>
+      <p>Fix JWT algorithm not in allowed list Node.js</p>
+    </a>
+    
+    <a href="/errors/jwt-alg-not-allowed-python.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Not Allowed Python</h2>
+      <p>Fix PyJWT algorithm not allowed error</p>
+    </a>
+    
+    <a href="/errors/jwt-none-algorithm-rejected.html" class="card card-link hub-card">
+      <h2>JWT None Algorithm Rejected</h2>
+      <p>Reject JWT with alg none algorithm attack</p>
+    </a>
+    
+    <a href="/errors/jwt-rs256-hs256-confusion.html" class="card card-link hub-card">
+      <h2>JWT RS256 HS256 Confusion</h2>
+      <p>Algorithm confusion RS256 verified as HS256</p>
+    </a>
+    
+    <a href="/errors/jwt-token-revoked-error.html" class="card card-link hub-card">
+      <h2>JWT Token Revoked Error</h2>
+      <p>JWT rejected because token is revoked blocklisted</p>
+    </a>
+    
+    <a href="/errors/jwt-jti-revoked.html" class="card card-link hub-card">
+      <h2>JWT jti Revoked Error</h2>
+      <p>JWT jti claim found in revocation list</p>
+    </a>
+    
+    <a href="/errors/jwt-session-expired-frontend.html" class="card card-link hub-card">
+      <h2>JWT Session Expired Frontend</h2>
+      <p>Handle JWT session expired in frontend SPA</p>
+    </a>
+    
+    <a href="/errors/jwt-auto-refresh-failed.html" class="card card-link hub-card">
+      <h2>JWT Auto Refresh Failed</h2>
+      <p>Automatic JWT refresh token request failed</p>
+    </a>
+    
+    <a href="/errors/jwt-refresh-token-expired.html" class="card card-link hub-card">
+      <h2>JWT Refresh Token Expired</h2>
+      <p>Refresh token also expired re-authenticate user</p>
+    </a>
+    
+    <a href="/errors/jwt-refresh-token-revoked.html" class="card card-link hub-card">
+      <h2>JWT Refresh Token Revoked</h2>
+      <p>Refresh token revoked due to reuse detection</p>
+    </a>
+    
+    <a href="/errors/jwt-concurrent-session.html" class="card card-link hub-card">
+      <h2>JWT Concurrent Session Error</h2>
+      <p>JWT rejected due to concurrent session limit</p>
+    </a>
+    
+    <a href="/errors/jwt-ip-mismatch-error.html" class="card card-link hub-card">
+      <h2>JWT IP Mismatch Error</h2>
+      <p>JWT rejected IP address does not match claim</p>
+    </a>
+    
+    <a href="/errors/jwt-device-mismatch-error.html" class="card card-link hub-card">
+      <h2>JWT Device Mismatch Error</h2>
+      <p>JWT device fingerprint claim mismatch error</p>
+    </a>
+    
+    <a href="/errors/jwt-scope-insufficient.html" class="card card-link hub-card">
+      <h2>JWT Insufficient Scope Error</h2>
+      <p>JWT valid but insufficient OAuth scope for action</p>
+    </a>
+    
+    <a href="/errors/jwt-role-insufficient.html" class="card card-link hub-card">
+      <h2>JWT Insufficient Role Error</h2>
+      <p>JWT valid but user role claim insufficient</p>
+    </a>
+    
+    <a href="/errors/jwt-tenant-mismatch.html" class="card card-link hub-card">
+      <h2>JWT Tenant Mismatch Error</h2>
+      <p>JWT tenant_id claim does not match request</p>
+    </a>
+    
+    <a href="/errors/jwt-org-mismatch.html" class="card card-link hub-card">
+      <h2>JWT Organization Mismatch</h2>
+      <p>JWT org claim mismatch multi-tenant error</p>
+    </a>
+    
+    <a href="/errors/jwt-graphql-unauthorized.html" class="card card-link hub-card">
+      <h2>JWT GraphQL Unauthorized Error</h2>
+      <p>GraphQL 401 unauthorized JWT authentication error</p>
+    </a>
+    
+    <a href="/errors/jwt-grpc-unauthenticated.html" class="card card-link hub-card">
+      <h2>JWT gRPC Unauthenticated Error</h2>
+      <p>gRPC Unauthenticated JWT metadata missing</p>
+    </a>
+    
+    <a href="/errors/jwt-websocket-unauthorized.html" class="card card-link hub-card">
+      <h2>JWT WebSocket Unauthorized</h2>
+      <p>WebSocket connection rejected JWT auth failed</p>
+    </a>
+    
+    <a href="/errors/jwt-serverless-unauthorized.html" class="card card-link hub-card">
+      <h2>JWT Serverless Unauthorized</h2>
+      <p>JWT 401 in AWS Lambda serverless function</p>
+    </a>
+    
+    <a href="/errors/jwt-edge-unauthorized.html" class="card card-link hub-card">
+      <h2>JWT Edge Function Unauthorized</h2>
+      <p>JWT auth failure Vercel Cloudflare edge</p>
+    </a>
+    
+    <a href="/errors/jwt-cdn-unauthorized.html" class="card card-link hub-card">
+      <h2>JWT CDN Unauthorized</h2>
+      <p>JWT validation failed at CDN edge layer</p>
+    </a>
+    
+    <a href="/errors/jwt-api-version-mismatch.html" class="card card-link hub-card">
+      <h2>JWT API Version Mismatch</h2>
+      <p>JWT valid but API version claim mismatch</p>
+    </a>
+    
+    <a href="/errors/jwt-custom-claim-missing.html" class="card card-link hub-card">
+      <h2>JWT Custom Claim Missing Error</h2>
+      <p>Required custom JWT claim missing from token</p>
+    </a>
+    
+    <a href="/errors/jwt-custom-claim-invalid.html" class="card card-link hub-card">
+      <h2>JWT Custom Claim Invalid</h2>
+      <p>Custom JWT claim value failed validation</p>
+    </a>
+    
+    <a href="/errors/jwt-payload-too-large-error.html" class="card card-link hub-card">
+      <h2>JWT Payload Too Large</h2>
+      <p>JWT payload exceeds size limit error</p>
+    </a>
+    
+    <a href="/errors/jwt-header-too-large.html" class="card card-link hub-card">
+      <h2>JWT Header Too Large</h2>
+      <p>JWT header exceeds maximum size limit</p>
+    </a>
+    
+    <a href="/errors/jwt-token-size-limit.html" class="card card-link hub-card">
+      <h2>JWT Token Size Limit Exceeded</h2>
+      <p>JWT token exceeds HTTP header size limit</p>
+    </a>
+    
+    <a href="/errors/jwt-cookie-size-limit.html" class="card card-link hub-card">
+      <h2>JWT Cookie Size Limit</h2>
+      <p>JWT too large to store in httpOnly cookie</p>
+    </a>
+    
+    <a href="/errors/jwt-localstorage-quota.html" class="card card-link hub-card">
+      <h2>JWT localStorage Quota Error</h2>
+      <p>JWT too large for localStorage quota</p>
+    </a>
+    
+    <a href="/errors/jwt-indexeddb-storage.html" class="card card-link hub-card">
+      <h2>JWT IndexedDB Storage Error</h2>
+      <p>Store large JWT tokens in IndexedDB browser</p>
+    </a>
+    
+    <a href="/errors/jwt-memory-storage-spa.html" class="card card-link hub-card">
+      <h2>JWT Memory Storage SPA</h2>
+      <p>In-memory JWT storage pattern for SPAs</p>
+    </a>
+    
+    <a href="/errors/jwt-tab-sync-error.html" class="card card-link hub-card">
+      <h2>JWT Tab Sync Error</h2>
+      <p>Sync JWT token state across browser tabs</p>
+    </a>
+    
+    <a href="/errors/jwt-ssr-hydration-error.html" class="card card-link hub-card">
+      <h2>JWT SSR Hydration Error</h2>
+      <p>JWT auth state mismatch SSR hydration error</p>
+    </a>
+    
+    <a href="/errors/jwt-nextjs-middleware-error.html" class="card card-link hub-card">
+      <h2>JWT Next.js Middleware Error</h2>
+      <p>Next.js middleware JWT validation error</p>
+    </a>
+    
+    <a href="/errors/jwt-remix-loader-error.html" class="card card-link hub-card">
+      <h2>JWT Remix Loader Error</h2>
+      <p>JWT authentication error in Remix loader</p>
+    </a>
+    
+    <a href="/errors/jwt-nuxt-middleware-error.html" class="card card-link hub-card">
+      <h2>JWT Nuxt Middleware Error</h2>
+      <p>Nuxt route middleware JWT auth error</p>
+    </a>
+    
+    <a href="/errors/jwt-sveltekit-hooks-error.html" class="card card-link hub-card">
+      <h2>JWT SvelteKit Hooks Error</h2>
+      <p>SvelteKit server hooks JWT validation error</p>
+    </a>
+    
+    <a href="/errors/jwt-test-env-error.html" class="card card-link hub-card">
+      <h2>JWT Test Environment Error</h2>
+      <p>JWT auth failing in test environment CI</p>
+    </a>
+    
+    <a href="/errors/jwt-mock-auth-error.html" class="card card-link hub-card">
+      <h2>JWT Mock Auth Test Error</h2>
+      <p>Mock JWT authentication failing in unit tests</p>
+    </a>
+    
+    <a href="/errors/jwt-e2e-auth-error.html" class="card card-link hub-card">
+      <h2>JWT E2E Test Auth Error</h2>
+      <p>JWT authentication failing in E2E Cypress tests</p>
+    </a>
+    
+    <a href="/errors/jwt-playwright-auth-error.html" class="card card-link hub-card">
+      <h2>JWT Playwright Auth Error</h2>
+      <p>Playwright E2E JWT authentication setup error</p>
+    </a>
+    
+  </section>
+
+  <nav class="trust-links card" aria-label="Related resources">
+  <h2>Explore JWT Tools &amp; Guides</h2>
+  <ul class="trust-links-list">
+    <li><a href="/tools/jwt-decoder.html">JWT Decoder</a></li>
+    <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+    <li><a href="/guides/jwt-basics.html">JWT Basics Guide</a></li>
+    <li><a href="/guides/">All Guides</a></li>
+    <li><a href="/about.html">About JWTValidator.org</a></li>
+  </ul>
+</nav>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

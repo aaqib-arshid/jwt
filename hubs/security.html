@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>JWT Security — JWT Topic Hub | JWTValidator.org</title>
+<meta name="description" content="JWT security best practices, vulnerabilities, and attack prevention.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<link rel="canonical" href="https://jwtvalidator.org/hubs/security.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/hubs/security.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/hubs/security.html">
+<meta property="og:title" content="JWT Security — JWT Topic Hub | JWTValidator.org">
+<meta property="og:description" content="JWT security best practices, vulnerabilities, and attack prevention.">
+<meta property="og:url" content="https://jwtvalidator.org/hubs/security.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JWT Security — JWT Topic Hub | JWTValidator.org">
+<meta name="twitter:description" content="JWT security best practices, vulnerabilities, and attack prevention.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Topics","item":"https://jwtvalidator.org/hubs/"},{"@type":"ListItem","position":3,"name":"JWT Security"}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  
+  
+  <span aria-current="page">JWT Security</span>
+  
+  <a href="">JWT Security</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page hub-page">
+  <header class="page-header">
+    <h1>JWT Security</h1>
+    <p class="lead">JWT security best practices, vulnerabilities, and attack prevention.</p>
+  </header>
+
+  <section class="hub-grid">
+    
+    <a href="/guides/jwt-secret-key.html" class="card card-link hub-card">
+      <h2>JWT Secret Key Guide</h2>
+      <p>How to generate and manage JWT secret keys securely</p>
+    </a>
+    
+    <a href="/guides/jwt-refresh-token-guide.html" class="card card-link hub-card">
+      <h2>JWT Refresh Token Guide</h2>
+      <p>Implement refresh tokens with JWT access tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-revocation.html" class="card card-link hub-card">
+      <h2>JWT Token Revocation</h2>
+      <p>How to revoke JWT tokens before expiration</p>
+    </a>
+    
+    <a href="/guides/jwt-blacklist.html" class="card card-link hub-card">
+      <h2>JWT Blacklist Implementation</h2>
+      <p>Implement JWT blocklist for token revocation</p>
+    </a>
+    
+    <a href="/guides/jwt-localstorage-danger.html" class="card card-link hub-card">
+      <h2>JWT localStorage Security Risk</h2>
+      <p>Why storing JWTs in localStorage is dangerous</p>
+    </a>
+    
+    <a href="/guides/jwt-httponly-cookie.html" class="card card-link hub-card">
+      <h2>JWT httpOnly Cookie</h2>
+      <p>Store JWT tokens in httpOnly cookies securely</p>
+    </a>
+    
+    <a href="/guides/jwt-xss-prevention.html" class="card card-link hub-card">
+      <h2>JWT XSS Prevention</h2>
+      <p>Protect JWT tokens from XSS attacks</p>
+    </a>
+    
+    <a href="/guides/jwt-alg-none-attack.html" class="card card-link hub-card">
+      <h2>JWT alg none Attack</h2>
+      <p>Understanding and preventing the alg:none vulnerability</p>
+    </a>
+    
+    <a href="/guides/jwt-algorithm-confusion.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Confusion Attack</h2>
+      <p>Prevent RS256 to HS256 algorithm confusion</p>
+    </a>
+    
+    <a href="/guides/jwt-brute-force.html" class="card card-link hub-card">
+      <h2>JWT Secret Brute Force</h2>
+      <p>Protect HS256 secrets from brute force attacks</p>
+    </a>
+    
+    <a href="/guides/jwt-token-theft.html" class="card card-link hub-card">
+      <h2>JWT Token Theft Prevention</h2>
+      <p>Prevent and detect stolen JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-best-practices-production.html" class="card card-link hub-card">
+      <h2>JWT Production Best Practices</h2>
+      <p>Production-ready JWT authentication checklist</p>
+    </a>
+    
+    <a href="/guides/jwt-microservices-security.html" class="card card-link hub-card">
+      <h2>JWT Microservices Security</h2>
+      <p>Secure JWT authentication across microservices</p>
+    </a>
+    
+    <a href="/guides/jwt-api-security.html" class="card card-link hub-card">
+      <h2>JWT API Security</h2>
+      <p>Secure REST API authentication with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-encrypted-token.html" class="card card-link hub-card">
+      <h2>JWT Encrypted Token</h2>
+      <p>When and how to encrypt JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-refresh-token-implementation.html" class="card card-link hub-card">
+      <h2>JWT Refresh Token Implementation</h2>
+      <p>Build refresh token flow with JWT access tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-token-rotation.html" class="card card-link hub-card">
+      <h2>JWT Token Rotation</h2>
+      <p>Access and refresh token rotation patterns</p>
+    </a>
+    
+    <a href="/guides/jwt-silent-renewal.html" class="card card-link hub-card">
+      <h2>JWT Silent Renewal</h2>
+      <p>Renew JWT tokens without user interaction in SPAs</p>
+    </a>
+    
+    <a href="/guides/jwt-logout-invalidation.html" class="card card-link hub-card">
+      <h2>JWT Logout and Invalidation</h2>
+      <p>How to invalidate JWT on logout</p>
+    </a>
+    
+    <a href="/guides/jwt-single-logout.html" class="card card-link hub-card">
+      <h2>JWT Single Logout</h2>
+      <p>Implement single logout with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-multi-tenant.html" class="card card-link hub-card">
+      <h2>JWT Multi Tenant Authentication</h2>
+      <p>Multi-tenant JWT with tenant_id claims</p>
+    </a>
+    
+    <a href="/guides/jwt-role-based-access.html" class="card card-link hub-card">
+      <h2>JWT Role Based Access Control</h2>
+      <p>Implement RBAC with JWT role claims</p>
+    </a>
+    
+    <a href="/guides/jwt-permission-claims.html" class="card card-link hub-card">
+      <h2>JWT Permission Claims</h2>
+      <p>Custom permission and scope claims in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-tenant-id-claim.html" class="card card-link hub-card">
+      <h2>JWT Tenant ID Claim</h2>
+      <p>Multi-tenant tenant identification via JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-generate-secret.html" class="card card-link hub-card">
+      <h2>JWT Generate Secret Key</h2>
+      <p>Generate secure random secrets for HS256</p>
+    </a>
+    
+    <a href="/guides/jwt-256-bit-secret.html" class="card card-link hub-card">
+      <h2>JWT 256 Bit Secret</h2>
+      <p>Why JWT secrets need 256+ bits of entropy</p>
+    </a>
+    
+    <a href="/guides/jwt-redis-session.html" class="card card-link hub-card">
+      <h2>JWT Redis Session Store</h2>
+      <p>Combine JWT with Redis session validation</p>
+    </a>
+    
+    <a href="/guides/jwt-implicit-flow-deprecated.html" class="card card-link hub-card">
+      <h2>JWT Implicit Flow Deprecated</h2>
+      <p>Why implicit OAuth flow is deprecated for JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-lifetime.html" class="card card-link hub-card">
+      <h2>JWT Token Lifetime Best Practices</h2>
+      <p>Optimal access token lifetime settings</p>
+    </a>
+    
+    <a href="/guides/jwt-15-minute-expiry.html" class="card card-link hub-card">
+      <h2>JWT 15 Minute Expiry</h2>
+      <p>Why 15 minute JWT expiry is recommended</p>
+    </a>
+    
+    <a href="/guides/jwt-same-site-cookie.html" class="card card-link hub-card">
+      <h2>JWT SameSite Cookie</h2>
+      <p>SameSite cookie settings for JWT storage</p>
+    </a>
+    
+    <a href="/guides/jwt-csrf-protection.html" class="card card-link hub-card">
+      <h2>JWT CSRF Protection</h2>
+      <p>CSRF protection when using JWT in cookies</p>
+    </a>
+    
+    <a href="/guides/jwt-csp-headers.html" class="card card-link hub-card">
+      <h2>JWT CSP Headers</h2>
+      <p>CSP headers to protect JWT from XSS</p>
+    </a>
+    
+    <a href="/guides/jwt-pentest.html" class="card card-link hub-card">
+      <h2>JWT Penetration Testing</h2>
+      <p>Security testing JWT authentication endpoints</p>
+    </a>
+    
+    <a href="/guides/jwt-security-audit.html" class="card card-link hub-card">
+      <h2>JWT Security Audit Checklist</h2>
+      <p>Production JWT security audit checklist</p>
+    </a>
+    
+    <a href="/guides/jwt-compliance-gdpr.html" class="card card-link hub-card">
+      <h2>JWT GDPR Compliance</h2>
+      <p>JWT token handling under GDPR requirements</p>
+    </a>
+    
+    <a href="/guides/jwt-logging-best-practices.html" class="card card-link hub-card">
+      <h2>JWT Logging Best Practices</h2>
+      <p>What to log and never log with JWT auth</p>
+    </a>
+    
+    <a href="/guides/jwt-redis-revocation.html" class="card card-link hub-card">
+      <h2>JWT Redis Token Revocation</h2>
+      <p>Redis-based JWT revocation blocklist</p>
+    </a>
+    
+    <a href="/guides/jwt-mongodb-revocation.html" class="card card-link hub-card">
+      <h2>JWT MongoDB Revocation List</h2>
+      <p>MongoDB JWT jti revocation store</p>
+    </a>
+    
+    <a href="/guides/jwt-postgres-revocation.html" class="card card-link hub-card">
+      <h2>JWT PostgreSQL Revocation</h2>
+      <p>PostgreSQL JWT token revocation table</p>
+    </a>
+    
+    <a href="/guides/jwt-dynamodb-revocation.html" class="card card-link hub-card">
+      <h2>JWT DynamoDB Revocation</h2>
+      <p>DynamoDB JWT token blocklist AWS</p>
+    </a>
+    
+    <a href="/guides/jwt-rate-limiting.html" class="card card-link hub-card">
+      <h2>JWT Rate Limiting</h2>
+      <p>Rate limit JWT authenticated API endpoints</p>
+    </a>
+    
+    <a href="/guides/jwt-ip-binding.html" class="card card-link hub-card">
+      <h2>JWT IP Address Binding</h2>
+      <p>Bind JWT tokens to client IP address</p>
+    </a>
+    
+    <a href="/guides/jwt-device-binding.html" class="card card-link hub-card">
+      <h2>JWT Device Binding</h2>
+      <p>Device fingerprint binding in JWT claims</p>
+    </a>
+    
+    <a href="/guides/jwt-fingerprint-claim.html" class="card card-link hub-card">
+      <h2>JWT Device Fingerprint Claim</h2>
+      <p>Custom device fingerprint JWT claim</p>
+    </a>
+    
+    <a href="/guides/jwt-mfa-claim.html" class="card card-link hub-card">
+      <h2>JWT MFA Claim</h2>
+      <p>Multi-factor authentication status in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-roles-claim.html" class="card card-link hub-card">
+      <h2>JWT Roles Claim</h2>
+      <p>Role-based access with roles claim in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-groups-claim.html" class="card card-link hub-card">
+      <h2>JWT Groups Claim</h2>
+      <p>Group membership claims in JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-permissions-array.html" class="card card-link hub-card">
+      <h2>JWT Permissions Array Claim</h2>
+      <p>Array of permission strings in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-tenant-claim.html" class="card card-link hub-card">
+      <h2>JWT Tenant Claim Multi-Tenant</h2>
+      <p>Multi-tenant SaaS tenant_id JWT claim</p>
+    </a>
+    
+    <a href="/guides/jwt-org-id-claim.html" class="card card-link hub-card">
+      <h2>JWT Organization ID Claim</h2>
+      <p>Organization identifier claim in B2B JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-workspace-claim.html" class="card card-link hub-card">
+      <h2>JWT Workspace Claim</h2>
+      <p>Workspace or team ID in JWT claims</p>
+    </a>
+    
+    <a href="/guides/jwt-plan-claim.html" class="card card-link hub-card">
+      <h2>JWT Subscription Plan Claim</h2>
+      <p>Subscription tier plan claim in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-feature-flags-claim.html" class="card card-link hub-card">
+      <h2>JWT Feature Flags Claim</h2>
+      <p>Feature flag claims embedded in JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-test-secret.html" class="card card-link hub-card">
+      <h2>JWT Test Secret Key</h2>
+      <p>Standard test secrets for JWT development</p>
+    </a>
+    
+    <a href="/guides/jwt-hardcoded-secret-danger.html" class="card card-link hub-card">
+      <h2>JWT Hardcoded Secret Danger</h2>
+      <p>Why hardcoded JWT secrets are a security risk</p>
+    </a>
+    
+    <a href="/guides/jwt-env-secret.html" class="card card-link hub-card">
+      <h2>JWT Secret Environment Variable</h2>
+      <p>Store JWT secrets in environment variables</p>
+    </a>
+    
+    <a href="/guides/jwt-vault-secret.html" class="card card-link hub-card">
+      <h2>JWT Secret HashiCorp Vault</h2>
+      <p>Manage JWT signing keys with HashiCorp Vault</p>
+    </a>
+    
+    <a href="/guides/jwt-aws-secrets-manager.html" class="card card-link hub-card">
+      <h2>JWT AWS Secrets Manager</h2>
+      <p>Store JWT secrets in AWS Secrets Manager</p>
+    </a>
+    
+    <a href="/guides/jwt-azure-key-vault.html" class="card card-link hub-card">
+      <h2>JWT Azure Key Vault</h2>
+      <p>Azure Key Vault for JWT signing keys</p>
+    </a>
+    
+    <a href="/guides/jwt-google-kms.html" class="card card-link hub-card">
+      <h2>JWT Google Cloud KMS</h2>
+      <p>Google Cloud KMS for JWT key management</p>
+    </a>
+    
+    <a href="/guides/jwt-key-rotation-strategy.html" class="card card-link hub-card">
+      <h2>JWT Key Rotation Strategy</h2>
+      <p>Production JWT signing key rotation plan</p>
+    </a>
+    
+    <a href="/guides/jwt-zero-downtime-rotation.html" class="card card-link hub-card">
+      <h2>JWT Zero Downtime Key Rotation</h2>
+      <p>Rotate JWT keys without service interruption</p>
+    </a>
+    
+    <a href="/guides/jwt-grace-period-rotation.html" class="card card-link hub-card">
+      <h2>JWT Key Rotation Grace Period</h2>
+      <p>Grace period for old JWT signing keys</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-production-safe.html" class="card card-link hub-card">
+      <h2>JWT Decode Production Safe</h2>
+      <p>Safely decode production JWT tokens for debugging</p>
+    </a>
+    
+    <a href="/guides/jwt-trust-decode-warning.html" class="card card-link hub-card">
+      <h2>JWT Never Trust Decode Only</h2>
+      <p>Why decoded JWT payload cannot be trusted without verify</p>
+    </a>
+    
+    <a href="/guides/jwt-best-practices-2025.html" class="card card-link hub-card">
+      <h2>JWT Best Practices 2025</h2>
+      <p>JWT security best practices for 2025</p>
+    </a>
+    
+    <a href="/guides/jwt-trends-2025.html" class="card card-link hub-card">
+      <h2>JWT Authentication Trends 2025</h2>
+      <p>Latest JWT authentication trends and standards</p>
+    </a>
+    
+    <a href="/guides/jwt-rfc-8725-bcp.html" class="card card-link hub-card">
+      <h2>JWT RFC 8725 Best Practices</h2>
+      <p>JSON Web Token Best Current Practices RFC 8725</p>
+    </a>
+    
+    <a href="/guides/jwt-oauth-bcp.html" class="card card-link hub-card">
+      <h2>JWT OAuth 2.0 Best Practices</h2>
+      <p>OAuth 2.0 security best practices with JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-delegation-token.html" class="card card-link hub-card">
+      <h2>JWT Delegation Token</h2>
+      <p>On-behalf-of JWT delegation tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-impersonation-token.html" class="card card-link hub-card">
+      <h2>JWT Impersonation Token</h2>
+      <p>Admin impersonation JWT tokens safely</p>
+    </a>
+    
+    <a href="/guides/jwt-service-account.html" class="card card-link hub-card">
+      <h2>JWT Service Account Token</h2>
+      <p>Service account JWT for machine authentication</p>
+    </a>
+    
+    <a href="/guides/jwt-cookie-not-set.html" class="card card-link hub-card">
+      <h2>JWT Cookie Not Set</h2>
+      <p>Fix JWT cookie not being set in browser</p>
+    </a>
+    
+    <a href="/guides/jwt-cookie-not-sent-fix.html" class="card card-link hub-card">
+      <h2>JWT Cookie Not Sent Fix</h2>
+      <p>Fix JWT httpOnly cookie not sent with requests</p>
+    </a>
+    
+    <a href="/guides/jwt-redis-session-jwt.html" class="card card-link hub-card">
+      <h2>JWT Redis Session Hybrid</h2>
+      <p>Hybrid JWT and Redis session authentication</p>
+    </a>
+    
+    <a href="/guides/jwt-memcached-session.html" class="card card-link hub-card">
+      <h2>JWT Memcached Session</h2>
+      <p>Memcached session store with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-etcd-config.html" class="card card-link hub-card">
+      <h2>JWT Config in etcd</h2>
+      <p>Distribute JWT config with etcd</p>
+    </a>
+    
+    <a href="/guides/jwt-consul-config.html" class="card card-link hub-card">
+      <h2>JWT Config in Consul</h2>
+      <p>JWT signing config with HashiCorp Consul</p>
+    </a>
+    
+    <a href="/guides/jwt-kubernetes-secrets.html" class="card card-link hub-card">
+      <h2>JWT Kubernetes Secrets</h2>
+      <p>Store JWT secrets in Kubernetes secrets</p>
+    </a>
+    
+    <a href="/guides/jwt-docker-secrets.html" class="card card-link hub-card">
+      <h2>JWT Docker Secrets</h2>
+      <p>JWT signing keys in Docker Swarm secrets</p>
+    </a>
+    
+    <a href="/guides/jwt-decode-embedded-systems.html" class="card card-link hub-card">
+      <h2>JWT Embedded Systems Auth</h2>
+      <p>JWT authentication for IoT and embedded devices</p>
+    </a>
+    
+    <a href="/guides/jwt-scada-auth.html" class="card card-link hub-card">
+      <h2>JWT SCADA Authentication</h2>
+      <p>JWT auth for SCADA and industrial systems</p>
+    </a>
+    
+    <a href="/guides/jwt-healthcare-hipaa.html" class="card card-link hub-card">
+      <h2>JWT Healthcare HIPAA</h2>
+      <p>JWT authentication HIPAA compliance healthcare APIs</p>
+    </a>
+    
+    <a href="/guides/jwt-fintech-pci.html" class="card card-link hub-card">
+      <h2>JWT Fintech PCI Compliance</h2>
+      <p>JWT token handling PCI DSS compliance</p>
+    </a>
+    
+    <a href="/guides/jwt-gov-federal-auth.html" class="card card-link hub-card">
+      <h2>JWT Government Federal Auth</h2>
+      <p>JWT authentication for government APIs</p>
+    </a>
+    
+    <a href="/guides/jwt-webhook-auth.html" class="card card-link hub-card">
+      <h2>JWT Webhook Authentication</h2>
+      <p>Verify JWT tokens in webhook callbacks</p>
+    </a>
+    
+    <a href="/guides/jwt-vault-jwt-auth.html" class="card card-link hub-card">
+      <h2>JWT HashiCorp Vault JWT Auth</h2>
+      <p>Vault JWT auth method configuration</p>
+    </a>
+    
+    <a href="/guides/jwt-sd-jwt.html" class="card card-link hub-card">
+      <h2>JWT SD-JWT Selective Disclosure</h2>
+      <p>SD-JWT selective disclosure credentials explained</p>
+    </a>
+    
+    <a href="/guides/jwt-vc-jwt.html" class="card card-link hub-card">
+      <h2>JWT Verifiable Credentials</h2>
+      <p>W3C Verifiable Credentials JWT format</p>
+    </a>
+    
+    <a href="/guides/jwt-did-jwt.html" class="card card-link hub-card">
+      <h2>JWT DID Authentication</h2>
+      <p>Decentralized identifier DID JWT authentication</p>
+    </a>
+    
+    <a href="/guides/jwt-passkey-jwt.html" class="card card-link hub-card">
+      <h2>JWT Passkey and JWT Auth</h2>
+      <p>Combining passkeys with JWT session tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-webauthn-jwt.html" class="card card-link hub-card">
+      <h2>JWT WebAuthn JWT Flow</h2>
+      <p>WebAuthn authentication with JWT session issuance</p>
+    </a>
+    
+    <a href="/guides/jwt-fido2-jwt.html" class="card card-link hub-card">
+      <h2>JWT FIDO2 JWT Authentication</h2>
+      <p>FIDO2 authentication issuing JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-biometric-mobile-jwt.html" class="card card-link hub-card">
+      <h2>JWT Biometric Mobile Auth</h2>
+      <p>Biometric authentication with JWT on mobile</p>
+    </a>
+    
+    <a href="/guides/jwt-pin-mobile-auth.html" class="card card-link hub-card">
+      <h2>JWT PIN Mobile Authentication</h2>
+      <p>PIN-based mobile auth with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-totp-mfa-jwt.html" class="card card-link hub-card">
+      <h2>JWT TOTP MFA Authentication</h2>
+      <p>TOTP MFA with JWT token claims</p>
+    </a>
+    
+    <a href="/guides/jwt-backup-codes-jwt.html" class="card card-link hub-card">
+      <h2>JWT Backup Codes MFA</h2>
+      <p>JWT MFA backup codes implementation</p>
+    </a>
+    
+    <a href="/guides/jwt-risk-based-auth.html" class="card card-link hub-card">
+      <h2>JWT Risk Based Authentication</h2>
+      <p>Risk-based auth with adaptive JWT expiry</p>
+    </a>
+    
+    <a href="/guides/jwt-step-up-auth.html" class="card card-link hub-card">
+      <h2>JWT Step Up Authentication</h2>
+      <p>Step-up authentication with short-lived JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-continuous-auth.html" class="card card-link hub-card">
+      <h2>JWT Continuous Authentication</h2>
+      <p>Continuous authentication refreshing JWT claims</p>
+    </a>
+    
+    <a href="/guides/jwt-zero-trust.html" class="card card-link hub-card">
+      <h2>JWT Zero Trust Architecture</h2>
+      <p>JWT in zero trust network architecture</p>
+    </a>
+    
+    <a href="/guides/jwt-beyondcorp.html" class="card card-link hub-card">
+      <h2>JWT BeyondCorp Model</h2>
+      <p>Google BeyondCorp model with JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-spiffe-spire.html" class="card card-link hub-card">
+      <h2>JWT SPIFFE SPIRE Identity</h2>
+      <p>SPIFFE JWT-SVID vs standard JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-service-mesh-identity.html" class="card card-link hub-card">
+      <h2>JWT Service Mesh Identity</h2>
+      <p>Service identity JWT in service mesh</p>
+    </a>
+    
+    <a href="/guides/jwt-workload-identity.html" class="card card-link hub-card">
+      <h2>JWT Workload Identity</h2>
+      <p>Cloud workload identity federation JWT</p>
+    </a>
+    
+    <a href="/guides/jwt-secret-test.html" class="card card-link hub-card">
+      <h2>JWT Secret Test</h2>
+      <p>Test JWT HMAC secret strength</p>
+    </a>
+    
+    <a href="/guides/jwt-cache-pattern.html" class="card card-link hub-card">
+      <h2>JWT Cache Pattern</h2>
+      <p>JWT token caching pattern guide</p>
+    </a>
+    
+    <a href="/guides/jwt-refresh-pattern.html" class="card card-link hub-card">
+      <h2>JWT Refresh Pattern</h2>
+      <p>JWT token refresh pattern guide</p>
+    </a>
+    
+    <a href="/guides/jwt-rotation-pattern.html" class="card card-link hub-card">
+      <h2>JWT Rotation Pattern</h2>
+      <p>JWT key rotation pattern production</p>
+    </a>
+    
+    <a href="/guides/jwt-revocation-pattern.html" class="card card-link hub-card">
+      <h2>JWT Revocation Pattern</h2>
+      <p>JWT token revocation pattern guide</p>
+    </a>
+    
+    <a href="/guides/jwt-blocklist-pattern.html" class="card card-link hub-card">
+      <h2>JWT Blocklist Pattern</h2>
+      <p>JWT blocklist revocation pattern</p>
+    </a>
+    
+    <a href="/guides/jwt-denylist-pattern.html" class="card card-link hub-card">
+      <h2>JWT Denylist Pattern</h2>
+      <p>JWT denylist token revocation pattern</p>
+    </a>
+    
+    <a href="/guides/jwt-allowlist-pattern.html" class="card card-link hub-card">
+      <h2>JWT Allowlist Pattern</h2>
+      <p>JWT jti allowlist pattern</p>
+    </a>
+    
+    <a href="/guides/jwt-session-pattern.html" class="card card-link hub-card">
+      <h2>JWT Session Pattern</h2>
+      <p>JWT hybrid session pattern guide</p>
+    </a>
+    
+    <a href="/guides/jwt-cookie-pattern.html" class="card card-link hub-card">
+      <h2>JWT Cookie Pattern</h2>
+      <p>JWT httpOnly cookie pattern guide</p>
+    </a>
+    
+    <a href="/guides/jwt-waf-auth.html" class="card card-link hub-card">
+      <h2>JWT WAF Integration</h2>
+      <p>JWT validation with Web Application Firewall</p>
+    </a>
+    
+    <a href="/guides/jwt-ddos-protection.html" class="card card-link hub-card">
+      <h2>JWT DDoS Protection</h2>
+      <p>JWT auth layer DDoS protection pattern</p>
+    </a>
+    
+    <a href="/guides/jwt-bot-protection.html" class="card card-link hub-card">
+      <h2>JWT Bot Protection</h2>
+      <p>JWT auth for bot and scraper protection</p>
+    </a>
+    
+    <a href="/guides/jwt-fraud-detection.html" class="card card-link hub-card">
+      <h2>JWT Fraud Detection</h2>
+      <p>JWT claims for fraud detection systems</p>
+    </a>
+    
+    <a href="/guides/jwt-anomaly-detection.html" class="card card-link hub-card">
+      <h2>JWT Anomaly Detection</h2>
+      <p>Detect anomalous JWT usage patterns</p>
+    </a>
+    
+    <a href="/use-cases/microservices-auth.html" class="card card-link hub-card">
+      <h2>JWT for microservices architectures</h2>
+      <p>jwt authentication microservices — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/spa-authentication.html" class="card card-link hub-card">
+      <h2>JWT for single-page applications</h2>
+      <p>jwt authentication spa react — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/mobile-api-auth.html" class="card card-link hub-card">
+      <h2>JWT for mobile app API authentication</h2>
+      <p>jwt mobile app authentication — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/api-gateway-jwt.html" class="card card-link hub-card">
+      <h2>JWT for API gateway token validation</h2>
+      <p>jwt api gateway validation — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/single-sign-on.html" class="card card-link hub-card">
+      <h2>JWT for single sign-on</h2>
+      <p>jwt single sign on sso — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/machine-to-machine.html" class="card card-link hub-card">
+      <h2>JWT for machine-to-machine</h2>
+      <p>jwt machine to machine m2m — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/graphql-jwt-auth.html" class="card card-link hub-card">
+      <h2>JWT for GraphQL API authentication</h2>
+      <p>jwt graphql authentication — implementation guide with tools and best practices.</p>
+    </a>
+    
+    <a href="/use-cases/websocket-jwt-auth.html" class="card card-link hub-card">
+      <h2>JWT for WebSocket connection authentication</h2>
+      <p>jwt websocket authentication — implementation guide with tools and best practices.</p>
+    </a>
+    
+  </section>
+
+  <nav class="trust-links card" aria-label="Related resources">
+  <h2>Explore JWT Tools &amp; Guides</h2>
+  <ul class="trust-links-list">
+    <li><a href="/tools/jwt-decoder.html">JWT Decoder</a></li>
+    <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+    <li><a href="/guides/jwt-basics.html">JWT Basics Guide</a></li>
+    <li><a href="/guides/">All Guides</a></li>
+    <li><a href="/about.html">About JWTValidator.org</a></li>
+  </ul>
+</nav>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

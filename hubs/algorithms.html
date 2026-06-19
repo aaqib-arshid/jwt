@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>JWT Algorithms — JWT Topic Hub | JWTValidator.org</title>
+<meta name="description" content="HS256, RS256, ES256 and algorithm comparisons.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<link rel="canonical" href="https://jwtvalidator.org/hubs/algorithms.html">
+<link rel="alternate" hreflang="x-default" href="https://jwtvalidator.org/hubs/algorithms.html">
+<link rel="alternate" hreflang="en" href="https://jwtvalidator.org/hubs/algorithms.html">
+<meta property="og:title" content="JWT Algorithms — JWT Topic Hub | JWTValidator.org">
+<meta property="og:description" content="HS256, RS256, ES256 and algorithm comparisons.">
+<meta property="og:url" content="https://jwtvalidator.org/hubs/algorithms.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JWTValidator.org">
+<meta property="og:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JWT Algorithms — JWT Topic Hub | JWTValidator.org">
+<meta name="twitter:description" content="HS256, RS256, ES256 and algorithm comparisons.">
+<meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
+<link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Topics","item":"https://jwtvalidator.org/hubs/"},{"@type":"ListItem","position":3,"name":"JWT Algorithms"}]}</script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8899635585691076"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">JWTValidator.org</a>
+      <div class="header-search" id="site-search-wrap">
+        <input type="search" id="site-search" placeholder="Search JWT guides & tools…" aria-label="Search site" autocomplete="off">
+        <div id="search-results" class="search-results hidden" role="listbox"></div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        
+        <a href="/#tools">Tools</a>
+        
+        <a href="/guides/">Guides</a>
+        
+        <a href="/glossary/">Glossary</a>
+        
+        <a href="/resources.html">Resources</a>
+        
+        <a href="/hubs/">Topics</a>
+        
+        <a href="/learn/">Learn</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  
+  
+  
+  
+  
+  
+  <span aria-current="page">JWT Algorithms</span>
+  
+  <a href="">JWT Algorithms</a><span class="sep">/</span>
+  
+  
+</nav>
+
+
+<article class="content-page hub-page">
+  <header class="page-header">
+    <h1>JWT Algorithms</h1>
+    <p class="lead">HS256, RS256, ES256 and algorithm comparisons.</p>
+  </header>
+
+  <section class="hub-grid">
+    
+    <a href="/guides/jwt-kid-rotation.html" class="card card-link hub-card">
+      <h2>JWT Key ID Rotation</h2>
+      <p>Rotate signing keys using kid header claim</p>
+    </a>
+    
+    <a href="/guides/jwt-public-key-verify.html" class="card card-link hub-card">
+      <h2>JWT Public Key Verification</h2>
+      <p>Verify JWT with RSA/EC public keys</p>
+    </a>
+    
+    <a href="/guides/jwt-private-key-sign.html" class="card card-link hub-card">
+      <h2>JWT Private Key Signing</h2>
+      <p>Sign JWT tokens with RSA private keys</p>
+    </a>
+    
+    <a href="/guides/jwt-certificate-chain.html" class="card card-link hub-card">
+      <h2>JWT Certificate Chain</h2>
+      <p>Validate JWT with X.509 certificate chains</p>
+    </a>
+    
+    <a href="/guides/jwt-openssl-generate.html" class="card card-link hub-card">
+      <h2>JWT OpenSSL Key Generation</h2>
+      <p>Generate RSA keys for JWT with OpenSSL</p>
+    </a>
+    
+    <a href="/guides/jwt-x5c-certificate.html" class="card card-link hub-card">
+      <h2>JWT x5c Certificate Header</h2>
+      <p>x5c X.509 certificate chain in JWT header</p>
+    </a>
+    
+    <a href="/guides/jwt-x5t-thumbprint.html" class="card card-link hub-card">
+      <h2>JWT x5t Thumbprint</h2>
+      <p>X.509 certificate thumbprint in JWT header</p>
+    </a>
+    
+    <a href="/guides/jwt-private-key-jwt.html" class="card card-link hub-card">
+      <h2>JWT Private Key JWT Auth</h2>
+      <p>Private key JWT client authentication method</p>
+    </a>
+    
+    <a href="/guides/jwt-self-signed-client.html" class="card card-link hub-card">
+      <h2>JWT Self Signed Client Assertion</h2>
+      <p>Self-signed JWT for OAuth client auth</p>
+    </a>
+    
+    <a href="/guides/jwt-verify-test.html" class="card card-link hub-card">
+      <h2>JWT Verify Test</h2>
+      <p>Test JWT signature verification online</p>
+    </a>
+    
+    <a href="/guides/jwt-hs256-test.html" class="card card-link hub-card">
+      <h2>JWT HS256 Test</h2>
+      <p>Test HS256 JWT signing and verification</p>
+    </a>
+    
+    <a href="/guides/jwt-rs256-test.html" class="card card-link hub-card">
+      <h2>JWT RS256 Test</h2>
+      <p>Test RS256 JWT with RSA keys</p>
+    </a>
+    
+    <a href="/guides/jwt-es256-test.html" class="card card-link hub-card">
+      <h2>JWT ES256 Test</h2>
+      <p>Test ES256 ECDSA JWT tokens</p>
+    </a>
+    
+    <a href="/guides/jwt-algorithm-test.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Test</h2>
+      <p>Test different JWT signing algorithms</p>
+    </a>
+    
+    <a href="/guides/jwt-key-test.html" class="card card-link hub-card">
+      <h2>JWT Key Test Tool</h2>
+      <p>Test JWT signing keys online</p>
+    </a>
+    
+    <a href="/guides/jwt-hs256-decoder.html" class="card card-link hub-card">
+      <h2>JWT HS256 Decoder</h2>
+      <p>Decode HS256 JWT tokens online</p>
+    </a>
+    
+    <a href="/guides/jwt-rs256-decoder.html" class="card card-link hub-card">
+      <h2>JWT RS256 Decoder</h2>
+      <p>Decode RS256 JWT tokens online</p>
+    </a>
+    
+    <a href="/guides/jwt-es256-decoder.html" class="card card-link hub-card">
+      <h2>JWT ES256 Decoder</h2>
+      <p>Decode ES256 JWT tokens online</p>
+    </a>
+    
+    <a href="/algorithms/hs256-vs-rs256.html" class="card card-link hub-card">
+      <h2>HS256 vs RS256 — Which JWT Algorithm to Use?</h2>
+      <p>Compare HS256 and RS256 JWT signing algorithms. Learn when to use symmetric vs asymmetric keys for JWT security.</p>
+    </a>
+    
+    <a href="/algorithms/rs512-explained.html" class="card card-link hub-card">
+      <h2>RS512 Explained — RSA-SHA512 JWT Signing</h2>
+      <p>Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.</p>
+    </a>
+    
+    <a href="/algorithms/es256-explained.html" class="card card-link hub-card">
+      <h2>ES256 JWT Algorithm Explained</h2>
+      <p>ECDSA P-256 SHA-256 JWT signing explained</p>
+    </a>
+    
+    <a href="/algorithms/es384-explained.html" class="card card-link hub-card">
+      <h2>ES384 JWT Algorithm Explained</h2>
+      <p>ECDSA P-384 JWT signing guide</p>
+    </a>
+    
+    <a href="/algorithms/es512-explained.html" class="card card-link hub-card">
+      <h2>ES512 JWT Algorithm Explained</h2>
+      <p>ECDSA P-521 JWT signing guide</p>
+    </a>
+    
+    <a href="/algorithms/hs384-explained.html" class="card card-link hub-card">
+      <h2>HS384 JWT Algorithm Explained</h2>
+      <p>HMAC SHA-384 JWT signing guide</p>
+    </a>
+    
+    <a href="/algorithms/hs512-explained.html" class="card card-link hub-card">
+      <h2>HS512 JWT Algorithm Explained</h2>
+      <p>HMAC SHA-512 JWT signing guide</p>
+    </a>
+    
+    <a href="/algorithms/rs256-explained.html" class="card card-link hub-card">
+      <h2>RS256 JWT Algorithm Explained</h2>
+      <p>RSA SHA-256 JWT signing — most common asymmetric algorithm</p>
+    </a>
+    
+    <a href="/algorithms/rs384-explained.html" class="card card-link hub-card">
+      <h2>RS384 JWT Algorithm Explained</h2>
+      <p>RSA SHA-384 JWT signing guide</p>
+    </a>
+    
+    <a href="/algorithms/ps256-explained.html" class="card card-link hub-card">
+      <h2>PS256 JWT Algorithm Explained</h2>
+      <p>RSA-PSS SHA-256 JWT signing guide</p>
+    </a>
+    
+    <a href="/algorithms/eddsa-jwt.html" class="card card-link hub-card">
+      <h2>EdDSA JWT Algorithm</h2>
+      <p>Ed25519 JWT signing with EdDSA algorithm</p>
+    </a>
+    
+    <a href="/algorithms/jwt-alg-none.html" class="card card-link hub-card">
+      <h2>JWT alg none Explained</h2>
+      <p>Why alg:none is dangerous and must be rejected</p>
+    </a>
+    
+    <a href="/algorithms/jwt-algorithm-selection.html" class="card card-link hub-card">
+      <h2>JWT Algorithm Selection Guide</h2>
+      <p>How to choose the right JWT signing algorithm</p>
+    </a>
+    
+    <a href="/algorithms/jwt-symmetric-vs-asymmetric.html" class="card card-link hub-card">
+      <h2>JWT Symmetric vs Asymmetric</h2>
+      <p>HMAC vs RSA vs ECDSA for JWT signing</p>
+    </a>
+    
+    <a href="/algorithms/jwt-hs256-secret-length.html" class="card card-link hub-card">
+      <h2>HS256 Secret Key Length</h2>
+      <p>Minimum secret key length for HS256 JWT</p>
+    </a>
+    
+    <a href="/algorithms/jwt-rs256-key-size.html" class="card card-link hub-card">
+      <h2>RS256 Key Size Requirements</h2>
+      <p>RSA key size recommendations for RS256 JWT</p>
+    </a>
+    
+    <a href="/algorithms/jwt-ecdsa-vs-rsa.html" class="card card-link hub-card">
+      <h2>ECDSA vs RSA for JWT</h2>
+      <p>Compare ES256 and RS256 for JWT signing</p>
+    </a>
+    
+    <a href="/algorithms/jwt-jwks-explained.html" class="card card-link hub-card">
+      <h2>JWKS Explained for JWT</h2>
+      <p>JSON Web Key Set for JWT public key verification</p>
+    </a>
+    
+    <a href="/algorithms/jwt-kid-header.html" class="card card-link hub-card">
+      <h2>JWT kid Header Claim</h2>
+      <p>Key ID in JWT header for key rotation</p>
+    </a>
+    
+    <a href="/algorithms/jwt-key-rotation.html" class="card card-link hub-card">
+      <h2>JWT Key Rotation Guide</h2>
+      <p>Rotate JWT signing keys without downtime</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-hs384.html" class="card card-link hub-card">
+      <h2>HS256 vs HS384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and HS384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-hs512.html" class="card card-link hub-card">
+      <h2>HS256 vs HS512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and HS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-rs256.html" class="card card-link hub-card">
+      <h2>HS256 vs RS256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and RS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-rs384.html" class="card card-link hub-card">
+      <h2>HS256 vs RS384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and RS384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-rs512.html" class="card card-link hub-card">
+      <h2>HS256 vs RS512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and RS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-es384.html" class="card card-link hub-card">
+      <h2>HS256 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-es512.html" class="card card-link hub-card">
+      <h2>HS256 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-ps256.html" class="card card-link hub-card">
+      <h2>HS256 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs256-vs-eddsa.html" class="card card-link hub-card">
+      <h2>HS256 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare HS256 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-hs512.html" class="card card-link hub-card">
+      <h2>HS384 vs HS512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and HS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-rs256.html" class="card card-link hub-card">
+      <h2>HS384 vs RS256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and RS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-rs384.html" class="card card-link hub-card">
+      <h2>HS384 vs RS384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and RS384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-rs512.html" class="card card-link hub-card">
+      <h2>HS384 vs RS512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and RS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-es256.html" class="card card-link hub-card">
+      <h2>HS384 vs ES256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and ES256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-es384.html" class="card card-link hub-card">
+      <h2>HS384 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-es512.html" class="card card-link hub-card">
+      <h2>HS384 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-ps256.html" class="card card-link hub-card">
+      <h2>HS384 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs384-vs-eddsa.html" class="card card-link hub-card">
+      <h2>HS384 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare HS384 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-rs256.html" class="card card-link hub-card">
+      <h2>HS512 vs RS256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and RS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-rs384.html" class="card card-link hub-card">
+      <h2>HS512 vs RS384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and RS384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-rs512.html" class="card card-link hub-card">
+      <h2>HS512 vs RS512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and RS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-es256.html" class="card card-link hub-card">
+      <h2>HS512 vs ES256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and ES256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-es384.html" class="card card-link hub-card">
+      <h2>HS512 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-es512.html" class="card card-link hub-card">
+      <h2>HS512 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-ps256.html" class="card card-link hub-card">
+      <h2>HS512 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/hs512-vs-eddsa.html" class="card card-link hub-card">
+      <h2>HS512 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare HS512 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-rs384.html" class="card card-link hub-card">
+      <h2>RS256 vs RS384 — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and RS384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-rs512.html" class="card card-link hub-card">
+      <h2>RS256 vs RS512 — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and RS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-es256.html" class="card card-link hub-card">
+      <h2>RS256 vs ES256 — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and ES256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-es384.html" class="card card-link hub-card">
+      <h2>RS256 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-es512.html" class="card card-link hub-card">
+      <h2>RS256 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-ps256.html" class="card card-link hub-card">
+      <h2>RS256 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs256-vs-eddsa.html" class="card card-link hub-card">
+      <h2>RS256 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare RS256 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs384-vs-rs512.html" class="card card-link hub-card">
+      <h2>RS384 vs RS512 — JWT Algorithm Comparison</h2>
+      <p>Compare RS384 and RS512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs384-vs-es256.html" class="card card-link hub-card">
+      <h2>RS384 vs ES256 — JWT Algorithm Comparison</h2>
+      <p>Compare RS384 and ES256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs384-vs-es384.html" class="card card-link hub-card">
+      <h2>RS384 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare RS384 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs384-vs-es512.html" class="card card-link hub-card">
+      <h2>RS384 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare RS384 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs384-vs-ps256.html" class="card card-link hub-card">
+      <h2>RS384 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare RS384 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs384-vs-eddsa.html" class="card card-link hub-card">
+      <h2>RS384 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare RS384 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs512-vs-es256.html" class="card card-link hub-card">
+      <h2>RS512 vs ES256 — JWT Algorithm Comparison</h2>
+      <p>Compare RS512 and ES256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs512-vs-es384.html" class="card card-link hub-card">
+      <h2>RS512 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare RS512 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs512-vs-es512.html" class="card card-link hub-card">
+      <h2>RS512 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare RS512 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs512-vs-ps256.html" class="card card-link hub-card">
+      <h2>RS512 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare RS512 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/rs512-vs-eddsa.html" class="card card-link hub-card">
+      <h2>RS512 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare RS512 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es256-vs-es384.html" class="card card-link hub-card">
+      <h2>ES256 vs ES384 — JWT Algorithm Comparison</h2>
+      <p>Compare ES256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es256-vs-es512.html" class="card card-link hub-card">
+      <h2>ES256 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare ES256 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es256-vs-ps256.html" class="card card-link hub-card">
+      <h2>ES256 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare ES256 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es256-vs-eddsa.html" class="card card-link hub-card">
+      <h2>ES256 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare ES256 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es384-vs-es512.html" class="card card-link hub-card">
+      <h2>ES384 vs ES512 — JWT Algorithm Comparison</h2>
+      <p>Compare ES384 and ES512 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es384-vs-ps256.html" class="card card-link hub-card">
+      <h2>ES384 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare ES384 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es384-vs-eddsa.html" class="card card-link hub-card">
+      <h2>ES384 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare ES384 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es512-vs-ps256.html" class="card card-link hub-card">
+      <h2>ES512 vs PS256 — JWT Algorithm Comparison</h2>
+      <p>Compare ES512 and PS256 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/es512-vs-eddsa.html" class="card card-link hub-card">
+      <h2>ES512 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare ES512 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+    <a href="/compare/ps256-vs-eddsa.html" class="card card-link hub-card">
+      <h2>PS256 vs EdDSA — JWT Algorithm Comparison</h2>
+      <p>Compare PS256 and EdDSA JWT signing algorithms. Choose the right algorithm for your API.</p>
+    </a>
+    
+  </section>
+
+  <nav class="trust-links card" aria-label="Related resources">
+  <h2>Explore JWT Tools &amp; Guides</h2>
+  <ul class="trust-links-list">
+    <li><a href="/tools/jwt-decoder.html">JWT Decoder</a></li>
+    <li><a href="/tools/jwt-validator.html">JWT Validator</a></li>
+    <li><a href="/guides/jwt-basics.html">JWT Basics Guide</a></li>
+    <li><a href="/guides/">All Guides</a></li>
+    <li><a href="/about.html">About JWTValidator.org</a></li>
+  </ul>
+</nav>
+
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 JWTValidator.org — The most complete free JWT resource online. All tools run in your browser.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/tools/jwt-decoder.html">Decoder</a>
+        <a href="/tools/jwt-validator.html">Validator</a>
+        <a href="/guides/">Guides</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+      </nav>
+      <nav class="footer-legal" aria-label="Legal">
+        
+        <a href="/about.html">About</a>
+        
+        <a href="/privacy.html">Privacy</a>
+        
+        <a href="/terms.html">Terms</a>
+        
+        <a href="/disclaimer.html">Disclaimer</a>
+        
+        <a href="/contact.html">Contact</a>
+        
+        <a href="/support.html">Support</a>
+        
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/core/ui.js"></script>
+  <script type="module" src="/assets/js/search.js"></script>
+</body>
+</html>

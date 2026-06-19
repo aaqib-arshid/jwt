@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.js",
+    "publish": "node scripts/build.js && node scripts/publish-root.js",
     "generate": "node scripts/generate-pages.js",
     "generate:programmatic": "node scripts/generate-programmatic.js",
     "sitemap": "node scripts/generate-sitemap.js",
