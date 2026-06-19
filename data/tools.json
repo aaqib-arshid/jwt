@@ -19,15 +19,15 @@
     "slug": "jwt-encoder",
     "title": "JWT Encoder",
     "seoTitle": "JWT Encoder Online | Create JWT Tokens Free",
-    "description": "Create and encode JWT tokens online. Set header, payload, and secret to generate HS256/HS384/HS512 signed tokens client-side.",
-    "keywords": "jwt encoder,create jwt token,jwt generator,encode jwt online",
+    "description": "Create and encode JWT tokens online. HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, and EdDSA — client-side signing.",
+    "keywords": "jwt encoder,create jwt token,jwt generator,encode jwt online,rs256 encoder,es256 jwt",
     "icon": "🔐",
     "script": "jwt-encoder.js",
     "relatedGuides": ["jwt-authentication-explained"],
     "relatedTools": ["jwt-decoder", "jwt-validator", "base64-decode"],
     "faq": [
-      { "q": "Which algorithms are supported?", "a": "HS256, HS384, and HS512 using Web Crypto API." },
-      { "q": "Is the secret stored?", "a": "No. Your secret never leaves your browser." }
+      { "q": "Which algorithms are supported?", "a": "HS256, HS384, HS512, RS256, RS384, RS512, PS256, PS384, PS512, ES256, ES384, ES512, and EdDSA. HMAC uses a secret; all others use a PKCS#8 PEM private key." },
+      { "q": "Is the secret stored?", "a": "No. Your secret and private key never leave your browser." }
     ]
   },
   {
