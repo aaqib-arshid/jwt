@@ -26,6 +26,12 @@ jobs:
 
       - run: npm run build
 
+      - name: Verify sitemap
+        run: |
+          test -f dist/sitemap.xml
+          echo "URLs in sitemap:" $(grep -c '<loc>' dist/sitemap.xml)
+          ls -la dist/sitemap*.xml 2>/dev/null || true
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

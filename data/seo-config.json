@@ -92,7 +92,7 @@
     "use-cases": { "path": "/use-cases/{slug}.html", "priority": 0.7, "template": "content" }
   },
   "sitemap": {
-    "indexThreshold": 500,
+    "indexThreshold": 50000,
     "changefreq": "weekly"
   }
 }

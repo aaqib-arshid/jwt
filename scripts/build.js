@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, cpSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, cpSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { generateAll } from './generate-pages.js';
@@ -82,6 +82,23 @@ function copyStaticAssets() {
     const src = join(ROOT, file);
     if (existsSync(src)) cpSync(src, join(DIST, file));
   }
+  // Prevent Jekyll processing if GitHub Pages ever serves from a branch
+  writeFileSync(join(DIST, '.nojekyll'), '');
+}
+
+function cleanOldSitemaps() {
+  if (!existsSync(DIST)) return;
+  for (const file of readdirSync(DIST)) {
+    if (file.startsWith('sitemap-') && file.endsWith('.xml')) {
+      unlinkSync(join(DIST, file));
+    }
+  }
+  const sitemapsDir = join(DIST, 'sitemaps');
+  if (existsSync(sitemapsDir)) {
+    for (const file of readdirSync(sitemapsDir)) {
+      if (file.endsWith('.xml')) unlinkSync(join(sitemapsDir, file));
+    }
+  }
 }
 
 const SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9';
@@ -98,19 +115,23 @@ function urlEntry(domain, page) {
 function generateSitemap(pages) {
   const site = JSON.parse(readFileSync(join(ROOT, 'data', 'site.json'), 'utf-8'));
   const seoConfig = JSON.parse(readFileSync(join(ROOT, 'data', 'seo-config.json'), 'utf-8'));
-  const threshold = seoConfig.sitemap?.indexThreshold || 500;
+  // Google allows 50,000 URLs per sitemap file. Use a single file until that limit.
+  const indexThreshold = seoConfig.sitemap?.indexThreshold || 50000;
 
-  if (pages.length <= threshold) {
+  cleanOldSitemaps();
+
+  if (pages.length <= indexThreshold) {
     const urls = pages.map(p => urlEntry(site.domain, p)).join('\n');
     writeFileSync(join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="${SITEMAP_NS}">
 ${urls}
 </urlset>`);
-    console.log(`Sitemap: ${pages.length} URLs`);
+    console.log(`Sitemap: ${pages.length} URLs in sitemap.xml`);
     return;
   }
 
-  // Split into section sitemaps
+  // Split into section sitemaps under /sitemaps/ (only when exceeding 50k URLs)
+  mkdirSync(join(DIST, 'sitemaps'), { recursive: true });
   const sections = {
     core: p => ['/', '/learning-path.html', '/resources.html', '/about.html', '/hubs/'].includes(p.path) || p.path.startsWith('/tools/') || p.path.startsWith('/hubs/'),
     guides: p => p.path.startsWith('/guides/'),
@@ -132,7 +153,7 @@ ${urls}
     if (!sectionPages.length) continue;
     const filename = `sitemap-${name}.xml`;
     const urls = sectionPages.map(p => urlEntry(site.domain, p)).join('\n');
-    writeFileSync(join(DIST, filename), `<?xml version="1.0" encoding="UTF-8"?>
+    writeFileSync(join(DIST, 'sitemaps', filename), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="${SITEMAP_NS}">
 ${urls}
 </urlset>`);
@@ -140,7 +161,7 @@ ${urls}
   }
 
   const indexEntries = sitemapFiles.map(s => `  <sitemap>
-    <loc>${site.domain}/${s.filename}</loc>
+    <loc>${site.domain}/sitemaps/${s.filename}</loc>
     <lastmod>${s.lastmod}</lastmod>
   </sitemap>`).join('\n');
 
@@ -149,7 +170,7 @@ ${urls}
 ${indexEntries}
 </sitemapindex>`);
 
-  console.log(`Sitemap index: ${sitemapFiles.length} sitemaps, ${pages.length} total URLs`);
+  console.log(`Sitemap index: ${sitemapFiles.length} sitemaps in /sitemaps/, ${pages.length} total URLs`);
 }
 
 console.log('Building jwtvalidator.org...\n');
