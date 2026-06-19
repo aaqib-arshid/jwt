@@ -24,8 +24,8 @@
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"RS512 JWT Algorithm Explained — RSA SHA-512 Signing","description":"Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.","url":"https://jwtvalidator.org/algorithms/rs512-explained.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/algorithms/rs512-explained.html","inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is RS512 stronger than RS256?","acceptedAnswer":{"@type":"Answer","text":"RS512 uses SHA-512 instead of SHA-256. Both use RSA; RS512 provides a larger hash output."}},{"@type":"Question","name":"Should I use RS512?","acceptedAnswer":{"@type":"Answer","text":"RS256 is the industry default. Use RS512 only if your security policy requires SHA-512."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Algorithms","item":"https://jwtvalidator.org/algorithms/"},{"@type":"ListItem","position":3,"name":"RS512 Explained — RSA-SHA512 JWT Signing"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"RS512 Explained — RSA-SHA512 JWT Signing","description":"Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}],"tool":[{"@type":"HowToTool","name":"JWTValidator.org JWT Decoder"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Algorithms","item":"https://jwtvalidator.org/algorithms/"},{"@type":"ListItem","position":3,"name":"RS512 Explained — RSA-SHA512 JWT Signing","item":"https://jwtvalidator.org/algorithms/rs512-explained.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"RS512 Explained — RSA-SHA512 JWT Signing","description":"Learn RS512 JWT signing with RSA-SHA512. Stronger hash than RS256, use cases, and verification with JWKS.","url":"https://jwtvalidator.org/algorithms/rs512-explained.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -91,7 +91,9 @@
   
 
   <div class="prose">
-    <h2>What is RS512?</h2><p>RS512 combines RSA public-key cryptography with the SHA-512 hash function. The JWT header specifies <code>"alg": "RS512"</code>.</p><h2>Header Example</h2><pre><code>{ "alg": "RS512", "typ": "JWT", "kid": "key-1" }</code></pre><h2>Verification</h2><p>Verify using the RSA public key from your JWKS endpoint. Our <a href="/tools/jwks-validator.html">JWKS Validator</a> supports RS512 verification.</p>
+    <h2>What is RS512?</h2><p>RS512 combines RSA public-key cryptography with the SHA-512 hash function. The JWT header specifies <code>"alg": "RS512"</code>.</p><h2>Header Example</h2><pre><code>{ "alg": "RS512", "typ": "JWT", "kid": "key-1" }</code></pre><h2>Verification</h2><p>Verify using the RSA public key from your JWKS endpoint. Our <a href="/tools/jwks-validator.html">JWKS Validator</a> supports RS512 verification.</p><h2>Using RS512 Explained — RSA-SHA512 JWT Signing Safely</h2>
+<p>Algorithm <strong>RS512 Explained — RSA-SHA512 JWT Signing</strong> defines JWT signing. Validate the header <code>alg</code> matches expectations. Use JWKS for asymmetric keys; protect HMAC secrets.</p>
+<p>Browse related resources: <a href="/tools/jwt-decoder.html">JWT Decoder</a>, <a href="/tools/jwt-validator.html">JWT Validator</a>, <a href="/guides/jwt-basics.html">JWT Basics</a>, <a href="/guides/jwt-authentication-explained.html">JWT Authentication</a>, <a href="/errors/">JWT Errors</a>, <a href="/algorithms/">Algorithms</a>, <a href="/glossary/">Glossary</a>, and <a href="/learning-path.html">Learning Path</a>.</p>
   </div>
 
   <section class="try-it">
@@ -185,6 +187,9 @@
         <a href="/glossary/">Glossary</a>
         <a href="/resources.html">Resources</a>
         <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+        <a href="/algorithms/">Algorithms</a>
+        <a href="/errors/">Errors</a>
+        <a href="/learn/">Learn</a>
       </nav>
       <nav class="footer-legal" aria-label="Legal">
         

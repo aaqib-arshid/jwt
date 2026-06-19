@@ -24,8 +24,8 @@
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Key Not Found — Fix & Explanation","description":"JWKS key ID not found in key set","url":"https://jwtvalidator.org/errors/jwt-key-not-found.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/errors/jwt-key-not-found.html","inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why am I seeing jwt key not found kid?","acceptedAnswer":{"@type":"Answer","text":"This error occurs when JWT validation fails. Check secret/key, algorithm, expiration, and token structure."}},{"@type":"Question","name":"Can I fix this without the secret?","acceptedAnswer":{"@type":"Answer","text":"You can decode the payload without the secret, but signature verification requires the correct key."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Errors","item":"https://jwtvalidator.org/errors/"},{"@type":"ListItem","position":3,"name":"JWT Key Not Found"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Key Not Found","description":"JWKS key ID not found in key set","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}],"tool":[{"@type":"HowToTool","name":"JWTValidator.org JWT Decoder"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Errors","item":"https://jwtvalidator.org/errors/"},{"@type":"ListItem","position":3,"name":"JWT Key Not Found","item":"https://jwtvalidator.org/errors/jwt-key-not-found.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Key Not Found","description":"JWKS key ID not found in key set","url":"https://jwtvalidator.org/errors/jwt-key-not-found.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -104,7 +104,9 @@
 <li>Inspect claims with <a href="/tools/jwt-debugger.html">JWT Debugger</a> for expiration and issuer issues</li>
 </ol>
 <h2>Prevention</h2>
-<p>Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side. Use short-lived access tokens with refresh token rotation.</p>
+<p>Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side. Use short-lived access tokens with refresh token rotation.</p><h2>Debugging JWT Key Not Found</h2>
+<p>The error <strong>JWT Key Not Found</strong> means JWT verification failed. Decode the token, check <code>alg</code>, verify <code>exp</code> is not past, and confirm the secret or JWKS URL matches your auth provider.</p>
+<p>Browse related resources: <a href="/tools/jwt-decoder.html">JWT Decoder</a>, <a href="/tools/jwt-validator.html">JWT Validator</a>, <a href="/guides/jwt-basics.html">JWT Basics</a>, <a href="/guides/jwt-authentication-explained.html">JWT Authentication</a>, <a href="/errors/">JWT Errors</a>, <a href="/algorithms/">Algorithms</a>, <a href="/glossary/">Glossary</a>, and <a href="/learning-path.html">Learning Path</a>.</p>
   </div>
 
   <section class="try-it">
@@ -206,6 +208,9 @@
         <a href="/glossary/">Glossary</a>
         <a href="/resources.html">Resources</a>
         <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+        <a href="/algorithms/">Algorithms</a>
+        <a href="/errors/">Errors</a>
+        <a href="/learn/">Learn</a>
       </nav>
       <nav class="footer-legal" aria-label="Legal">
         

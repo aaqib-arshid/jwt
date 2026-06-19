@@ -24,8 +24,8 @@
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Invalid Signature Error — Diagnose & Fix","description":"Fix JWT invalid signature errors. Wrong secret, algorithm mismatch, tampered payload — diagnose and resolve signature verification failures.","url":"https://jwtvalidator.org/guides/jwt-invalid-signature.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/guides/jwt-invalid-signature.html","inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What causes invalid signature?","acceptedAnswer":{"@type":"Answer","text":"Wrong secret/key, algorithm mismatch (alg header vs verification), or modified token content."}},{"@type":"Question","name":"Can I decode without verifying?","acceptedAnswer":{"@type":"Answer","text":"Yes, but never trust decodedTrimmed content without verification. Use our decoder to inspect, validator to verify."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://jwtvalidator.org/guides/"},{"@type":"ListItem","position":3,"name":"JWT Invalid Signature — Causes & Fixes"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Invalid Signature — Causes & Fixes","description":"Fix JWT invalid signature errors. Wrong secret, algorithm mismatch, tampered payload — diagnose and resolve signature verification failures.","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}],"tool":[{"@type":"HowToTool","name":"JWTValidator.org JWT Decoder"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://jwtvalidator.org/guides/"},{"@type":"ListItem","position":3,"name":"JWT Invalid Signature — Causes & Fixes","item":"https://jwtvalidator.org/guides/jwt-invalid-signature.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Invalid Signature — Causes & Fixes","description":"Fix JWT invalid signature errors. Wrong secret, algorithm mismatch, tampered payload — diagnose and resolve signature verification failures.","url":"https://jwtvalidator.org/guides/jwt-invalid-signature.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -94,7 +94,11 @@
     <h2>What Invalid Signature Means</h2><p>The signature doesn't match the header and payload when verified with the provided key. The token may be tampered, signed with a different key, or verified with the wrong algorithm.</p><h2>Common Causes</h2><ul><li><strong>Wrong secret</strong> — HS256 verified with incorrect secret</li><li><strong>Algorithm mismatch</strong> — Token is RS256 but verified with HS256</li><li><strong>Modified payload</strong> — Any change invalidates the signature</li><li><strong>Key rotation</strong> — Old token verified with new key</li></ul><h2>Fix with JWKS</h2><pre><code class="language-javascript">const jwksClient = require('jwks-rsa');
 const client = jwksClient({ jwksUri: 'https://issuer/.well-known/jwks.json' });
 const key = await client.getSigningKey(kid);
-jwt.verify(token, key.getPublicKey());</code></pre>
+jwt.verify(token, key.getPublicKey());</code></pre><h2>Understanding JWT Invalid Signature — Causes & Fixes in Production</h2>
+<p>Developers search for <strong>JWT Invalid Signature — Causes & Fixes</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side.</p>
+<h2>Common Pitfalls</h2>
+<ul><li>Algorithm confusion (<code>none</code> attack)</li><li>Secrets in the payload</li><li>Ignoring clock skew on <code>exp</code></li><li>Weak HMAC secrets</li><li>Skipping signature verification</li></ul>
+<p>Browse related resources: <a href="/tools/jwt-decoder.html">JWT Decoder</a>, <a href="/tools/jwt-validator.html">JWT Validator</a>, <a href="/guides/jwt-basics.html">JWT Basics</a>, <a href="/guides/jwt-authentication-explained.html">JWT Authentication</a>, <a href="/errors/">JWT Errors</a>, <a href="/algorithms/">Algorithms</a>, <a href="/glossary/">Glossary</a>, and <a href="/learning-path.html">Learning Path</a>.</p>
   </div>
 
   <section class="try-it">
@@ -190,6 +194,9 @@ jwt.verify(token, key.getPublicKey());</code></pre>
         <a href="/glossary/">Glossary</a>
         <a href="/resources.html">Resources</a>
         <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+        <a href="/algorithms/">Algorithms</a>
+        <a href="/errors/">Errors</a>
+        <a href="/learn/">Learn</a>
       </nav>
       <nav class="footer-legal" aria-label="Legal">
         
