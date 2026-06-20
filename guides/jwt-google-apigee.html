@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Google Apigee JWT access token validation">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Google Apigee JWT | JWTValidator.org","description":"Google Apigee JWT access token validation","url":"https://jwtvalidator.org/guides/jwt-google-apigee.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/guides/jwt-google-apigee.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Google Apigee JWT | JWTValidator.org","description":"Google Apigee JWT access token validation","url":"https://jwtvalidator.org/guides/jwt-google-apigee.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-20","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/guides/jwt-google-apigee.html","inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is jwt google apigee jwt?","acceptedAnswer":{"@type":"Answer","text":"A common JWT authentication topic. This guide explains jwt google apigee jwt with examples and links to free decoder/validator tools."}},{"@type":"Question","name":"Are JWT tools on this site free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools run client-side in your browser with no account required."}},{"@type":"Question","name":"How do I debug JWT errors?","acceptedAnswer":{"@type":"Answer","text":"Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://jwtvalidator.org/guides/"},{"@type":"ListItem","position":3,"name":"JWT Google Apigee JWT","item":"https://jwtvalidator.org/guides/jwt-google-apigee.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Google Apigee JWT","description":"Google Apigee JWT access token validation","url":"https://jwtvalidator.org/guides/jwt-google-apigee.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
@@ -47,6 +47,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -84,6 +86,7 @@
   <header class="page-header">
     <h1>JWT Google Apigee JWT</h1>
     <p class="lead">Google Apigee JWT access token validation</p>
+    
   </header>
 
   
@@ -107,9 +110,12 @@
 
 <h2>Related Resources</h2>
 <p>Start with our <a href="/guides/jwt-basics.html">JWT Basics</a> guide or follow the <a href="/learning-path.html">JWT Learning Path</a>.</p><h2>Understanding JWT Google Apigee JWT in Production</h2>
-<p>Developers search for <strong>JWT Google Apigee JWT</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side.</p>
+<p>Developers search for <strong>JWT Google Apigee JWT</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side — decoding alone proves nothing about authenticity.</p>
+<h2>JWT Structure Recap</h2>
+<p>Every JWT has three dot-separated segments: header (algorithm), payload (claims), signature (proof). Use <a href="/tools/jwt-decoder.html">JWT Decoder</a> to inspect and <a href="/tools/jwt-validator.html">JWT Validator</a> to verify before trusting any claim value in production code.</p>
 <h2>Common Pitfalls</h2>
-<ul><li>Algorithm confusion (<code>none</code> attack)</li><li>Secrets in the payload</li><li>Ignoring clock skew on <code>exp</code></li><li>Weak HMAC secrets</li><li>Skipping signature verification</li></ul>
+<ul><li>Algorithm confusion (<code>none</code> attack) — whitelist allowed algorithms</li><li>Secrets in the payload — payload is only Base64-encoded, not encrypted</li><li>Ignoring clock skew on <code>exp</code> and <code>nbf</code></li><li>Weak HMAC secrets — use 256-bit random keys</li><li>Skipping signature verification — always call verify(), not decode()</li><li>Storing tokens in localStorage — XSS can steal them</li></ul>
+<h2>Further Reading</h2>
 <p>Browse related resources: <a href="/tools/jwt-decoder.html">JWT Decoder</a>, <a href="/tools/jwt-validator.html">JWT Validator</a>, <a href="/guides/jwt-basics.html">JWT Basics</a>, <a href="/guides/jwt-authentication-explained.html">JWT Authentication</a>, <a href="/errors/">JWT Errors</a>, <a href="/algorithms/">Algorithms</a>, <a href="/glossary/">Glossary</a>, and <a href="/learning-path.html">Learning Path</a>.</p>
   </div>
 

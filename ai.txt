@@ -9,7 +9,7 @@
 - https://jwtvalidator.org/tools/jwks-validator.html — Verify RS256 with JWKS endpoints
 
 ## Resource discovery
-- https://jwtvalidator.org/resources.html — Searchable directory of all 1095+ pages
+- https://jwtvalidator.org/resources.html — Searchable directory of all 1115+ pages
 - https://jwtvalidator.org/glossary/ — JWT terminology encyclopedia
 - https://jwtvalidator.org/guides/ — Step-by-step JWT guides
 - https://jwtvalidator.org/errors/ — JWT error diagnosis and fixes

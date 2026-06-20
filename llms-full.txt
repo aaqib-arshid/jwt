@@ -1,4 +1,4 @@
-# All pages (1095)
+# All pages (1115)
 
 https://jwtvalidator.org/
 https://jwtvalidator.org/tools/jwt-decoder.html
@@ -814,6 +814,26 @@ https://jwtvalidator.org/blog/posts/jwt-beginner-guide.html
 https://jwtvalidator.org/blog/posts/jwt-security-best-practices.html
 https://jwtvalidator.org/blog/posts/oauth-vs-jwt.html
 https://jwtvalidator.org/blog/posts/refresh-token-rotation.html
+https://jwtvalidator.org/blog/posts/how-jwt-authentication-works.html
+https://jwtvalidator.org/blog/posts/jwt-vs-sessions.html
+https://jwtvalidator.org/blog/posts/common-jwt-security-mistakes.html
+https://jwtvalidator.org/blog/posts/decode-jwt-javascript.html
+https://jwtvalidator.org/blog/posts/jwt-expiration-handling.html
+https://jwtvalidator.org/blog/posts/jwt-rs256-explained.html
+https://jwtvalidator.org/blog/posts/jwt-auth0-decode-guide.html
+https://jwtvalidator.org/blog/posts/jwt-firebase-verification.html
+https://jwtvalidator.org/blog/posts/jwt-claims-reference.html
+https://jwtvalidator.org/blog/posts/jwt-microservices-auth.html
+https://jwtvalidator.org/blog/posts/jwt-testing-strategies.html
+https://jwtvalidator.org/blog/posts/jwt-oauth-openid-connect.html
+https://jwtvalidator.org/blog/posts/jwt-algorithm-confusion-attack.html
+https://jwtvalidator.org/blog/posts/jwt-localstorage-danger.html
+https://jwtvalidator.org/blog/posts/jwt-api-gateway-patterns.html
+https://jwtvalidator.org/blog/posts/jwt-io-alternative-comparison.html
+https://jwtvalidator.org/jwt-validator.html
+https://jwtvalidator.org/jwt-decoder.html
+https://jwtvalidator.org/jwt-debugger.html
+https://jwtvalidator.org/jwt-signature-verification.html
 https://jwtvalidator.org/compare/jwt-vs-session.html
 https://jwtvalidator.org/compare/jwt-vs-oauth.html
 https://jwtvalidator.org/compare/jwt-vs-api-key.html

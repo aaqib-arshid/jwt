@@ -22,8 +22,8 @@
 <meta name="twitter:description" content="Compare HS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"HS256 vs ES384 — JWT Algorithm Comparison | JWTValidator.org","description":"Compare HS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.","url":"https://jwtvalidator.org/compare/hs256-vs-es384.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/compare/hs256-vs-es384.html","inLanguage":"en"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is hs256 vs es384 jwt algorithm?","acceptedAnswer":{"@type":"Answer","text":"A common JWT authentication topic. This guide explains hs256 vs es384 jwt algorithm with examples and links to free decoder/validator tools."}},{"@type":"Question","name":"Are JWT tools on this site free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools run client-side in your browser with no account required."}},{"@type":"Question","name":"How do I debug JWT errors?","acceptedAnswer":{"@type":"Answer","text":"Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"HS256 vs ES384 — JWT Algorithm Comparison | JWTValidator.org","description":"Compare HS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.","url":"https://jwtvalidator.org/compare/hs256-vs-es384.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-20","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/compare/hs256-vs-es384.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is hs256 vs es384 jwt algorithm?","acceptedAnswer":{"@type":"Answer","text":"hs256 vs es384 jwt algorithm is a common JWT authentication topic. This guide explains the concept with step-by-step instructions, code examples, and links to free decoder and validator tools."}},{"@type":"Question","name":"Are JWT tools on this site free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 13 tools run client-side in your browser with no account required. Tokens are never uploaded to a server."}},{"@type":"Question","name":"How do I debug JWT errors?","acceptedAnswer":{"@type":"Answer","text":"Use our JWT Decoder to inspect structure, JWT Validator to verify signatures, and JWT Debugger for claim-by-claim analysis and expiration warnings."}},{"@type":"Question","name":"Is decoding the same as validating a JWT?","acceptedAnswer":{"@type":"Answer","text":"No. Decoding reads header and payload without proving authenticity. Always verify the signature before trusting claims in production."}},{"@type":"Question","name":"Which JWT algorithm should I use?","acceptedAnswer":{"@type":"Answer","text":"Use RS256 or ES256 for public APIs and OAuth. HS256 is fine for internal services when you can protect the shared secret."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://jwtvalidator.org/compare/"},{"@type":"ListItem","position":3,"name":"HS256 vs ES384 — JWT Algorithm Comparison","item":"https://jwtvalidator.org/compare/hs256-vs-es384.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"HS256 vs ES384 — JWT Algorithm Comparison","description":"Compare HS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.","url":"https://jwtvalidator.org/compare/hs256-vs-es384.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
 
@@ -47,6 +47,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -84,6 +86,7 @@
   <header class="page-header">
     <h1>HS256 vs ES384 — JWT Algorithm Comparison</h1>
     <p class="lead">Compare HS256 and ES384 JWT signing algorithms. Choose the right algorithm for your API.</p>
+    
   </header>
 
   
@@ -134,17 +137,27 @@
     
     <details class="faq-item">
       <summary>What is hs256 vs es384 jwt algorithm?</summary>
-      <p>A common JWT authentication topic. This guide explains hs256 vs es384 jwt algorithm with examples and links to free decoder/validator tools.</p>
+      <p>hs256 vs es384 jwt algorithm is a common JWT authentication topic. This guide explains the concept with step-by-step instructions, code examples, and links to free decoder and validator tools.</p>
     </details>
     
     <details class="faq-item">
       <summary>Are JWT tools on this site free?</summary>
-      <p>Yes. All tools run client-side in your browser with no account required.</p>
+      <p>Yes. All 13 tools run client-side in your browser with no account required. Tokens are never uploaded to a server.</p>
     </details>
     
     <details class="faq-item">
       <summary>How do I debug JWT errors?</summary>
-      <p>Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures.</p>
+      <p>Use our JWT Decoder to inspect structure, JWT Validator to verify signatures, and JWT Debugger for claim-by-claim analysis and expiration warnings.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Is decoding the same as validating a JWT?</summary>
+      <p>No. Decoding reads header and payload without proving authenticity. Always verify the signature before trusting claims in production.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Which JWT algorithm should I use?</summary>
+      <p>Use RS256 or ES256 for public APIs and OAuth. HS256 is fine for internal services when you can protect the shared secret.</p>
     </details>
     
   </div>

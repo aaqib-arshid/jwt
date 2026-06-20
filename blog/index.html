@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Browse JWT Blog on JWTValidator.org.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"JWT Blog","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"name":"JWT Beginner Guide — Start Here","url":"https://jwtvalidator.org/blog/posts/jwt-beginner-guide.html"},{"@type":"ListItem","position":2,"name":"JWT Security Best Practices","url":"https://jwtvalidator.org/blog/posts/jwt-security-best-practices.html"},{"@type":"ListItem","position":3,"name":"OAuth 2.0 vs JWT — What's the Difference?","url":"https://jwtvalidator.org/blog/posts/oauth-vs-jwt.html"},{"@type":"ListItem","position":4,"name":"Refresh Token Rotation — Secure Implementation","url":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"JWT Blog","numberOfItems":20,"itemListElement":[{"@type":"ListItem","position":1,"name":"JWT Beginner Guide — Start Here","url":"https://jwtvalidator.org/blog/posts/jwt-beginner-guide.html"},{"@type":"ListItem","position":2,"name":"JWT Security Best Practices","url":"https://jwtvalidator.org/blog/posts/jwt-security-best-practices.html"},{"@type":"ListItem","position":3,"name":"OAuth 2.0 vs JWT — What's the Difference?","url":"https://jwtvalidator.org/blog/posts/oauth-vs-jwt.html"},{"@type":"ListItem","position":4,"name":"Refresh Token Rotation — Secure Implementation","url":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html"},{"@type":"ListItem","position":5,"name":"How JWT Authentication Works — Complete Guide","url":"https://jwtvalidator.org/blog/posts/how-jwt-authentication-works.html"},{"@type":"ListItem","position":6,"name":"JWT vs Sessions — Which Is Better?","url":"https://jwtvalidator.org/blog/posts/jwt-vs-sessions.html"},{"@type":"ListItem","position":7,"name":"Common JWT Security Mistakes Developers Make","url":"https://jwtvalidator.org/blog/posts/common-jwt-security-mistakes.html"},{"@type":"ListItem","position":8,"name":"How to Decode JWT Tokens in JavaScript","url":"https://jwtvalidator.org/blog/posts/decode-jwt-javascript.html"},{"@type":"ListItem","position":9,"name":"JWT Expiration Handling — exp Claim Best Practices","url":"https://jwtvalidator.org/blog/posts/jwt-expiration-handling.html"},{"@type":"ListItem","position":10,"name":"RS256 JWT Explained — RSA Signature Verification","url":"https://jwtvalidator.org/blog/posts/jwt-rs256-explained.html"},{"@type":"ListItem","position":11,"name":"How to Decode and Verify Auth0 JWT Tokens","url":"https://jwtvalidator.org/blog/posts/jwt-auth0-decode-guide.html"},{"@type":"ListItem","position":12,"name":"Firebase JWT Verification — ID Token Guide","url":"https://jwtvalidator.org/blog/posts/jwt-firebase-verification.html"},{"@type":"ListItem","position":13,"name":"JWT Claims Reference — Registered & Custom Claims","url":"https://jwtvalidator.org/blog/posts/jwt-claims-reference.html"},{"@type":"ListItem","position":14,"name":"JWT Authentication in Microservices","url":"https://jwtvalidator.org/blog/posts/jwt-microservices-auth.html"},{"@type":"ListItem","position":15,"name":"JWT Testing Strategies for Developers","url":"https://jwtvalidator.org/blog/posts/jwt-testing-strategies.html"},{"@type":"ListItem","position":16,"name":"JWT in OAuth 2.0 and OpenID Connect","url":"https://jwtvalidator.org/blog/posts/jwt-oauth-openid-connect.html"},{"@type":"ListItem","position":17,"name":"JWT Algorithm Confusion Attack Explained","url":"https://jwtvalidator.org/blog/posts/jwt-algorithm-confusion-attack.html"},{"@type":"ListItem","position":18,"name":"Why Storing JWT in localStorage Is Dangerous","url":"https://jwtvalidator.org/blog/posts/jwt-localstorage-danger.html"},{"@type":"ListItem","position":19,"name":"JWT Validation at the API Gateway","url":"https://jwtvalidator.org/blog/posts/jwt-api-gateway-patterns.html"},{"@type":"ListItem","position":20,"name":"JWTValidator.org vs jwt.io — Feature Comparison","url":"https://jwtvalidator.org/blog/posts/jwt-io-alternative-comparison.html"}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -44,6 +44,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -79,7 +81,7 @@
   <header class="page-header">
     <h1>JWT Blog</h1>
     
-    <p class="lead">Browse 4 jwt blog on JWTValidator.org — free JWT decoder, validator, and learning resources.</p>
+    <p class="lead">Browse 20 jwt blog on JWTValidator.org — free JWT decoder, validator, and learning resources.</p>
   </header>
   <ul class="index-list">
     
@@ -101,6 +103,86 @@
     <li class="index-item card">
       <a href="/blog/posts/refresh-token-rotation.html"><h2>Refresh Token Rotation — Secure Implementation</h2></a>
       <p>Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/how-jwt-authentication-works.html"><h2>How JWT Authentication Works — Complete Guide</h2></a>
+      <p>Complete guide to JWT authentication: token structure, signing, verification, OAuth flows, and production patterns for APIs.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-vs-sessions.html"><h2>JWT vs Sessions — Which Is Better?</h2></a>
+      <p>JWT vs session cookies compared: scalability, revocation, security, and when to use each for web apps and APIs.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/common-jwt-security-mistakes.html"><h2>Common JWT Security Mistakes Developers Make</h2></a>
+      <p>Top JWT security mistakes: alg none attack, weak secrets, skipping verification, localStorage storage, and algorithm confusion.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/decode-jwt-javascript.html"><h2>How to Decode JWT Tokens in JavaScript</h2></a>
+      <p>Decode and verify JWT tokens in JavaScript and Node.js with jsonwebtoken, jose, and Web Crypto. Examples and security notes.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-expiration-handling.html"><h2>JWT Expiration Handling — exp Claim Best Practices</h2></a>
+      <p>Handle JWT expiration correctly: exp claim validation, clock skew, refresh flows, and client-side expiry checking.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-rs256-explained.html"><h2>RS256 JWT Explained — RSA Signature Verification</h2></a>
+      <p>Understand RS256 JWT signing: RSA keys, JWKS endpoints, OIDC verification, and when to choose RS256 over HS256.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-auth0-decode-guide.html"><h2>How to Decode and Verify Auth0 JWT Tokens</h2></a>
+      <p>Decode and verify Auth0 JWT access tokens and ID tokens. JWKS URL, audience validation, and common Auth0 errors.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-firebase-verification.html"><h2>Firebase JWT Verification — ID Token Guide</h2></a>
+      <p>Verify Firebase ID tokens on your backend. Project ID as audience, Google JWKS, and Node.js admin SDK patterns.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-claims-reference.html"><h2>JWT Claims Reference — Registered &amp; Custom Claims</h2></a>
+      <p>Complete JWT claims reference: iss, sub, aud, exp, nbf, iat, jti, scope, and custom claims with validation rules.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-microservices-auth.html"><h2>JWT Authentication in Microservices</h2></a>
+      <p>JWT patterns for microservices: gateway validation, service-to-service tokens, claim propagation, and zero-trust considerations.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-testing-strategies.html"><h2>JWT Testing Strategies for Developers</h2></a>
+      <p>Test JWT authentication: mock tokens, fixture secrets, exp manipulation, integration tests with real verify paths.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-oauth-openid-connect.html"><h2>JWT in OAuth 2.0 and OpenID Connect</h2></a>
+      <p>How JWT fits in OAuth 2.0 and OpenID Connect: access tokens, ID tokens, scopes, and validation requirements.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-algorithm-confusion-attack.html"><h2>JWT Algorithm Confusion Attack Explained</h2></a>
+      <p>Understand the JWT algorithm confusion vulnerability: RS256 to HS256 switch, prevention, and secure library configuration.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-localstorage-danger.html"><h2>Why Storing JWT in localStorage Is Dangerous</h2></a>
+      <p>Why localStorage JWT storage enables XSS token theft. Secure alternatives: httpOnly cookies, memory storage, and CSP.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-api-gateway-patterns.html"><h2>JWT Validation at the API Gateway</h2></a>
+      <p>Validate JWT at API gateway: Kong, AWS API Gateway, NGINX, Envoy. Centralized auth, claim forwarding, and rate limiting.</p>
+    </li>
+    
+    <li class="index-item card">
+      <a href="/blog/posts/jwt-io-alternative-comparison.html"><h2>JWTValidator.org vs jwt.io — Feature Comparison</h2></a>
+      <p>Compare JWTValidator.org and jwt.io: tools, privacy, guides, algorithms supported, and why developers choose each.</p>
     </li>
     
   </ul>

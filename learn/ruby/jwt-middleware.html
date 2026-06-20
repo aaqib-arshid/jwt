@@ -22,8 +22,8 @@
 <meta name="twitter:description" content="jwt middleware ruby example. Complete code sample with sign, verify, and debug using free JWT tools.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Middleware ruby Example — Code & Guide","description":"jwt middleware ruby example. Complete code sample with sign, verify, and debug using free JWT tools.","url":"https://jwtvalidator.org/learn/ruby/jwt-middleware.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/learn/ruby/jwt-middleware.html","inLanguage":"en"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is jwt middleware ruby?","acceptedAnswer":{"@type":"Answer","text":"A common JWT authentication topic. This guide explains jwt middleware ruby with examples and links to free decoder/validator tools."}},{"@type":"Question","name":"Are JWT tools on this site free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools run client-side in your browser with no account required."}},{"@type":"Question","name":"How do I debug JWT errors?","acceptedAnswer":{"@type":"Answer","text":"Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Middleware ruby Example — Code & Guide","description":"jwt middleware ruby example. Complete code sample with sign, verify, and debug using free JWT tools.","url":"https://jwtvalidator.org/learn/ruby/jwt-middleware.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-20","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/learn/ruby/jwt-middleware.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is jwt middleware ruby?","acceptedAnswer":{"@type":"Answer","text":"jwt middleware ruby is a common JWT authentication topic. This guide explains the concept with step-by-step instructions, code examples, and links to free decoder and validator tools."}},{"@type":"Question","name":"Are JWT tools on this site free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 13 tools run client-side in your browser with no account required. Tokens are never uploaded to a server."}},{"@type":"Question","name":"How do I debug JWT errors?","acceptedAnswer":{"@type":"Answer","text":"Use our JWT Decoder to inspect structure, JWT Validator to verify signatures, and JWT Debugger for claim-by-claim analysis and expiration warnings."}},{"@type":"Question","name":"Is decoding the same as validating a JWT?","acceptedAnswer":{"@type":"Answer","text":"No. Decoding reads header and payload without proving authenticity. Always verify the signature before trusting claims in production."}},{"@type":"Question","name":"Which JWT algorithm should I use?","acceptedAnswer":{"@type":"Answer","text":"Use RS256 or ES256 for public APIs and OAuth. HS256 is fine for internal services when you can protect the shared secret."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://jwtvalidator.org/learn/"},{"@type":"ListItem","position":3,"name":"RUBY","item":"https://jwtvalidator.org/learn/ruby/"},{"@type":"ListItem","position":4,"name":"JWT Middleware in Ruby","item":"https://jwtvalidator.org/learn/ruby/jwt-middleware.html"}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -46,6 +46,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -85,6 +87,7 @@
   <header class="page-header">
     <h1>JWT Middleware in Ruby</h1>
     <p class="lead">jwt middleware ruby example. Complete code sample with sign, verify, and debug using free JWT tools.</p>
+    
   </header>
 
   
@@ -126,17 +129,27 @@ decoded = JWT.decode(token, secret, true, { algorithm: 'HS256' })</code></pre>
     
     <details class="faq-item">
       <summary>What is jwt middleware ruby?</summary>
-      <p>A common JWT authentication topic. This guide explains jwt middleware ruby with examples and links to free decoder/validator tools.</p>
+      <p>jwt middleware ruby is a common JWT authentication topic. This guide explains the concept with step-by-step instructions, code examples, and links to free decoder and validator tools.</p>
     </details>
     
     <details class="faq-item">
       <summary>Are JWT tools on this site free?</summary>
-      <p>Yes. All tools run client-side in your browser with no account required.</p>
+      <p>Yes. All 13 tools run client-side in your browser with no account required. Tokens are never uploaded to a server.</p>
     </details>
     
     <details class="faq-item">
       <summary>How do I debug JWT errors?</summary>
-      <p>Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures.</p>
+      <p>Use our JWT Decoder to inspect structure, JWT Validator to verify signatures, and JWT Debugger for claim-by-claim analysis and expiration warnings.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Is decoding the same as validating a JWT?</summary>
+      <p>No. Decoding reads header and payload without proving authenticity. Always verify the signature before trusting claims in production.</p>
+    </details>
+    
+    <details class="faq-item">
+      <summary>Which JWT algorithm should I use?</summary>
+      <p>Use RS256 or ES256 for public APIs and OAuth. HS256 is fine for internal services when you can protect the shared secret.</p>
     </details>
     
   </div>
