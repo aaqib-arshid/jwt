@@ -16,6 +16,7 @@
   "nav": [
     { "label": "Tools", "href": "/#tools" },
     { "label": "Guides", "href": "/guides/" },
+    { "label": "Blog", "href": "/blog/" },
     { "label": "Glossary", "href": "/glossary/" },
     { "label": "Resources", "href": "/resources.html" },
     { "label": "Topics", "href": "/hubs/" },

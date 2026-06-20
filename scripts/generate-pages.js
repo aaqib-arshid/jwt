@@ -7,6 +7,7 @@ import {
   buildBreadcrumbs,
   buildFaqSchema,
   buildArticleSchema,
+  buildBlogPostingSchema,
   buildSoftwareAppSchema,
   buildBreadcrumbSchema,
   buildHowToSchema,
@@ -16,7 +17,14 @@ import {
   buildDefinedTermSchema,
   defaultHowToSteps,
 } from './lib/seo.js';
-import { quickAnswerSnippet, contentSupplement } from './lib/content-templates.js';
+import {
+  quickAnswerSnippet,
+  contentSupplement,
+  toolPageContent,
+  pillarPageContent,
+  toolHowToSteps,
+} from './lib/content-templates.js';
+import { extendedBlogPosts } from './lib/blog-articles.js';
 import { buildSearchIndex } from './lib/search-index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -111,8 +119,67 @@ function renderTryItPartial(tools) {
   return render(loadTemplate(join(TEMPLATES, 'partials', 'try-it.html')), { tryTools: tools.slice(0, 2) });
 }
 
+function renderToolTrustPartial() {
+  return render(loadTemplate(join(TEMPLATES, 'partials', 'tool-trust.html')), {});
+}
+
 function renderTrustLinksPartial() {
   return render(loadTemplate(join(TEMPLATES, 'partials', 'trust-links.html')), {});
+}
+
+function generatePillarPages(ctx) {
+  const { site } = ctx;
+  const pillars = readJson('pillar-pages.json', []);
+  const toolsMap = ctx.toolsMap;
+
+  for (const page of pillars) {
+    const path = page.path;
+    const tool = toolsMap.get(page.toolSlug);
+    page.path = path;
+    page.toolTitle = tool?.title || page.title;
+    const related = buildRelatedSections(page, ctx);
+    const breadcrumbs = [
+      { label: 'Home', href: '/' },
+      { label: page.title.split('—')[0].trim() },
+    ];
+    const howToSteps = page.howToSteps || defaultHowToSteps(page.primaryKeyword);
+    const quickAnswerHtml = quickAnswerSnippet({ keyword: page.primaryKeyword, type: 'guide' });
+    const meta = buildMeta({ ...page, path }, site);
+    const tryTools = resolveLinks([page.toolSlug, ...(page.relatedTools || []).slice(0, 1)], ctx.toolsMap, '/tools');
+    const schemas = [
+      buildSoftwareAppSchema(tool || page, site),
+      buildArticleSchema(page, site),
+      buildFaqSchema(page.faq),
+      buildBreadcrumbSchema(breadcrumbs, site, path),
+      buildHowToSchema({ ...page, howToSteps, title: page.title }, site),
+    ].filter(s => s && s.length > 2);
+
+    const filePath = page.path.replace(/^\//, '');
+    writePage(filePath, renderPage('pillar', {
+      site,
+      page,
+      path,
+      metaHtml: renderHeadPartial(meta, schemas),
+      breadcrumbsHtml: renderBreadcrumbsPartial(breadcrumbs),
+      relatedHtml: renderRelatedPartial(related),
+      faqHtml: renderFaqPartial(page.faq),
+      tryItHtml: renderTryItPartial(tryTools),
+      toolTrustHtml: renderToolTrustPartial(),
+      contentHtml: pillarPageContent(page),
+      quickAnswerHtml,
+      year: new Date().getFullYear(),
+      ...related,
+    }));
+
+    ctx.allPages.push({ path, lastmod: today(), priority: '0.95' });
+    ctx.searchEntries.push({
+      title: page.title,
+      description: page.description,
+      path,
+      type: 'pillar',
+      keywords: page.keywords || '',
+    });
+  }
 }
 
 function generateGlossaryPages(ctx) {
@@ -238,8 +305,9 @@ function generateContentPages(ctx, items, config) {
     });
     const meta = buildMeta({ ...item, path, ogType: ogType || 'website' }, site);
     const tryTools = resolveLinks(item.relatedTools?.slice(0, 2), ctx.toolsMap, '/tools');
+    const isBlog = snippetType === 'blog' || sectionLabel === 'Blog';
     const schemas = [
-      buildArticleSchema(item, site),
+      isBlog ? buildBlogPostingSchema(item, site) : buildArticleSchema(item, site),
       buildFaqSchema(item.faq),
       buildBreadcrumbSchema(breadcrumbs, site, path),
       buildHowToSchema({ ...item, howToSteps }, site),
@@ -435,7 +503,7 @@ export function generateAll() {
   const guides = readJson('guides.json');
   const algorithms = readJson('algorithms.json');
   const errors = readJson('errors.json');
-  const blogPosts = readJson('blog-posts.json');
+  const blogPosts = [...readJson('blog-posts.json'), ...extendedBlogPosts];
   const comparisons = readJson('comparisons.json');
   const claims = readJson('claims.json');
   const providers = readJson('providers.json');
@@ -470,8 +538,15 @@ export function generateAll() {
     const path = `/tools/${tool.slug}.html`;
     const related = buildRelatedSections(tool, ctx);
     const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'Tools', href: '/#tools' }, { label: tool.title }];
+    const howToSteps = toolHowToSteps(tool);
     const meta = buildMeta({ ...tool, path }, site);
-    const schemas = [buildSoftwareAppSchema(tool, site), buildFaqSchema(tool.faq), buildBreadcrumbSchema(breadcrumbs, site, path)];
+    const schemas = [
+      buildSoftwareAppSchema(tool, site),
+      buildFaqSchema(tool.faq),
+      buildBreadcrumbSchema(breadcrumbs, site, path),
+      buildHowToSchema({ ...tool, howToSteps, title: tool.title, description: tool.description }, site),
+    ].filter(s => s && s.length > 2);
+    const editorialHtml = toolPageContent(tool);
 
     writePage(`tools/${tool.slug}.html`, renderPage('tool', {
       site, page: tool, path,
@@ -479,7 +554,8 @@ export function generateAll() {
       breadcrumbsHtml: renderBreadcrumbsPartial(breadcrumbs),
       relatedHtml: renderRelatedPartial(related),
       faqHtml: renderFaqPartial(tool.faq),
-      contentHtml: '',
+      editorialHtml,
+      toolTrustHtml: renderToolTrustPartial(),
       exampleToken: examples.hs256?.token || '',
       toolScript: tool.script,
       year: new Date().getFullYear(),
@@ -492,7 +568,8 @@ export function generateAll() {
   generateContentPages(ctx, guides, { site, sectionLabel: 'Guides', sectionHref: '/guides/', filePrefix: 'guides', urlPrefix: '/guides', priority: '0.8', snippetType: 'guide' });
   generateContentPages(ctx, algorithms, { site, sectionLabel: 'Algorithms', sectionHref: '/algorithms/', filePrefix: 'algorithms', urlPrefix: '/algorithms', priority: '0.8', snippetType: 'algorithm' });
   generateContentPages(ctx, errors, { site, sectionLabel: 'Errors', sectionHref: '/errors/', filePrefix: 'errors', urlPrefix: '/errors', priority: '0.75', snippetType: 'error' });
-  generateContentPages(ctx, blogPosts.map(p => ({ ...p, date: p.date })), { site, sectionLabel: 'Blog', sectionHref: '/blog/', filePrefix: 'blog/posts', urlPrefix: '/blog/posts', priority: '0.8', ogType: 'article', snippetType: 'blog' });
+  generateContentPages(ctx, blogPosts.map(p => ({ ...p, date: p.date, ogType: 'article' })), { site, sectionLabel: 'Blog', sectionHref: '/blog/', filePrefix: 'blog/posts', urlPrefix: '/blog/posts', priority: '0.8', ogType: 'article', snippetType: 'blog' });
+  generatePillarPages(ctx);
   generateContentPages(ctx, comparisons, { site, sectionLabel: 'Compare', sectionHref: '/compare/', filePrefix: 'compare', urlPrefix: '/compare', priority: '0.7', snippetType: 'compare' });
   generateContentPages(ctx, claims, { site, sectionLabel: 'Claims', sectionHref: '/claims/', filePrefix: 'claims', urlPrefix: '/claims', priority: '0.7', snippetType: 'claim' });
   generateContentPages(ctx, providers, { site, sectionLabel: 'Providers', sectionHref: '/providers/', filePrefix: 'providers', urlPrefix: '/providers', priority: '0.7', snippetType: 'provider' });
@@ -536,7 +613,7 @@ export function generateAll() {
     ]),
     toolCards: tools.map(t => ({ icon: t.icon, title: t.title, description: t.description, href: `/tools/${t.slug}.html` })),
     guideCards: guides.slice(0, 6).map(g => ({ title: g.title, description: g.description, href: `/guides/${g.slug}.html` })),
-    blogCards: blogPosts.slice(0, 3).map(b => ({ title: b.title, description: b.description, href: `/blog/posts/${b.slug}.html` })),
+    blogCards: blogPosts.slice(0, 6).map(b => ({ title: b.title, description: b.description, href: `/blog/posts/${b.slug}.html` })),
     year: new Date().getFullYear(),
   }));
   ctx.allPages.unshift({ path: '/', lastmod: today(), priority: '1.0' });

@@ -26,37 +26,58 @@ export function guideContent({ title, keyword, lang, fixType }) {
 
   return `<h2>${title}</h2>
 <p>This guide explains <strong>${keyword}</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>
+${whatIsJwtSection()}
+${howValidationWorksSection(keyword)}
 <h2>Quick Answer</h2>
 <p>Use our ${TOOL_LINKS.decoder} to inspect the token, then ${TOOL_LINKS.validator} to verify the signature. All processing runs in your browser — no upload required.</p>
 ${fixBlock}
-<h2>Step-by-Step</h2>
+<h2>Step-by-Step Guide</h2>
 <ol>
-<li>Copy the JWT from your app, API response, or browser dev tools</li>
+<li>Copy the JWT from your app, API response, or browser dev tools (Network tab → Authorization header)</li>
 <li>Paste into the ${TOOL_LINKS.decoder} — review header, payload, and claims</li>
-<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>
-<li>Verify signature with ${TOOL_LINKS.validator} using the correct secret or JWKS URL</li>
-<li>Use ${TOOL_LINKS.debugger} for claim-by-claim warnings and timeline analysis</li>
+<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims match your configuration</li>
+<li>Verify signature with ${TOOL_LINKS.validator} using the correct secret (HS256) or JWKS URL (RS256)</li>
+<li>Use ${TOOL_LINKS.debugger} for claim-by-claim warnings and expiration timeline</li>
+<li>Fix any errors using our <a href="/errors/">JWT Error Directory</a></li>
 </ol>
+<h2>Real-World Example</h2>
+<p>When debugging <strong>${keyword}</strong>, developers typically receive a 401 Unauthorized from an API. The token may be expired, signed with the wrong key, or missing required claims. Decode first to inspect — never skip signature verification before trusting payload data.</p>
+<pre><code>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</code></pre>
 ${langBlock}
+${commonErrorsSection()}
+${securityBestPracticesSection()}
 <h2>Related Resources</h2>
-<p>Start with our <a href="/guides/jwt-basics.html">JWT Basics</a> guide or follow the <a href="/learning-path.html">JWT Learning Path</a>. See also <a href="/compare/jwt-io-alternative.html">JWTValidator vs jwt.io</a>, <a href="/hubs/security.html">JWT Security Hub</a>, and <a href="/resources.html">full resource directory</a>.</p>`;
+<p>Start with our <a href="/guides/jwt-basics.html">JWT Basics</a> guide or follow the <a href="/learning-path.html">JWT Learning Path</a>. See also <a href="/compare/jwt-io-alternative.html">JWTValidator vs jwt.io</a>, <a href="/hubs/security.html">JWT Security Hub</a>, <a href="/blog/posts/jwt-security-best-practices.html">Security Best Practices</a>, and <a href="/resources.html">full resource directory</a>.</p>`;
 }
 
 export function errorContent({ title, keyword, errorCode }) {
   return `<h2>${title}</h2>
-<p>Encountering <strong>${keyword}</strong> is common when working with JWT authentication. This page explains the cause and how to fix it.</p>
+<p>Encountering <strong>${keyword}</strong> is common when working with JWT authentication. This page explains the cause, step-by-step fix, and prevention.</p>
 ${errorCode ? `<p><strong>Error code:</strong> <code>${errorCode}</code></p>` : ''}
+${whatIsJwtSection()}
 <h2>What Causes This Error?</h2>
-<p>JWT libraries throw this error when token validation fails. Common triggers include wrong secret/key, algorithm mismatch, clock skew, or modified token content.</p>
-<h2>How to Fix</h2>
+<p>JWT libraries throw this error when token validation fails. Common triggers include wrong secret/key, algorithm mismatch, clock skew, modified token content, or expired <code>exp</code> claim.</p>
+<ul>
+<li><strong>Wrong secret or key</strong> — HMAC secret mismatch or incorrect JWKS endpoint</li>
+<li><strong>Algorithm mismatch</strong> — token signed with RS256 but verified as HS256</li>
+<li><strong>Expired token</strong> — <code>exp</code> claim is in the past</li>
+<li><strong>Invalid issuer/audience</strong> — <code>iss</code> or <code>aud</code> does not match config</li>
+<li><strong>Malformed token</strong> — not exactly three Base64URL segments</li>
+</ul>
+<h2>How to Fix — Step by Step</h2>
 <ol>
 <li>Paste the token into ${TOOL_LINKS.decoder} — confirm structure is valid (3 segments)</li>
 <li>Check the <code>alg</code> header claim matches your verification method</li>
-<li>Verify with ${TOOL_LINKS.validator} using the correct: correct secret (HS256) or JWKS URL (RS256)</li>
+<li>Verify with ${TOOL_LINKS.validator} using the correct secret (HS256) or JWKS URL (RS256)</li>
 <li>Inspect claims with ${TOOL_LINKS.debugger} for expiration and issuer issues</li>
+<li>Compare against provider docs (Auth0, Cognito, Firebase) for expected iss and aud values</li>
 </ol>
+<h2>Developer Debugging Tips</h2>
+<p>Log the error message from your JWT library — it usually indicates whether signature, expiration, or claim validation failed. Never log the full token in production.</p>
+${commonErrorsSection(keyword)}
 <h2>Prevention</h2>
-<p>Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side. Use short-lived access tokens with refresh token rotation.</p>`;
+<p>Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side. Use short-lived access tokens with refresh token rotation. Whitelist allowed algorithms explicitly.</p>
+${securityBestPracticesSection()}`;
 }
 
 export function claimContent({ claim, name, description }) {
@@ -231,17 +252,30 @@ val claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(token)</cod
 export function buildFaq(keyword, type = 'guide') {
   const faqs = {
     guide: [
-      { q: `What is ${keyword}?`, a: `A common JWT authentication topic. This guide explains ${keyword} with examples and links to free decoder/validator tools.` },
-      { q: 'Are JWT tools on this site free?', a: 'Yes. All tools run client-side in your browser with no account required.' },
-      { q: 'How do I debug JWT errors?', a: 'Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures.' },
+      { q: `What is ${keyword}?`, a: `${keyword} is a common JWT authentication topic. This guide explains the concept with step-by-step instructions, code examples, and links to free decoder and validator tools.` },
+      { q: 'Are JWT tools on this site free?', a: 'Yes. All 13 tools run client-side in your browser with no account required. Tokens are never uploaded to a server.' },
+      { q: 'How do I debug JWT errors?', a: 'Use our JWT Decoder to inspect structure, JWT Validator to verify signatures, and JWT Debugger for claim-by-claim analysis and expiration warnings.' },
+      { q: 'Is decoding the same as validating a JWT?', a: 'No. Decoding reads header and payload without proving authenticity. Always verify the signature before trusting claims in production.' },
+      { q: 'Which JWT algorithm should I use?', a: 'Use RS256 or ES256 for public APIs and OAuth. HS256 is fine for internal services when you can protect the shared secret.' },
     ],
     error: [
-      { q: `Why am I seeing ${keyword}?`, a: 'This error occurs when JWT validation fails. Check secret/key, algorithm, expiration, and token structure.' },
-      { q: 'Can I fix this without the secret?', a: 'You can decode the payload without the secret, but signature verification requires the correct key.' },
+      { q: `Why am I seeing ${keyword}?`, a: 'This error occurs when JWT validation fails — wrong secret, algorithm mismatch, expired token, or invalid claims.' },
+      { q: 'Can I fix this without the secret?', a: 'You can decode the payload without the secret, but signature verification requires the correct key or JWKS endpoint.' },
+      { q: 'How do I prevent this error?', a: 'Validate exp, iss, and aud on every request. Use short-lived tokens, algorithm whitelists, and correct key configuration.' },
+      { q: 'Does clock skew cause JWT errors?', a: 'Yes. Allow 30–60 seconds tolerance for exp and nbf validation. Server clocks must be synchronized with NTP.' },
     ],
     claim: [
-      { q: `What does the claim mean in JWT?`, a: `See this page for a full explanation with examples and validation rules.` },
-      { q: 'How do I view this claim?', a: 'Paste your JWT into our free JWT Decoder to see all claims in the payload.' },
+      { q: `What does this JWT claim mean?`, a: `See this page for a full explanation with JSON examples and validation rules for production APIs.` },
+      { q: 'How do I view this claim in a token?', a: 'Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly.' },
+      { q: 'Must I validate this claim server-side?', a: 'Registered claims like exp, iss, aud, and sub should always be validated during token verification.' },
+    ],
+    blog: [
+      { q: `Who is this article for?`, a: 'Developers implementing JWT authentication in web apps, APIs, and microservices — from beginners to senior engineers.' },
+      { q: 'Are JWT tokens safe to paste in online tools?', a: 'Our tools process everything locally. Avoid pasting production secrets; use test tokens when possible.' },
+    ],
+    algorithm: [
+      { q: `When should I use this algorithm?`, a: 'See the comparison table on this page. RS256/ES256 for OAuth and public APIs; HS256 for trusted internal services only.' },
+      { q: 'Can I switch algorithms on existing tokens?', a: 'No. Changing alg requires re-issuing tokens. Verifiers must whitelist allowed algorithms.' },
     ],
   };
   return faqs[type] || faqs.guide;
@@ -253,9 +287,12 @@ export function contentSupplement({ keyword, type = 'guide' }) {
 
   const blocks = {
     guide: `<h2>Understanding ${keyword} in Production</h2>
-<p>Developers search for <strong>${keyword}</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side.</p>
+<p>Developers search for <strong>${keyword}</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side — decoding alone proves nothing about authenticity.</p>
+<h2>JWT Structure Recap</h2>
+<p>Every JWT has three dot-separated segments: header (algorithm), payload (claims), signature (proof). Use ${TOOL_LINKS.decoder} to inspect and ${TOOL_LINKS.validator} to verify before trusting any claim value in production code.</p>
 <h2>Common Pitfalls</h2>
-<ul><li>Algorithm confusion (<code>none</code> attack)</li><li>Secrets in the payload</li><li>Ignoring clock skew on <code>exp</code></li><li>Weak HMAC secrets</li><li>Skipping signature verification</li></ul>
+<ul><li>Algorithm confusion (<code>none</code> attack) — whitelist allowed algorithms</li><li>Secrets in the payload — payload is only Base64-encoded, not encrypted</li><li>Ignoring clock skew on <code>exp</code> and <code>nbf</code></li><li>Weak HMAC secrets — use 256-bit random keys</li><li>Skipping signature verification — always call verify(), not decode()</li><li>Storing tokens in localStorage — XSS can steal them</li></ul>
+<h2>Further Reading</h2>
 ${links}`,
     error: `<h2>Debugging ${keyword}</h2>
 <p>The error <strong>${keyword}</strong> means JWT verification failed. Decode the token, check <code>alg</code>, verify <code>exp</code> is not past, and confirm the secret or JWKS URL matches your auth provider.</p>
@@ -274,4 +311,125 @@ ${links}`,
 ${links}`,
   };
   return blocks[type] || blocks.guide;
+}
+
+/** Shared SEO sections — appended to pillar and tool pages */
+export function whatIsJwtSection() {
+  return `<h2>What Is a JWT?</h2>
+<p>A JSON Web Token (JWT) is a compact, URL-safe string defined by <a href="/glossary/rfc7519.html">RFC 7519</a>. It encodes claims as JSON and attaches a cryptographic signature so receivers can verify the token was issued by a trusted party and was not tampered with.</p>
+<p>JWTs consist of three Base64URL-encoded parts separated by dots:</p>
+<ul>
+<li><strong>Header</strong> — algorithm (<code>alg</code>) and token type (<code>typ</code>)</li>
+<li><strong>Payload</strong> — claims such as <code>sub</code>, <code>iss</code>, <code>aud</code>, <code>exp</code></li>
+<li><strong>Signature</strong> — HMAC or asymmetric signature over header + payload</li>
+</ul>
+<p>JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and most modern API authentication systems.</p>`;
+}
+
+export function howValidationWorksSection(keyword = 'JWT validation') {
+  return `<h2>How JWT Validation Works</h2>
+<p><strong>${keyword}</strong> requires more than Base64 decoding. A secure verifier performs these steps on every request:</p>
+<ol>
+<li><strong>Parse structure</strong> — confirm exactly three segments separated by dots</li>
+<li><strong>Verify signature</strong> — HMAC with shared secret, or asymmetric verify with public key from JWKS</li>
+<li><strong>Validate algorithm</strong> — reject unexpected <code>alg</code> values including <code>none</code></li>
+<li><strong>Check time claims</strong> — <code>exp</code> not past, <code>nbf</code> not future, allow clock skew</li>
+<li><strong>Validate iss and aud</strong> — issuer and audience match your application configuration</li>
+</ol>
+<p>Use ${TOOL_LINKS.validator} for HMAC verification or ${TOOL_LINKS.jwks} for RS256/ES256 with JWKS endpoints.</p>`;
+}
+
+export function commonErrorsSection(context = '') {
+  return `<h2>Common JWT Errors</h2>
+<p>${context ? `When troubleshooting <strong>${context}</strong>, ` : ''}developers encounter these errors frequently:</p>
+<ul>
+<li><a href="/errors/token-expired.html">Token expired</a> — <code>exp</code> claim is in the past</li>
+<li><a href="/errors/invalid-signature.html">Invalid signature</a> — wrong secret, key, or algorithm</li>
+<li><a href="/errors/malformed-jwt.html">Malformed JWT</a> — not three valid Base64URL segments</li>
+<li><a href="/errors/jwt-alg-not-allowed-nodejs.html">Algorithm not allowed</a> — alg confusion or none attack attempt</li>
+</ul>
+<p>Browse the full <a href="/errors/">JWT Error Directory</a> for fixes with step-by-step instructions.</p>`;
+}
+
+export function securityBestPracticesSection() {
+  return `<h2>Best Practices for JWT Security</h2>
+<ul>
+<li>Never trust decoded payload without signature verification</li>
+<li>Use short-lived access tokens (5–15 minutes) with refresh rotation</li>
+<li>Whitelist allowed algorithms — never accept <code>alg: none</code></li>
+<li>Store tokens in httpOnly cookies, not localStorage (XSS risk)</li>
+<li>Use RS256/ES256 for public APIs; protect HMAC secrets with 256+ bit random keys</li>
+<li>Validate <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>sub</code> on every request</li>
+<li>Never log full bearer tokens in application logs</li>
+</ul>
+<p>Read our <a href="/blog/posts/jwt-security-best-practices.html">JWT Security Best Practices</a> article and explore the <a href="/hubs/security.html">Security Hub</a>.</p>`;
+}
+
+/** Editorial content for tool landing pages */
+export function toolPageContent(tool) {
+  const slug = tool.slug;
+  const intros = {
+    'jwt-decoder': `<h2>What This JWT Decoder Does</h2><p>Instantly decode any JSON Web Token into readable JSON. View the header (algorithm, type), payload (claims), and signature segment. Perfect for debugging OAuth, API authentication, and Auth0/Firebase/Cognito tokens.</p>`,
+    'jwt-validator': `<h2>What This JWT Validator Does</h2><p>Verify JWT signatures with your HMAC secret (HS256/384/512). Confirms the token was not modified and was signed with the correct key. Pair with our JWKS Validator for RS256 tokens.</p>`,
+    'jwt-debugger': `<h2>What This JWT Debugger Does</h2><p>Deep inspection of JWT claims with expiration timeline, validation warnings, and issuer/audience checks. Built for OAuth 2.0 and OpenID Connect development workflows.</p>`,
+    'jwt-encoder': `<h2>What This JWT Encoder Does</h2><p>Create signed JWT tokens with HS256, RS256, ES256, PS256, and EdDSA. Test authentication flows, generate fixtures for unit tests, and learn how signing works.</p>`,
+    'jwks-validator': `<h2>What This JWKS Validator Does</h2><p>Verify RS256/ES256 JWT tokens using a JWKS endpoint. Fetches public keys client-side from your OIDC provider and validates signatures against the matching key ID.</p>`,
+  };
+  const intro = intros[slug] || `<h2>About This Tool</h2><p>${tool.description}</p>`;
+
+  return `${intro}
+${whatIsJwtSection()}
+${howValidationWorksSection(tool.title)}
+<h2>How to Use This Tool</h2>
+<ol>
+<li>Copy a JWT from your application, API response, or browser dev tools</li>
+<li>Paste into the tool above and click the primary action button</li>
+<li>Review decoded output, validation result, or error message</li>
+<li>Use Copy buttons to export results for documentation or support tickets</li>
+</ol>
+<h2>Example Use Cases</h2>
+<ul>
+<li>Debug 401 Unauthorized errors from REST APIs</li>
+<li>Inspect OAuth access tokens and OpenID Connect ID tokens</li>
+<li>Verify token expiration before implementing refresh logic</li>
+<li>Learn JWT structure during onboarding or security reviews</li>
+</ul>
+${commonErrorsSection()}
+${securityBestPracticesSection()}
+<p>Explore <a href="/guides/">JWT Guides</a>, <a href="/blog/">Blog</a>, and <a href="/learning-path.html">Learning Path</a> for deeper tutorials.</p>`;
+}
+
+/** Pillar landing page content (Phase 7 programmatic SEO) */
+export function pillarPageContent(page) {
+  return `<h2>${page.primaryKeyword.charAt(0).toUpperCase() + page.primaryKeyword.slice(1)} — Complete Overview</h2>
+<p>This page is your starting point for <strong>${page.primaryKeyword}</strong>. JWTValidator.org provides free, privacy-first tools used by developers worldwide — all processing happens in your browser with zero server upload.</p>
+${whatIsJwtSection()}
+${howValidationWorksSection(page.primaryKeyword)}
+<h2>Step-by-Step: ${page.primaryKeyword.charAt(0).toUpperCase() + page.primaryKeyword.slice(1)}</h2>
+<ol>
+<li>Open the <a href="/tools/${page.toolSlug}.html">${page.title.split('—')[0].trim()}</a> tool</li>
+<li>Paste your JWT token from Authorization header or API response</li>
+<li>Review decoded claims: <code>sub</code>, <code>iss</code>, <code>aud</code>, <code>exp</code>, <code>alg</code></li>
+<li>Verify signature with correct secret or JWKS URL</li>
+<li>Fix errors using our <a href="/errors/">error guides</a> if validation fails</li>
+</ol>
+<h2>Why Developers Choose JWTValidator.org</h2>
+<ul>
+<li><strong>vs jwt.io</strong> — 13 tools, 1,000+ guides, bulk decode, OAuth inspector (<a href="/compare/jwt-io-alternative.html">comparison</a>)</li>
+<li><strong>Privacy</strong> — no account, no upload, no token storage</li>
+<li><strong>Algorithms</strong> — HS256/384/512, RS256/384/512, PS256/384/512, ES256/384/512, EdDSA</li>
+<li><strong>Learning</strong> — glossary, learning path, 13 language code examples</li>
+</ul>
+${commonErrorsSection(page.primaryKeyword)}
+${securityBestPracticesSection()}
+<p>Related: <a href="/jwt-decoder.html">JWT Decoder</a> · <a href="/jwt-validator.html">JWT Validator</a> · <a href="/jwt-debugger.html">JWT Debugger</a> · <a href="/jwt-signature-verification.html">Signature Verification</a></p>`;
+}
+
+export function toolHowToSteps(tool) {
+  return [
+    { name: 'Open the tool', text: `Navigate to the ${tool.title} page on JWTValidator.org.` },
+    { name: 'Paste JWT token', text: 'Copy your token from Authorization header or API response and paste into the input field.' },
+    { name: 'Run validation', text: 'Click the primary button to decode, validate, or debug the token.' },
+    { name: 'Review results', text: 'Inspect output, copy results, or follow linked guides if errors occur.' },
+  ];
 }

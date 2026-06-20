@@ -8,12 +8,16 @@
     "content": "<h2>What Is the exp Claim?</h2>\n<p>The <code>exp</code> (Expiration Time) claim is a Unix timestamp indicating when the token must no longer be accepted.</p>\n<h2>Example</h2>\n<pre><code>{ \"exp\": 1735689600 }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>exp</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Reject tokens where exp is in the past. Allow small clock skew (30s) server-side.</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",
@@ -48,12 +52,16 @@
     "content": "<h2>What Is the sub Claim?</h2>\n<p>The <code>sub</code> (Subject) claim identifies the principal (user or entity) that is the subject of the token.</p>\n<h2>Example</h2>\n<pre><code>{ \"sub\": \"user-123\" }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>sub</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Must match the expected user ID. This is the primary identity claim.</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",
@@ -88,12 +96,16 @@
     "content": "<h2>What Is the iss Claim?</h2>\n<p>The <code>iss</code> (Issuer) claim identifies the principal that issued the JWT, typically your auth server URL.</p>\n<h2>Example</h2>\n<pre><code>{ \"iss\": \"https://auth.example.com\" }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>iss</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Must match your configured issuer URL exactly.</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",
@@ -128,12 +140,16 @@
     "content": "<h2>What Is the aud Claim?</h2>\n<p>The <code>aud</code> (Audience) claim identifies the recipients that the JWT is intended for — your API or client ID.</p>\n<h2>Example</h2>\n<pre><code>{ \"aud\": \"api.example.com\" }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>aud</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Must include your API identifier or client ID.</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",
@@ -168,12 +184,16 @@
     "content": "<h2>What Is the iat Claim?</h2>\n<p>The <code>iat</code> (Issued At) claim is a Unix timestamp of when the token was created.</p>\n<h2>Example</h2>\n<pre><code>{ \"iat\": 1700000000 }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>iat</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Reject tokens issued too far in the future (clock skew).</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",
@@ -208,12 +228,16 @@
     "content": "<h2>What Is the nbf Claim?</h2>\n<p>The <code>nbf</code> (Not Before) claim is a Unix timestamp before which the token must not be accepted.</p>\n<h2>Example</h2>\n<pre><code>{ \"nbf\": 1700000000 }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>nbf</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Reject tokens where current time is before nbf.</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",
@@ -248,12 +272,16 @@
     "content": "<h2>What Is the jti Claim?</h2>\n<p>The <code>jti</code> (JWT ID) claim provides a unique identifier for the token, used for revocation and replay prevention.</p>\n<h2>Example</h2>\n<pre><code>{ \"jti\": \"unique-token-id\" }</code></pre>\n<h2>How to Inspect</h2>\n<p>Paste any JWT into <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to see the <code>jti</code> claim in the decoded payload. Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for validation warnings related to this claim.</p>\n<h2>Validation Rules</h2>\n<p>Use with a revocation list to prevent token replay.</p>",
     "faq": [
       {
-        "q": "What does the claim mean in JWT?",
-        "a": "See this page for a full explanation with examples and validation rules."
+        "q": "What does this JWT claim mean?",
+        "a": "See this page for a full explanation with JSON examples and validation rules for production APIs."
       },
       {
-        "q": "How do I view this claim?",
-        "a": "Paste your JWT into our free JWT Decoder to see all claims in the payload."
+        "q": "How do I view this claim in a token?",
+        "a": "Paste your JWT into our free JWT Decoder or Claims Viewer to see all payload claims instantly."
+      },
+      {
+        "q": "Must I validate this claim server-side?",
+        "a": "Registered claims like exp, iss, aud, and sub should always be validated during token verification."
       }
     ],
     "cluster": "claims",

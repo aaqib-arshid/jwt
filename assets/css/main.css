@@ -657,6 +657,26 @@ textarea:focus, input:focus, select:focus {
 .featured-snippet p { margin: 0; color: var(--color-text); }
 .featured-snippet a { color: var(--color-info); }
 
+/* Pillar & tool editorial */
+.pillar-cta {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+}
+.pillar-cta h2 { margin-top: 0; font-size: 1.25rem; }
+.btn-lg { padding: 0.75rem 1.5rem; font-size: 1.05rem; }
+
+.tool-trust { margin: 1.5rem 0; }
+.tool-trust h2 { font-size: 1.125rem; margin-top: 0; }
+.trust-checklist { margin: 0.75rem 0; padding-left: 1.25rem; }
+.trust-checklist li { margin-bottom: 0.5rem; color: var(--color-text); }
+.trust-warning { margin: 1rem 0 0; font-size: 0.875rem; color: var(--color-warning, #d97706); }
+
+.tool-editorial { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+
+.article-meta { font-size: 0.875rem; color: var(--color-muted); margin-top: 0.5rem; }
+
 /* Resources page */
 .resources-search { margin-bottom: 2rem; }
 .resources-search input { font-family: var(--font-sans); }

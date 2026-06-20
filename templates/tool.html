@@ -13,10 +13,16 @@
 
   <section class="example-section card">
     <h2>Example JWT</h2>
-    <p>Click to load a sample token:</p>
+    <p>Click to load a sample token for testing (HS256, no production secrets):</p>
     <button type="button" class="btn btn-secondary" id="load-example">Load HS256 Example</button>
     <textarea id="example-token" class="hidden" readonly>{{exampleToken}}</textarea>
   </section>
+
+  {{{toolTrustHtml}}}
+
+  <div class="prose tool-editorial">
+    {{{editorialHtml}}}
+  </div>
 
   {{{faqHtml}}}
   {{{relatedHtml}}}

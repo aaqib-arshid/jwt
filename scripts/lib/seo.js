@@ -2,22 +2,42 @@
  * Advanced SEO schema and metadata builders for global JWT search dominance.
  */
 
+export function optimizeTitle(title, maxLen = 60) {
+  if (!title || title.length <= maxLen) return title;
+  const trimmed = title.slice(0, maxLen - 1);
+  const lastSpace = trimmed.lastIndexOf(' ');
+  return (lastSpace > 40 ? trimmed.slice(0, lastSpace) : trimmed).trim() + '…';
+}
+
+export function optimizeDescription(desc, minLen = 140, maxLen = 160) {
+  if (!desc) return desc;
+  let d = desc.trim();
+  if (d.length > maxLen) {
+    d = d.slice(0, maxLen - 1);
+    const lastSpace = d.lastIndexOf(' ');
+    d = (lastSpace > minLen ? d.slice(0, lastSpace) : d).trim() + '…';
+  }
+  return d;
+}
+
 export function buildMeta(page, site) {
   const url = `${site.domain}${page.path}`;
+  const title = optimizeTitle(page.seoTitle || page.title);
+  const description = optimizeDescription(page.description);
   return {
-    title: page.seoTitle || page.title,
-    description: page.description,
+    title,
+    description,
     keywords: page.keywords || '',
     canonical: url,
-    ogTitle: page.seoTitle || page.title,
-    ogDescription: page.description,
+    ogTitle: title,
+    ogDescription: description,
     ogUrl: url,
     ogType: page.ogType || 'website',
     ogSiteName: site.name,
     ogImage: page.ogImage || site.ogImage || `${site.domain}/assets/img/og-default.svg`,
     twitterCard: 'summary_large_image',
-    twitterTitle: page.seoTitle || page.title,
-    twitterDescription: page.description,
+    twitterTitle: title,
+    twitterDescription: description,
     twitterImage: page.ogImage || site.ogImage || `${site.domain}/assets/img/og-default.svg`,
     hreflangTags: buildHreflangTags(page, site),
     robots: page.robots || 'index, follow, max-snippet:-1, max-image-preview:large',
@@ -82,15 +102,16 @@ export function buildHowToSchema(page, site) {
 }
 
 export function buildArticleSchema(page, site) {
+  const type = page.schemaType || 'TechArticle';
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'TechArticle',
-    headline: page.seoTitle || page.title,
-    description: page.description,
+    '@type': type,
+    headline: optimizeTitle(page.seoTitle || page.title),
+    description: optimizeDescription(page.description),
     url: `${site.domain}${page.path}`,
     author: { '@type': 'Organization', name: page.author || site.name, url: site.domain },
     datePublished: page.date || page.lastUpdated || '2026-01-01',
-    dateModified: page.lastUpdated || new Date().toISOString().split('T')[0],
+    dateModified: page.lastUpdated || page.date || new Date().toISOString().split('T')[0],
     publisher: {
       '@type': 'Organization', name: site.name, url: site.domain,
       logo: { '@type': 'ImageObject', url: `${site.domain}/assets/img/logo.svg` },
@@ -100,19 +121,24 @@ export function buildArticleSchema(page, site) {
   });
 }
 
+export function buildBlogPostingSchema(page, site) {
+  return buildArticleSchema({ ...page, schemaType: 'BlogPosting' }, site);
+}
+
 export function buildSoftwareAppSchema(tool, site) {
   const url = `${site.domain}/tools/${tool.slug}.html`;
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: tool.title,
-    description: tool.description,
+    description: optimizeDescription(tool.description),
     url,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    featureList: ['JWT decode', 'encode', 'validate', 'debug', 'offline capable', 'no upload'],
+    featureList: ['JWT decode', 'encode', 'validate', 'debug', 'offline capable', 'no upload', 'client-side only'],
+    screenshot: `${site.domain}/assets/img/og-default.svg`,
   });
 }
 

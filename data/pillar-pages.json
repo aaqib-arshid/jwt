@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "jwt-validator",
+    "path": "/jwt-validator.html",
+    "title": "JWT Validator Online — Verify JWT Signatures Free",
+    "seoTitle": "JWT Validator Online | Verify JWT Signature Free",
+    "description": "Validate JWT token signatures online with HS256, JWKS, and RS256. Free client-side JWT validator — no upload, instant verification.",
+    "keywords": "jwt validator,jwt signature verification,verify jwt token online,validate jwt signature",
+    "primaryKeyword": "jwt validator",
+    "toolSlug": "jwt-validator",
+    "relatedTools": ["jwt-decoder", "jwt-debugger", "jwks-validator"],
+    "relatedGuides": ["jwt-invalid-signature", "jwt-authentication-explained", "jwt-basics"],
+    "relatedArticles": ["jwt-security-best-practices", "how-jwt-authentication-works"],
+    "faq": [
+      { "q": "How do I verify a JWT signature online?", "a": "Paste your token and secret (HS256) or JWKS URL (RS256) into our JWT Validator. Signature verification runs entirely in your browser." },
+      { "q": "Can I validate RS256 tokens without uploading keys?", "a": "Yes. Use the JWKS Validator with your provider's public key endpoint. Keys are fetched client-side only." },
+      { "q": "What happens if signature validation fails?", "a": "The token was modified, signed with a different key, or uses the wrong algorithm. See our invalid signature guide for debugging steps." },
+      { "q": "Is decoding the same as validating?", "a": "No. Decoding reads header and payload without proving authenticity. Always verify the signature before trusting claims." },
+      { "q": "Are production tokens safe to paste here?", "a": "All processing is local. Never paste production secrets into any online tool. Use test tokens when possible." }
+    ]
+  },
+  {
+    "slug": "jwt-decoder",
+    "path": "/jwt-decoder.html",
+    "title": "JWT Decoder Online — Decode JWT Token Instantly",
+    "seoTitle": "JWT Decoder Online | Decode JWT Token Free",
+    "description": "Decode JWT tokens online instantly. View header, payload, and claims. 100% browser-based — no server upload.",
+    "keywords": "jwt decoder,decode jwt token,jwt decode online,jwt parser,jwt payload viewer",
+    "primaryKeyword": "jwt decoder",
+    "toolSlug": "jwt-decoder",
+    "relatedTools": ["jwt-validator", "jwt-debugger", "jwt-encoder"],
+    "relatedGuides": ["jwt-basics", "jwt-authentication-explained"],
+    "relatedArticles": ["decode-jwt-javascript", "jwt-beginner-guide"],
+    "faq": [
+      { "q": "How do I decode a JWT token?", "a": "Paste the token into our JWT Decoder. It splits the three Base64URL segments and displays header and payload as JSON." },
+      { "q": "Can I decode JWT without the secret?", "a": "Yes. Header and payload are Base64URL-encoded, not encrypted. Signature verification requires the key." },
+      { "q": "What are the three parts of a JWT?", "a": "Header (algorithm and type), payload (claims), and signature (cryptographic proof). They are separated by dots." },
+      { "q": "Does jwt.io store my token?", "a": "JWTValidator.org never sends tokens to a server. All decoding happens in your browser." },
+      { "q": "How is this different from jwt.io?", "a": "We offer 13 free tools, 1,000+ guides, and the same privacy-first client-side processing. See our jwt.io comparison." }
+    ]
+  },
+  {
+    "slug": "jwt-debugger",
+    "path": "/jwt-debugger.html",
+    "title": "JWT Debugger Online — Inspect & Debug JWT Tokens",
+    "seoTitle": "JWT Debugger Online | Debug JWT Claims Free",
+    "description": "Debug JWT tokens with claim analysis, expiration timeline, and validation warnings. Free OAuth and API development tool.",
+    "keywords": "jwt debugger,jwt debug tool,jwt inspector,debug jwt token online",
+    "primaryKeyword": "jwt debugger",
+    "toolSlug": "jwt-debugger",
+    "relatedTools": ["jwt-decoder", "jwt-validator", "oauth-token-inspector"],
+    "relatedGuides": ["jwt-authentication-explained", "jwt-expired-token-fix"],
+    "relatedArticles": ["common-jwt-security-mistakes", "jwt-security-best-practices"],
+    "faq": [
+      { "q": "What does a JWT debugger show?", "a": "Decoded claims, expiration status, issuer and audience checks, algorithm warnings, and a timeline of time-based claims." },
+      { "q": "When should I use the debugger vs decoder?", "a": "Use the decoder for quick inspection. Use the debugger when troubleshooting OAuth flows, expired tokens, or claim mismatches." },
+      { "q": "Does the debugger verify signatures?", "a": "It analyzes structure and claims. Use the JWT Validator or JWKS Validator for full signature verification." },
+      { "q": "Can I debug Auth0 or Cognito tokens?", "a": "Yes. Paste any standard JWT. Pair with our provider guides for iss, aud, and JWKS validation." },
+      { "q": "Is this tool free for teams?", "a": "Yes. No account, no API limits. Share URLs encode tokens in the query string for quick collaboration." }
+    ]
+  },
+  {
+    "slug": "jwt-signature-verification",
+    "path": "/jwt-signature-verification.html",
+    "title": "JWT Signature Verification — How to Verify JWT Tokens",
+    "seoTitle": "JWT Signature Verification | Verify JWT Online",
+    "description": "Learn and perform JWT signature verification with HS256, RS256, ES256, and JWKS. Step-by-step guide plus free online tools.",
+    "keywords": "jwt signature verification,verify jwt signature,validate jwt token,jwt verify online",
+    "primaryKeyword": "jwt signature verification",
+    "toolSlug": "jwt-validator",
+    "relatedTools": ["jwks-validator", "jwt-decoder", "jwt-debugger"],
+    "relatedGuides": ["jwt-invalid-signature", "jwt-authentication-explained"],
+    "relatedArticles": ["jwt-security-best-practices", "jwt-vs-sessions"],
+    "faq": [
+      { "q": "What is JWT signature verification?", "a": "Recomputing the HMAC or verifying the asymmetric signature to prove the token was issued by a trusted party and was not tampered with." },
+      { "q": "Which algorithm should I use?", "a": "RS256 or ES256 for public APIs and OAuth. HS256 only when you control both issuer and verifier and can protect the shared secret." },
+      { "q": "What is JWKS used for?", "a": "JSON Web Key Sets publish public keys so verifiers can fetch the correct key by kid without hardcoding certificates." },
+      { "q": "Why does verification fail with correct secret?", "a": "Common causes: wrong algorithm, token truncation, clock skew on exp, or using the public key where a secret is expected." },
+      { "q": "Must I verify on every API request?", "a": "Yes. Never trust decoded payload without signature verification and claim validation (exp, iss, aud)." }
+    ]
+  }
+]
