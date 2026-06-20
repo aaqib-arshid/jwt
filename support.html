@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="JWT tools support and FAQ. Fix JWT not decoding, invalid signature errors, and expired token issues. Links to decoder, validator, and guides.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Support & Help"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Support & Help","item":"https://jwtvalidator.org/support.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is my JWT not decoding?","acceptedAnswer":{"@type":"Answer","text":"A valid JWT must have exactly three Base64URL segments separated by dots (header.payload.signature). Check for truncation, extra whitespace, or non-JWT strings. Use our JWT Decoder tool and see our malformed JWT error guide."}},{"@type":"Question","name":"How do I fix an invalid signature error?","acceptedAnswer":{"@type":"Answer","text":"Verify you're using the correct secret or public key, matching the algorithm in the token header (alg claim). For RS256, use the JWKS Validator with your issuer's JWKS endpoint."}},{"@type":"Question","name":"My token is expired — what now?","acceptedAnswer":{"@type":"Answer","text":"The exp claim indicates expiration. You cannot extend it client-side. Use a refresh token to obtain a new access token from your auth server. See our JWT Expired Token Fix guide."}},{"@type":"Question","name":"Are my tokens safe on this site?","acceptedAnswer":{"@type":"Answer","text":"Yes. All processing happens in your browser. Tokens are never uploaded to our servers. See our Privacy Policy for details."}},{"@type":"Question","name":"Can I use these tools offline?","acceptedAnswer":{"@type":"Answer","text":"Once loaded, most tools work offline since they require no server API calls (except optional JWKS fetch)."}}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -179,6 +179,9 @@
         <a href="/glossary/">Glossary</a>
         <a href="/resources.html">Resources</a>
         <a href="/compare/jwt-io-alternative.html">vs jwt.io</a>
+        <a href="/algorithms/">Algorithms</a>
+        <a href="/errors/">Errors</a>
+        <a href="/learn/">Learn</a>
       </nav>
       <nav class="footer-legal" aria-label="Legal">
         
