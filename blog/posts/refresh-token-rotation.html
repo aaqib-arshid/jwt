@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Refresh Token Rotation — JWT Security Pattern","description":"Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.","url":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-06-15","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Refresh Token Rotation — JWT Security Pattern","description":"Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.","url":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-06-15","dateModified":"2026-06-15","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is refresh token rotation?","acceptedAnswer":{"@type":"Answer","text":"Each time a refresh token is used, a new refresh token is issued and the old one is invalidated."}},{"@type":"Question","name":"Why rotate refresh tokens?","acceptedAnswer":{"@type":"Answer","text":"If a refresh token is stolen, rotation limits the attack window and enables reuse detection."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://jwtvalidator.org/blog/"},{"@type":"ListItem","position":3,"name":"Refresh Token Rotation — Secure Implementation","item":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Refresh Token Rotation — Secure Implementation","description":"Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.","url":"https://jwtvalidator.org/blog/posts/refresh-token-rotation.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
@@ -47,6 +47,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -84,6 +86,9 @@
   <header class="page-header">
     <h1>Refresh Token Rotation — Secure Implementation</h1>
     <p class="lead">Implement refresh token rotation for JWT authentication. Prevent token reuse attacks and manage session lifecycle securely.</p>
+    
+    <p class="article-meta"><time datetime="2026-06-15">2026-06-15</time> · JWTValidator.org</p>
+    
   </header>
 
   
@@ -96,9 +101,12 @@ const newRefresh = generateRefreshToken(userId);
 await revokeRefreshToken(oldRefreshTokenId);
 await storeRefreshToken(newRefresh, userId);
 return { access_token, refresh_token: newRefresh };</code></pre><h2>Reuse Detection</h2><p>If a revoked refresh token is presented, invalidate all sessions for that user — possible token theft.</p><h2>Check Expiration</h2><p>Use our <a href="/tools/jwt-expiry-checker.html">JWT Expiry Checker</a> to monitor access token lifetimes.</p><h2>Understanding Refresh Token Rotation — Secure Implementation in Production</h2>
-<p>Developers search for <strong>Refresh Token Rotation — Secure Implementation</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side.</p>
+<p>Developers search for <strong>Refresh Token Rotation — Secure Implementation</strong> when building API authentication with JSON Web Tokens. JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and Keycloak. Always validate <code>exp</code>, <code>iss</code>, and <code>aud</code> server-side — decoding alone proves nothing about authenticity.</p>
+<h2>JWT Structure Recap</h2>
+<p>Every JWT has three dot-separated segments: header (algorithm), payload (claims), signature (proof). Use <a href="/tools/jwt-decoder.html">JWT Decoder</a> to inspect and <a href="/tools/jwt-validator.html">JWT Validator</a> to verify before trusting any claim value in production code.</p>
 <h2>Common Pitfalls</h2>
-<ul><li>Algorithm confusion (<code>none</code> attack)</li><li>Secrets in the payload</li><li>Ignoring clock skew on <code>exp</code></li><li>Weak HMAC secrets</li><li>Skipping signature verification</li></ul>
+<ul><li>Algorithm confusion (<code>none</code> attack) — whitelist allowed algorithms</li><li>Secrets in the payload — payload is only Base64-encoded, not encrypted</li><li>Ignoring clock skew on <code>exp</code> and <code>nbf</code></li><li>Weak HMAC secrets — use 256-bit random keys</li><li>Skipping signature verification — always call verify(), not decode()</li><li>Storing tokens in localStorage — XSS can steal them</li></ul>
+<h2>Further Reading</h2>
 <p>Browse related resources: <a href="/tools/jwt-decoder.html">JWT Decoder</a>, <a href="/tools/jwt-validator.html">JWT Validator</a>, <a href="/guides/jwt-basics.html">JWT Basics</a>, <a href="/guides/jwt-authentication-explained.html">JWT Authentication</a>, <a href="/errors/">JWT Errors</a>, <a href="/algorithms/">Algorithms</a>, <a href="/glossary/">Glossary</a>, and <a href="/learning-path.html">Learning Path</a>.</p>
   </div>
 

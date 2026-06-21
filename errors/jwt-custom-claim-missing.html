@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Required custom JWT claim missing from token">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Custom Claim Missing Error — Fix & Explanation","description":"Required custom JWT claim missing from token","url":"https://jwtvalidator.org/errors/jwt-custom-claim-missing.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-19","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/errors/jwt-custom-claim-missing.html","inLanguage":"en"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"JWT Custom Claim Missing Error — Fix & Explanation","description":"Required custom JWT claim missing from token","url":"https://jwtvalidator.org/errors/jwt-custom-claim-missing.html","author":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org"},"datePublished":"2026-01-01","dateModified":"2026-06-20","publisher":{"@type":"Organization","name":"JWTValidator.org","url":"https://jwtvalidator.org","logo":{"@type":"ImageObject","url":"https://jwtvalidator.org/assets/img/logo.svg"}},"mainEntityOfPage":"https://jwtvalidator.org/errors/jwt-custom-claim-missing.html","inLanguage":"en"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why am I seeing jwt custom claim missing?","acceptedAnswer":{"@type":"Answer","text":"This error occurs when JWT validation fails. Check secret/key, algorithm, expiration, and token structure."}},{"@type":"Question","name":"Can I fix this without the secret?","acceptedAnswer":{"@type":"Answer","text":"You can decode the payload without the secret, but signature verification requires the correct key."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Errors","item":"https://jwtvalidator.org/errors/"},{"@type":"ListItem","position":3,"name":"JWT Custom Claim Missing Error","item":"https://jwtvalidator.org/errors/jwt-custom-claim-missing.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Custom Claim Missing Error","description":"Required custom JWT claim missing from token","url":"https://jwtvalidator.org/errors/jwt-custom-claim-missing.html","step":[{"@type":"HowToStep","position":1,"name":"Copy JWT token","text":"Copy the JWT from your app, API response, or browser dev tools."},{"@type":"HowToStep","position":2,"name":"Paste into decoder","text":"Open the JWT Decoder tool and paste the token."},{"@type":"HowToStep","position":3,"name":"Inspect claims","text":"Review header, payload claims, and expiration time."},{"@type":"HowToStep","position":4,"name":"Verify signature","text":"Use the JWT Validator with the correct secret or JWKS URL to verify."}]}</script>
@@ -47,6 +47,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -84,6 +86,7 @@
   <header class="page-header">
     <h1>JWT Custom Claim Missing Error</h1>
     <p class="lead">Required custom JWT claim missing from token</p>
+    
   </header>
 
   

@@ -22,9 +22,10 @@
 <meta name="twitter:description" content="Beautify and format JWT tokens. Pretty-print decoded header and payload JSON with syntax highlighting. 100% client-side.">
 <meta name="twitter:image" content="https://jwtvalidator.org/assets/img/og-default.svg">
 <link rel="alternate" type="application/json" href="/assets/search-index.json" title="Site search index">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JWT Beautifier","description":"Beautify and format JWT tokens. Pretty-print decoded header and payload JSON with syntax highlighting. 100% client-side.","url":"https://jwtvalidator.org/tools/jwt-beautifier.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["JWT decode","encode","validate","debug","offline capable","no upload"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JWT Beautifier","description":"Beautify and format JWT tokens. Pretty-print decoded header and payload JSON with syntax highlighting. 100% client-side.","url":"https://jwtvalidator.org/tools/jwt-beautifier.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["JWT decode","encode","validate","debug","offline capable","no upload","client-side only"],"screenshot":"https://jwtvalidator.org/assets/img/og-default.svg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does beautify do?","acceptedAnswer":{"@type":"Answer","text":"Decodes the JWT and formats header and payload JSON with readable indentation."}},{"@type":"Question","name":"Can I copy formatted output?","acceptedAnswer":{"@type":"Answer","text":"Yes — use the copy buttons for header, payload, or the full formatted token."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jwtvalidator.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://jwtvalidator.org/#tools"},{"@type":"ListItem","position":3,"name":"JWT Beautifier","item":"https://jwtvalidator.org/tools/jwt-beautifier.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"JWT Beautifier","description":"Beautify and format JWT tokens. Pretty-print decoded header and payload JSON with syntax highlighting. 100% client-side.","url":"https://jwtvalidator.orgundefined","step":[{"@type":"HowToStep","position":1,"name":"Open the tool","text":"Navigate to the JWT Beautifier page on JWTValidator.org."},{"@type":"HowToStep","position":2,"name":"Paste JWT token","text":"Copy your token from Authorization header or API response and paste into the input field."},{"@type":"HowToStep","position":3,"name":"Run validation","text":"Click the primary button to decode, validate, or debug the token."},{"@type":"HowToStep","position":4,"name":"Review results","text":"Inspect output, copy results, or follow linked guides if errors occur."}]}</script>
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -46,6 +47,8 @@
         <a href="/#tools">Tools</a>
         
         <a href="/guides/">Guides</a>
+        
+        <a href="/blog/">Blog</a>
         
         <a href="/glossary/">Glossary</a>
         
@@ -92,10 +95,80 @@
 
   <section class="example-section card">
     <h2>Example JWT</h2>
-    <p>Click to load a sample token:</p>
+    <p>Click to load a sample token for testing (HS256, no production secrets):</p>
     <button type="button" class="btn btn-secondary" id="load-example">Load HS256 Example</button>
     <textarea id="example-token" class="hidden" readonly>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjk5OTk5OTk5OTksImlzcyI6ImV4YW1wbGUuY29tIiwiYXVkIjoiYXBpLmV4YW1wbGUuY29tIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
   </section>
+
+  <section class="tool-trust card" aria-label="Privacy and trust">
+  <h2>Why Trust JWTValidator.org</h2>
+  <ul class="trust-checklist">
+    <li><strong>100% client-side</strong> — tokens and secrets never leave your browser</li>
+    <li><strong>No account required</strong> — free forever, no sign-up</li>
+    <li><strong>No data stored</strong> — we do not log, upload, or persist your tokens</li>
+    <li><strong>Open process</strong> — see our <a href="/privacy.html">Privacy Policy</a> and <a href="/about.html">About</a> page</li>
+  </ul>
+  <p class="trust-warning">⚠️ Avoid pasting production secrets or live credentials. Use test tokens during development.</p>
+</section>
+
+
+  <div class="prose tool-editorial">
+    <h2>About This Tool</h2><p>Beautify and format JWT tokens. Pretty-print decoded header and payload JSON with syntax highlighting. 100% client-side.</p>
+<h2>What Is a JWT?</h2>
+<p>A JSON Web Token (JWT) is a compact, URL-safe string defined by <a href="/glossary/rfc7519.html">RFC 7519</a>. It encodes claims as JSON and attaches a cryptographic signature so receivers can verify the token was issued by a trusted party and was not tampered with.</p>
+<p>JWTs consist of three Base64URL-encoded parts separated by dots:</p>
+<ul>
+<li><strong>Header</strong> — algorithm (<code>alg</code>) and token type (<code>typ</code>)</li>
+<li><strong>Payload</strong> — claims such as <code>sub</code>, <code>iss</code>, <code>aud</code>, <code>exp</code></li>
+<li><strong>Signature</strong> — HMAC or asymmetric signature over header + payload</li>
+</ul>
+<p>JWTs are used by OAuth 2.0, OpenID Connect, Auth0, Firebase, AWS Cognito, and most modern API authentication systems.</p>
+<h2>How JWT Validation Works</h2>
+<p><strong>JWT Beautifier</strong> requires more than Base64 decoding. A secure verifier performs these steps on every request:</p>
+<ol>
+<li><strong>Parse structure</strong> — confirm exactly three segments separated by dots</li>
+<li><strong>Verify signature</strong> — HMAC with shared secret, or asymmetric verify with public key from JWKS</li>
+<li><strong>Validate algorithm</strong> — reject unexpected <code>alg</code> values including <code>none</code></li>
+<li><strong>Check time claims</strong> — <code>exp</code> not past, <code>nbf</code> not future, allow clock skew</li>
+<li><strong>Validate iss and aud</strong> — issuer and audience match your application configuration</li>
+</ol>
+<p>Use <a href="/tools/jwt-validator.html">JWT Validator</a> for HMAC verification or <a href="/tools/jwks-validator.html">JWKS Validator</a> for RS256/ES256 with JWKS endpoints.</p>
+<h2>How to Use This Tool</h2>
+<ol>
+<li>Copy a JWT from your application, API response, or browser dev tools</li>
+<li>Paste into the tool above and click the primary action button</li>
+<li>Review decoded output, validation result, or error message</li>
+<li>Use Copy buttons to export results for documentation or support tickets</li>
+</ol>
+<h2>Example Use Cases</h2>
+<ul>
+<li>Debug 401 Unauthorized errors from REST APIs</li>
+<li>Inspect OAuth access tokens and OpenID Connect ID tokens</li>
+<li>Verify token expiration before implementing refresh logic</li>
+<li>Learn JWT structure during onboarding or security reviews</li>
+</ul>
+<h2>Common JWT Errors</h2>
+<p>developers encounter these errors frequently:</p>
+<ul>
+<li><a href="/errors/token-expired.html">Token expired</a> — <code>exp</code> claim is in the past</li>
+<li><a href="/errors/invalid-signature.html">Invalid signature</a> — wrong secret, key, or algorithm</li>
+<li><a href="/errors/malformed-jwt.html">Malformed JWT</a> — not three valid Base64URL segments</li>
+<li><a href="/errors/jwt-alg-not-allowed-nodejs.html">Algorithm not allowed</a> — alg confusion or none attack attempt</li>
+</ul>
+<p>Browse the full <a href="/errors/">JWT Error Directory</a> for fixes with step-by-step instructions.</p>
+<h2>Best Practices for JWT Security</h2>
+<ul>
+<li>Never trust decoded payload without signature verification</li>
+<li>Use short-lived access tokens (5–15 minutes) with refresh rotation</li>
+<li>Whitelist allowed algorithms — never accept <code>alg: none</code></li>
+<li>Store tokens in httpOnly cookies, not localStorage (XSS risk)</li>
+<li>Use RS256/ES256 for public APIs; protect HMAC secrets with 256+ bit random keys</li>
+<li>Validate <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>sub</code> on every request</li>
+<li>Never log full bearer tokens in application logs</li>
+</ul>
+<p>Read our <a href="/blog/posts/jwt-security-best-practices.html">JWT Security Best Practices</a> article and explore the <a href="/hubs/security.html">Security Hub</a>.</p>
+<p>Explore <a href="/guides/">JWT Guides</a>, <a href="/blog/">Blog</a>, and <a href="/learning-path.html">Learning Path</a> for deeper tutorials.</p>
+  </div>
 
   <section class="faq-section">
   <h2>FAQ</h2>
