@@ -11718,23 +11718,23 @@
   },
   {
     "slug": "jwt-decoder-deutsch",
-    "title": "JWT Decoder Deutsch",
-    "seoTitle": "JWT Decoder Deutsch | JWTValidator.org",
+    "title": "JWT Decoder — JWT Token online dekodieren",
+    "seoTitle": "JWT Decoder online | JWT Token dekodieren kostenlos",
     "description": "JWT Token online dekodieren — kostenloser JWT Decoder auf Deutsch",
     "keywords": "jwt decoder deutsch,jwt",
-    "content": "<h2>JWT Decoder Deutsch</h2>\n<p>This guide explains <strong>jwt decoder deutsch</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>JWT Token online dekodieren</h2>\n<p>Dieser Leitfaden erklärt <strong>jwt decoder deutsch</strong> — wie Sie JSON Web Tokens dekodieren, Header und Payload lesen und typische Fehler erkennen. Ideal für API- und OAuth-Entwicklung.</p>\n<h2>Kurzantwort</h2>\n<p>Nutzen Sie unseren <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a>, um den Token zu inspizieren, und den <a href=\"/tools/jwt-validator.html\">JWT Validator</a> zur Signaturprüfung. Alles läuft lokal im Browser — kein Upload.</p>\n<h2>Was ist ein JWT?</h2>\n<p>Ein JWT (JSON Web Token, RFC 7519) besteht aus drei Base64URL-kodierten Teilen: <strong>Header</strong> (Algorithmus), <strong>Payload</strong> (Claims wie <code>sub</code>, <code>exp</code>, <code>iss</code>) und <strong>Signatur</strong>.</p>\n<h2>Schritt für Schritt</h2>\n<ol>\n<li>Kopieren Sie den JWT aus Ihrer App, API-Antwort oder den Browser-DevTools</li>\n<li>Fügen Sie ihn in den <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> ein</li>\n<li>Prüfen Sie <code>exp</code>, <code>iss</code>, <code>aud</code> und <code>alg</code></li>\n<li>Verifizieren Sie die Signatur mit dem <a href=\"/tools/jwt-validator.html\">JWT Validator</a></li>\n<li>Nutzen Sie den <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> für Warnungen und Ablaufzeiten</li>\n</ol>\n<h2>Sicherheit</h2>\n<p>Decodieren ersetzt keine Verifizierung. Validieren Sie <code>exp</code>, <code>iss</code> und <code>aud</code> serverseitig. Speichern Sie Tokens nicht in localStorage.</p>\n<h2>Weitere Ressourcen</h2>\n<p><a href=\"/guides/jwt-basics.html\">JWT Grundlagen</a> · <a href=\"/learning-path.html\">Lernpfad</a> · <a href=\"/tools/jwt-decoder.html\">Decoder öffnen</a></p>",
     "faq": [
       {
-        "q": "What is jwt decoder deutsch?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder deutsch with examples and links to free decoder/validator tools."
+        "q": "Was ist jwt decoder deutsch?",
+        "a": "Ein kostenloser Online-Leitfaden zum Dekodieren von JWT-Tokens mit Header, Payload und Claims — alles im Browser."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "Sind die Tools kostenlos?",
+        "a": "Ja. Alle Tools laufen clientseitig im Browser ohne Konto."
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "Werden Tokens hochgeladen?",
+        "a": "Nein. Ihre Tokens verlassen nie Ihren Browser."
       }
     ],
     "cluster": "decode-validate",
@@ -11752,27 +11752,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "de",
+    "primaryKeyword": "jwt decoder deutsch",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-francais",
-    "title": "JWT Décodeur Français",
-    "seoTitle": "JWT Décodeur Français | JWTValidator.org",
+    "title": "Décodeur JWT — décoder un token JWT en ligne",
+    "seoTitle": "Décodeur JWT en ligne | Décoder un token gratuitement",
     "description": "Décoder un token JWT en ligne gratuitement en français",
     "keywords": "jwt décodeur français,jwt",
-    "content": "<h2>JWT Décodeur Français</h2>\n<p>This guide explains <strong>jwt décodeur français</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>Décoder un token JWT en ligne</h2>\n<p>Ce guide explique <strong>jwt décodeur français</strong> — comment décoder un JSON Web Token, lire le header et le payload, et diagnostiquer les erreurs courantes.</p>\n<h2>Réponse rapide</h2>\n<p>Utilisez notre <a href=\"/tools/jwt-decoder.html\">Décodeur JWT</a> pour inspecter le token, puis le <a href=\"/tools/jwt-validator.html\">Validateur JWT</a> pour vérifier la signature. Tout s'exécute dans votre navigateur.</p>\n<h2>Qu'est-ce qu'un JWT ?</h2>\n<p>Un JWT (RFC 7519) comporte trois parties Base64URL : <strong>header</strong>, <strong>payload</strong> (claims) et <strong>signature</strong>.</p>\n<h2>Étapes</h2>\n<ol>\n<li>Copiez le JWT depuis votre application ou les outils de développement</li>\n<li>Collez-le dans le <a href=\"/tools/jwt-decoder.html\">Décodeur JWT</a></li>\n<li>Vérifiez <code>exp</code>, <code>iss</code>, <code>aud</code> et <code>alg</code></li>\n<li>Vérifiez la signature avec le <a href=\"/tools/jwt-validator.html\">Validateur JWT</a></li>\n<li>Utilisez le <a href=\"/tools/jwt-debugger.html\">Debugger JWT</a> pour l'analyse détaillée</li>\n</ol>\n<h2>Sécurité</h2>\n<p>Décoder n'est pas authentifier. Validez toujours la signature et les claims côté serveur.</p>\n<h2>Ressources</h2>\n<p><a href=\"/guides/jwt-basics.html\">Bases JWT</a> · <a href=\"/learning-path.html\">Parcours d'apprentissage</a></p>",
     "faq": [
       {
-        "q": "What is jwt décodeur français?",
-        "a": "A common JWT authentication topic. This guide explains jwt décodeur français with examples and links to free decoder/validator tools."
+        "q": "Qu'est-ce que jwt décodeur français ?",
+        "a": "Guide gratuit pour décoder les tokens JWT et inspecter header, payload et claims dans le navigateur."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "Les outils sont-ils gratuits ?",
+        "a": "Oui. Tout fonctionne côté client, sans compte."
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "Mes tokens sont-ils envoyés ?",
+        "a": "Non. Vos tokens ne quittent jamais votre navigateur."
       }
     ],
     "cluster": "decode-validate",
@@ -11790,27 +11793,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "fr",
+    "primaryKeyword": "jwt décodeur français",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-espanol",
-    "title": "JWT Decoder Español",
-    "seoTitle": "JWT Decoder Español | JWTValidator.org",
+    "title": "Decodificador JWT — decodificar tokens JWT online",
+    "seoTitle": "Decodificador JWT online | Decodificar JWT gratis",
     "description": "Decodificar tokens JWT online gratis en español",
     "keywords": "jwt decoder español,jwt",
-    "content": "<h2>JWT Decoder Español</h2>\n<p>This guide explains <strong>jwt decoder español</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>Decodificar tokens JWT online</h2>\n<p>Esta guía explica <strong>jwt decoder español</strong> — cómo decodificar JSON Web Tokens, leer claims y depurar errores de autenticación API.</p>\n<h2>Respuesta rápida</h2>\n<p>Use nuestro <a href=\"/tools/jwt-decoder.html\">Decodificador JWT</a> y luego el <a href=\"/tools/jwt-validator.html\">Validador JWT</a>. Todo en el navegador, sin subir datos.</p>\n<h2>¿Qué es un JWT?</h2>\n<p>Un JWT tiene header, payload (claims como <code>sub</code>, <code>exp</code>) y firma criptográfica separados por puntos.</p>\n<h2>Pasos</h2>\n<ol>\n<li>Copie el JWT de su app o herramientas de desarrollo</li>\n<li>Péguelo en el <a href=\"/tools/jwt-decoder.html\">Decodificador JWT</a></li>\n<li>Revise <code>exp</code>, <code>iss</code>, <code>aud</code> y <code>alg</code></li>\n<li>Verifique la firma con el <a href=\"/tools/jwt-validator.html\">Validador JWT</a></li>\n</ol>\n<h2>Seguridad</h2>\n<p>Decodificar no verifica la autenticidad. Siempre valide la firma en el servidor.</p>",
     "faq": [
       {
-        "q": "What is jwt decoder español?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder español with examples and links to free decoder/validator tools."
+        "q": "¿Qué es jwt decoder español?",
+        "a": "Guía gratuita para decodificar JWT y ver header, payload y claims en el navegador."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "¿Son gratis las herramientas?",
+        "a": "Sí. Todo funciona en el cliente, sin cuenta."
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "¿Se suben mis tokens?",
+        "a": "No. Sus tokens nunca salen del navegador."
       }
     ],
     "cluster": "decode-validate",
@@ -11828,7 +11834,10 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "es",
+    "primaryKeyword": "jwt decoder español",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-portugues",
@@ -12022,23 +12031,27 @@
   },
   {
     "slug": "jwt-decoder-russian",
-    "title": "JWT Decoder Russian",
-    "seoTitle": "JWT Decoder Russian | JWTValidator.org",
+    "title": "JWT Декодер — декодировать JWT токен онлайн",
+    "seoTitle": "JWT декодер онлайн | Декодировать JWT бесплатно",
     "description": "Декодировать JWT токен онлайн бесплатно",
     "keywords": "jwt decoder russian,jwt",
-    "content": "<h2>JWT Decoder Russian</h2>\n<p>This guide explains <strong>jwt decoder russian</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>Декодировать JWT токен онлайн</h2>\n<p>Это руководство по теме <strong>jwt decoder russian</strong> — как декодировать JSON Web Token, просмотреть header и payload, и найти типичные ошибки аутентификации.</p>\n<h2>Краткий ответ</h2>\n<p>Используйте наш <a href=\"/tools/jwt-decoder.html\">JWT декодер</a> для просмотра токена и <a href=\"/tools/jwt-validator.html\">JWT валидатор</a> для проверки подписи. Всё выполняется локально в браузере — без загрузки на сервер.</p>\n<h2>Что такое JWT?</h2>\n<p>JWT (RFC 7519) состоит из трёх частей в Base64URL: <strong>header</strong> (алгоритм), <strong>payload</strong> (claims: <code>sub</code>, <code>exp</code>, <code>iss</code>) и <strong>подпись</strong>.</p>\n<h2>Пошаговая инструкция</h2>\n<ol>\n<li>Скопируйте JWT из приложения, ответа API или DevTools браузера</li>\n<li>Вставьте в <a href=\"/tools/jwt-decoder.html\">JWT декодер</a></li>\n<li>Проверьте <code>exp</code>, <code>iss</code>, <code>aud</code> и <code>alg</code></li>\n<li>Проверьте подпись в <a href=\"/tools/jwt-validator.html\">JWT валидаторе</a></li>\n<li>Используйте <a href=\"/tools/jwt-debugger.html\">JWT отладчик</a> для детального анализа</li>\n</ol>\n<h2>Безопасность</h2>\n<p>Декодирование не подтверждает подлинность. Всегда проверяйте подпись и claims на сервере. Не храните токены в localStorage.</p>\n<h2>Дополнительно</h2>\n<p><a href=\"/guides/jwt-basics.html\">Основы JWT</a> · <a href=\"/learning-path.html\">Путь обучения</a></p>",
     "faq": [
       {
-        "q": "What is jwt decoder russian?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder russian with examples and links to free decoder/validator tools."
+        "q": "Что такое jwt decoder russian?",
+        "a": "Бесплатное руководство по декодированию JWT с просмотром header, payload и claims в браузере."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "Инструменты бесплатны?",
+        "a": "Да. Всё работает локально в браузере без регистрации."
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "Загружаются ли токены на сервер?",
+        "a": "Нет. Ваши токены не покидают браузер."
+      },
+      {
+        "q": "Декодирование — это проверка?",
+        "a": "Нет. Для аутентификации всегда проверяйте подпись на сервере."
       }
     ],
     "cluster": "decode-validate",
@@ -12056,27 +12069,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "ru",
+    "primaryKeyword": "jwt decoder russian",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-japanese",
-    "title": "JWT Decoder Japanese",
-    "seoTitle": "JWT Decoder Japanese | JWTValidator.org",
+    "title": "JWTデコーダー — JWTトークンをオンラインでデコード",
+    "seoTitle": "JWTデコーダー online | JWTトークンを無料でデコード",
     "description": "JWTトークンをオンラインでデコード",
     "keywords": "jwt decoder 日本語,jwt",
-    "content": "<h2>JWT Decoder Japanese</h2>\n<p>This guide explains <strong>jwt decoder 日本語</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>JWTトークンをオンラインでデコード</h2>\n<p>このガイドでは<strong>jwt decoder 日本語</strong>について説明します。JSON Web Tokenのデコード方法、headerとpayloadの読み方、よくあるエラーの対処法を解説します。</p>\n<h2>クイック回答</h2>\n<p><a href=\"/tools/jwt-decoder.html\">JWTデコーダー</a>でトークンを確認し、<a href=\"/tools/jwt-validator.html\">JWTバリデーター</a>で署名を検証します。すべてブラウザ内で処理され、アップロードは不要です。</p>\n<h2>JWTとは？</h2>\n<p>JWT（RFC 7519）はBase64URLエンコードされた3つの部分で構成されます：<strong>header</strong>、<strong>payload</strong>（<code>sub</code>、<code>exp</code>などのクレーム）、<strong>署名</strong>。</p>\n<h2>手順</h2>\n<ol>\n<li>アプリ、APIレスポンス、またはブラウザのDevToolsからJWTをコピー</li>\n<li><a href=\"/tools/jwt-decoder.html\">JWTデコーダー</a>に貼り付け</li>\n<li><code>exp</code>、<code>iss</code>、<code>aud</code>、<code>alg</code>を確認</li>\n<li><a href=\"/tools/jwt-validator.html\">JWTバリデーター</a>で署名を検証</li>\n<li><a href=\"/tools/jwt-debugger.html\">JWTデバッガー</a>で詳細分析</li>\n</ol>\n<h2>セキュリティ</h2>\n<p>デコードだけでは認証は完了しません。サーバー側で必ず署名とクレームを検証してください。</p>",
     "faq": [
       {
-        "q": "What is jwt decoder 日本語?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder 日本語 with examples and links to free decoder/validator tools."
+        "q": "jwt decoder 日本語とは？",
+        "a": "JWTをデコードしてheader、payload、claimsをブラウザで確認する無料ガイドです。"
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "ツールは無料ですか？",
+        "a": "はい。アカウント不要で、すべてブラウザ内で動作します。"
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "トークンはアップロードされますか？",
+        "a": "いいえ。トークンがサーバーに送信されることはありません。"
       }
     ],
     "cluster": "decode-validate",
@@ -12094,27 +12110,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "ja",
+    "primaryKeyword": "jwt decoder 日本語",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-korean",
-    "title": "JWT Decoder Korean",
-    "seoTitle": "JWT Decoder Korean | JWTValidator.org",
+    "title": "JWT 디코더 — JWT 토큰 온라인 디코딩",
+    "seoTitle": "JWT 디코더 online | JWT 토큰 무료 디코딩",
     "description": "JWT 토큰 온라인 디코더 무료",
     "keywords": "jwt decoder 한국어,jwt",
-    "content": "<h2>JWT Decoder Korean</h2>\n<p>This guide explains <strong>jwt decoder 한국어</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>JWT 토큰 온라인 디코딩</h2>\n<p>이 가이드는 <strong>jwt decoder 한국어</strong>에 대해 설명합니다. JSON Web Token을 디코딩하고 header, payload, claims를 확인하는 방법을 안내합니다.</p>\n<h2>빠른 답변</h2>\n<p><a href=\"/tools/jwt-decoder.html\">JWT 디코더</a>로 토큰을 확인하고 <a href=\"/tools/jwt-validator.html\">JWT 검증기</a>로 서명을 검증하세요. 모든 처리는 브라우저에서 로컬로 실행됩니다.</p>\n<h2>JWT란?</h2>\n<p>JWT(RFC 7519)는 Base64URL로 인코딩된 세 부분으로 구성됩니다: <strong>header</strong>, <strong>payload</strong>(<code>sub</code>, <code>exp</code> 등), <strong>서명</strong>.</p>\n<h2>단계별 안내</h2>\n<ol>\n<li>앱, API 응답 또는 브라우저 DevTools에서 JWT 복사</li>\n<li><a href=\"/tools/jwt-decoder.html\">JWT 디코더</a>에 붙여넣기</li>\n<li><code>exp</code>, <code>iss</code>, <code>aud</code>, <code>alg</code> 확인</li>\n<li><a href=\"/tools/jwt-validator.html\">JWT 검증기</a>로 서명 검증</li>\n<li><a href=\"/tools/jwt-debugger.html\">JWT 디버거</a>로 상세 분석</li>\n</ol>\n<h2>보안</h2>\n<p>디코딩만으로는 인증이 완료되지 않습니다. 서버에서 항상 서명과 claims를 검증하세요.</p>",
     "faq": [
       {
-        "q": "What is jwt decoder 한국어?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder 한국어 with examples and links to free decoder/validator tools."
+        "q": "jwt decoder 한국어란?",
+        "a": "JWT를 디코딩하고 header, payload, claims를 브라우저에서 확인하는 무료 가이드입니다."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "도구는 무료인가요?",
+        "a": "예. 계정 없이 브라우저에서 로컬로 실행됩니다."
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "토큰이 업로드되나요?",
+        "a": "아니요. 토큰은 브라우저를 벗어나지 않습니다."
       }
     ],
     "cluster": "decode-validate",
@@ -12132,27 +12151,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "ko",
+    "primaryKeyword": "jwt decoder 한국어",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-chinese",
-    "title": "JWT Decoder Chinese",
-    "seoTitle": "JWT Decoder Chinese | JWTValidator.org",
+    "title": "JWT解码器 — 在线解码JWT令牌",
+    "seoTitle": "JWT解码器 online | 免费在线解码JWT",
     "description": "JWT令牌在线解码器免费",
     "keywords": "jwt decoder 中文,jwt",
-    "content": "<h2>JWT Decoder Chinese</h2>\n<p>This guide explains <strong>jwt decoder 中文</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>在线解码JWT令牌</h2>\n<p>本指南介绍<strong>jwt decoder 中文</strong>——如何解码JSON Web Token、查看header和payload以及排查常见认证错误。</p>\n<h2>快速解答</h2>\n<p>使用我们的<a href=\"/tools/jwt-decoder.html\">JWT解码器</a>查看令牌，然后用<a href=\"/tools/jwt-validator.html\">JWT验证器</a>验证签名。全部在浏览器本地处理，无需上传。</p>\n<h2>什么是JWT？</h2>\n<p>JWT（RFC 7519）由三个Base64URL编码部分组成：<strong>header</strong>、<strong>payload</strong>（含<code>sub</code>、<code>exp</code>等声明）和<strong>签名</strong>。</p>\n<h2>操作步骤</h2>\n<ol>\n<li>从应用、API响应或浏览器DevTools复制JWT</li>\n<li>粘贴到<a href=\"/tools/jwt-decoder.html\">JWT解码器</a></li>\n<li>检查<code>exp</code>、<code>iss</code>、<code>aud</code>和<code>alg</code></li>\n<li>使用<a href=\"/tools/jwt-validator.html\">JWT验证器</a>验证签名</li>\n<li>使用<a href=\"/tools/jwt-debugger.html\">JWT调试器</a>进行详细分析</li>\n</ol>\n<h2>安全提示</h2>\n<p>解码不等于验证。务必在服务端验证签名和claims。</p>",
     "faq": [
       {
-        "q": "What is jwt decoder 中文?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder 中文 with examples and links to free decoder/validator tools."
+        "q": "什么是jwt decoder 中文？",
+        "a": "免费指南：在浏览器中解码JWT并查看header、payload和claims。"
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "工具免费吗？",
+        "a": "是的。无需账户，全部在浏览器本地运行。"
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "令牌会上传吗？",
+        "a": "不会。您的令牌永远不会离开浏览器。"
       }
     ],
     "cluster": "decode-validate",
@@ -12170,27 +12192,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "zh",
+    "primaryKeyword": "jwt decoder 中文",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-hindi",
-    "title": "JWT Decoder Hindi",
-    "seoTitle": "JWT Decoder Hindi | JWTValidator.org",
+    "title": "JWT डिकोडर — JWT टोकन ऑनलाइन डिकोड करें",
+    "seoTitle": "JWT डिकोडर online | JWT टोकन मुफ्त में डिकोड",
     "description": "JWT टोकन ऑनलाइन डिकोडर मुफ्त",
     "keywords": "jwt decoder hindi,jwt",
-    "content": "<h2>JWT Decoder Hindi</h2>\n<p>This guide explains <strong>jwt decoder hindi</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>JWT टोकन ऑनलाइन डिकोड करें</h2>\n<p>यह गाइड <strong>jwt decoder hindi</strong> समझाती है — JSON Web Token को कैसे डिकोड करें, header और payload पढ़ें, और सामान्य authentication errors ठीक करें।</p>\n<h2>त्वरित उत्तर</h2>\n<p>हमारे <a href=\"/tools/jwt-decoder.html\">JWT डिकोडर</a> से टोकन देखें और <a href=\"/tools/jwt-validator.html\">JWT वैलिडेटर</a> से signature verify करें। सब कुछ ब्राउज़र में locally चलता है — कोई upload नहीं।</p>\n<h2>JWT क्या है?</h2>\n<p>JWT (RFC 7519) तीन Base64URL parts से बना होता है: <strong>header</strong>, <strong>payload</strong> (<code>sub</code>, <code>exp</code> claims), और <strong>signature</strong>।</p>\n<h2>चरण-दर-चरण</h2>\n<ol>\n<li>ऐप, API response, या browser DevTools से JWT कॉपी करें</li>\n<li><a href=\"/tools/jwt-decoder.html\">JWT डिकोडर</a> में paste करें</li>\n<li><code>exp</code>, <code>iss</code>, <code>aud</code>, <code>alg</code> जांचें</li>\n<li><a href=\"/tools/jwt-validator.html\">JWT वैलिडेटर</a> से signature verify करें</li>\n</ol>\n<h2>सुरक्षा</h2>\n<p>Decode करना verify नहीं है। हमेशा server-side signature और claims validate करें।</p>",
     "faq": [
       {
-        "q": "What is jwt decoder hindi?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder hindi with examples and links to free decoder/validator tools."
+        "q": "jwt decoder hindi क्या है?",
+        "a": "JWT decode करने और header, payload, claims browser में देखने का मुफ्त गाइड।"
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "क्या tools मुफ्त हैं?",
+        "a": "हाँ। बिना account के browser में locally चलते हैं।"
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "क्या tokens upload होते हैं?",
+        "a": "नहीं। आपके tokens browser से बाहर नहीं जाते।"
       }
     ],
     "cluster": "decode-validate",
@@ -12208,27 +12233,30 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "hi",
+    "primaryKeyword": "jwt decoder hindi",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-decoder-arabic",
-    "title": "JWT Decoder Arabic",
-    "seoTitle": "JWT Decoder Arabic | JWTValidator.org",
+    "title": "فك تشفير JWT — فك JWT عبر الإنترنت",
+    "seoTitle": "فك تشفير JWT online | فك JWT مجاناً",
     "description": "فك تشفير JWT مجاناً عبر الإنترنت",
     "keywords": "jwt decoder arabic,jwt",
-    "content": "<h2>JWT Decoder Arabic</h2>\n<p>This guide explains <strong>jwt decoder arabic</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>فك تشفير JWT عبر الإنترنت</h2>\n<p>يشرح هذا الدليل <strong>jwt decoder arabic</strong> — كيفية فك JSON Web Token وقراءة header وpayload وتشخيص أخطاء المصادقة الشائعة.</p>\n<h2>إجابة سريعة</h2>\n<p>استخدم <a href=\"/tools/jwt-decoder.html\">فك JWT</a> لفحص الرمز، ثم <a href=\"/tools/jwt-validator.html\">التحقق من JWT</a> للتحقق من التوقيع. كل المعالجة محلياً في المتصفح — بدون رفع بيانات.</p>\n<h2>ما هو JWT؟</h2>\n<p>يتكون JWT (RFC 7519) من ثلاثة أجزاء Base64URL: <strong>header</strong> و<strong>payload</strong> (claims مثل <code>sub</code> و<code>exp</code>) و<strong>التوقيع</strong>.</p>\n<h2>خطوات</h2>\n<ol>\n<li>انسخ JWT من التطبيق أو استجابة API أو أدوات المطور</li>\n<li>الصقه في <a href=\"/tools/jwt-decoder.html\">فك JWT</a></li>\n<li>تحقق من <code>exp</code> و<code>iss</code> و<code>aud</code> و<code>alg</code></li>\n<li>تحقق من التوقيع باستخدام <a href=\"/tools/jwt-validator.html\">التحقق من JWT</a></li>\n<li>استخدم <a href=\"/tools/jwt-debugger.html\">أداة تصحيح JWT</a> للتحليل التفصيلي</li>\n</ol>\n<h2>الأمان</h2>\n<p>فك التشفير لا يعني التحقق. تحقق دائماً من التوقيع والclaims على الخادم.</p>",
     "faq": [
       {
-        "q": "What is jwt decoder arabic?",
-        "a": "A common JWT authentication topic. This guide explains jwt decoder arabic with examples and links to free decoder/validator tools."
+        "q": "ما هو jwt decoder arabic؟",
+        "a": "دليل مجاني لفك JWT وعرض header وpayload وclaims في المتصفح."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
+        "q": "هل الأدوات مجانية؟",
+        "a": "نعم. تعمل محلياً في المتصفح دون حساب."
       },
       {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "هل تُرفع الرموز إلى الخادم؟",
+        "a": "لا. رموزك لا تغادر متصفحك أبداً."
       }
     ],
     "cluster": "decode-validate",
@@ -12246,27 +12274,26 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "ar",
+    "primaryKeyword": "jwt decoder arabic",
+    "pageDir": "rtl"
   },
   {
     "slug": "jwt-validator-deutsch",
-    "title": "JWT Validator Deutsch",
-    "seoTitle": "JWT Validator Deutsch | JWTValidator.org",
+    "title": "JWT Validator — JWT Signatur online verifizieren",
+    "seoTitle": "JWT Validator online | Signatur verifizieren kostenlos",
     "description": "JWT Signatur online verifizieren kostenlos",
     "keywords": "jwt validator deutsch,jwt",
-    "content": "<h2>JWT Validator Deutsch</h2>\n<p>This guide explains <strong>jwt validator deutsch</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>JWT Signatur online verifizieren</h2>\n<p>Dieser Leitfaden erklärt <strong>jwt validator deutsch</strong> — wie Sie JWT-Signaturen mit HS256 oder JWKS (RS256) prüfen und häufige Validierungsfehler beheben.</p>\n<h2>Kurzantwort</h2>\n<p>Token und Secret (HS256) oder JWKS-URL (RS256) in unseren <a href=\"/tools/jwt-validator.html\">JWT Validator</a> einfügen. Die Prüfung erfolgt vollständig im Browser.</p>\n<h2>So funktioniert die Validierung</h2>\n<ol>\n<li>Struktur prüfen — genau drei Segmente</li>\n<li>Signatur verifizieren — HMAC oder asymmetrischer Schlüssel</li>\n<li>Algorithmus whitelisten — <code>none</code> ablehnen</li>\n<li><code>exp</code>, <code>iss</code>, <code>aud</code> validieren</li>\n</ol>\n<h2>Häufige Fehler</h2>\n<ul>\n<li><a href=\"/errors/token-expired.html\">Token abgelaufen</a></li>\n<li><a href=\"/errors/invalid-signature.html\">Ungültige Signatur</a></li>\n<li><a href=\"/errors/malformed-jwt.html\">Malformed JWT</a></li>\n</ul>\n<h2>Weitere Ressourcen</h2>\n<p><a href=\"/guides/jwt-basics.html\">JWT Grundlagen</a> · <a href=\"/tools/jwt-validator.html\">Validator öffnen</a></p>",
     "faq": [
       {
-        "q": "What is jwt validator deutsch?",
-        "a": "A common JWT authentication topic. This guide explains jwt validator deutsch with examples and links to free decoder/validator tools."
+        "q": "Wie verifiziere ich jwt validator deutsch?",
+        "a": "Token und Secret oder JWKS-URL in den JWT Validator einfügen. Signaturprüfung erfolgt lokal."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
-      },
-      {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "Ist Dekodieren dasselbe wie Validieren?",
+        "a": "Nein. Dekodieren liest nur den Inhalt. Validieren prüft die kryptografische Signatur."
       }
     ],
     "cluster": "decode-validate",
@@ -12284,27 +12311,26 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "de",
+    "primaryKeyword": "jwt validator deutsch",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-validator-francais",
-    "title": "JWT Validateur Français",
-    "seoTitle": "JWT Validateur Français | JWTValidator.org",
+    "title": "Validateur JWT — vérifier la signature en ligne",
+    "seoTitle": "Validateur JWT en ligne | Vérifier la signature gratuitement",
     "description": "Vérifier la signature JWT en ligne gratuitement",
     "keywords": "jwt validateur français,jwt",
-    "content": "<h2>JWT Validateur Français</h2>\n<p>This guide explains <strong>jwt validateur français</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>Vérifier la signature JWT en ligne</h2>\n<p>Ce guide couvre <strong>jwt validateur français</strong> — vérification HS256, RS256 via JWKS, et résolution des erreurs de validation.</p>\n<h2>Réponse rapide</h2>\n<p>Collez le token et le secret ou l'URL JWKS dans notre <a href=\"/tools/jwt-validator.html\">Validateur JWT</a>. Traitement 100 % local.</p>\n<h2>Validation en 4 étapes</h2>\n<ol>\n<li>Vérifier la structure (3 segments)</li>\n<li>Vérifier la signature cryptographique</li>\n<li>Refuser les algorithmes non autorisés</li>\n<li>Valider <code>exp</code>, <code>iss</code>, <code>aud</code></li>\n</ol>\n<h2>Erreurs fréquentes</h2>\n<ul>\n<li><a href=\"/errors/token-expired.html\">Token expiré</a></li>\n<li><a href=\"/errors/invalid-signature.html\">Signature invalide</a></li>\n</ul>",
     "faq": [
       {
-        "q": "What is jwt validateur français?",
-        "a": "A common JWT authentication topic. This guide explains jwt validateur français with examples and links to free decoder/validator tools."
+        "q": "Comment vérifier jwt validateur français ?",
+        "a": "Collez le token et le secret ou l'URL JWKS dans le Validateur JWT."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
-      },
-      {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "Décoder suffit-il ?",
+        "a": "Non. La vérification de signature est obligatoire en production."
       }
     ],
     "cluster": "decode-validate",
@@ -12322,27 +12348,26 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "fr",
+    "primaryKeyword": "jwt validateur français",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-validator-espanol",
-    "title": "JWT Validador Español",
-    "seoTitle": "JWT Validador Español | JWTValidator.org",
+    "title": "Validador JWT — verificar firma JWT online",
+    "seoTitle": "Validador JWT online | Verificar firma JWT gratis",
     "description": "Validar firma JWT online gratis",
     "keywords": "jwt validador español,jwt",
-    "content": "<h2>JWT Validador Español</h2>\n<p>This guide explains <strong>jwt validador español</strong> — one of the most searched JWT topics by developers building authentication for APIs and web apps.</p>\n<h2>Quick Answer</h2>\n<p>Use our <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> to inspect the token, then <a href=\"/tools/jwt-validator.html\">JWT Validator</a> to verify the signature. All processing runs in your browser — no upload required.</p>\n\n<h2>Step-by-Step</h2>\n<ol>\n<li>Copy the JWT from your app, API response, or browser dev tools</li>\n<li>Paste into the <a href=\"/tools/jwt-decoder.html\">JWT Decoder</a> — review header, payload, and claims</li>\n<li>Check <code>exp</code>, <code>iss</code>, <code>aud</code>, and <code>alg</code> claims</li>\n<li>Verify signature with <a href=\"/tools/jwt-validator.html\">JWT Validator</a> using the correct secret or JWKS URL</li>\n<li>Use <a href=\"/tools/jwt-debugger.html\">JWT Debugger</a> for claim-by-claim warnings and timeline analysis</li>\n</ol>\n\n<h2>Related Resources</h2>\n<p>Start with our <a href=\"/guides/jwt-basics.html\">JWT Basics</a> guide or follow the <a href=\"/learning-path.html\">JWT Learning Path</a>.</p>",
+    "content": "<h2>Validar firma JWT online</h2>\n<p>Guía sobre <strong>jwt validador español</strong> — verificación HS256, RS256 con JWKS y solución de errores comunes.</p>\n<h2>Respuesta rápida</h2>\n<p>Pegue el token y la clave en nuestro <a href=\"/tools/jwt-validator.html\">Validador JWT</a>. Procesamiento 100 % local.</p>\n<h2>Cómo validar</h2>\n<ol>\n<li>Comprobar estructura (3 segmentos)</li>\n<li>Verificar firma con clave correcta</li>\n<li>Validar <code>exp</code>, <code>iss</code>, <code>aud</code></li>\n<li>Rechazar <code>alg: none</code></li>\n</ol>",
     "faq": [
       {
-        "q": "What is jwt validador español?",
-        "a": "A common JWT authentication topic. This guide explains jwt validador español with examples and links to free decoder/validator tools."
+        "q": "¿Cómo validar jwt validador español?",
+        "a": "Pegue el token y la clave o URL JWKS en el Validador JWT."
       },
       {
-        "q": "Are JWT tools on this site free?",
-        "a": "Yes. All tools run client-side in your browser with no account required."
-      },
-      {
-        "q": "How do I debug JWT errors?",
-        "a": "Use our JWT Decoder, Validator, and Debugger tools. Paste your token to inspect claims and verify signatures."
+        "q": "¿Decodificar es validar?",
+        "a": "No. Siempre verifique la firma en el servidor."
       }
     ],
     "cluster": "decode-validate",
@@ -12360,7 +12385,10 @@
     "relatedArticles": [
       "jwt-beginner-guide",
       "jwt-security-best-practices"
-    ]
+    ],
+    "hreflang": "es",
+    "primaryKeyword": "jwt validador español",
+    "pageDir": "ltr"
   },
   {
     "slug": "jwt-was-ist-das",

@@ -87,7 +87,9 @@ function renderPage(templateName, data) {
   const base = loadTemplate(join(TEMPLATES, 'base.html'));
   const partial = loadTemplate(join(TEMPLATES, `${templateName}.html`));
   const body = render(partial, data);
-  return render(base, { ...data, body });
+  const pageLang = data.page?.hreflang || 'en';
+  const pageDir = data.page?.pageDir || 'ltr';
+  return render(base, { ...data, body, pageLang, pageDir });
 }
 
 function renderHeadPartial(meta, schemas) {
@@ -299,10 +301,12 @@ function generateContentPages(ctx, items, config) {
       { label: item.title },
     ];
     const howToSteps = item.howToSteps || defaultHowToSteps(item.primaryKeyword || item.title);
-    const quickAnswerHtml = item.quickAnswerHtml || quickAnswerSnippet({
-      keyword: item.primaryKeyword || item.title,
-      type: snippetType || 'guide',
-    });
+    const quickAnswerHtml = item.hreflang
+      ? ''
+      : (item.quickAnswerHtml || quickAnswerSnippet({
+          keyword: item.primaryKeyword || item.title,
+          type: snippetType || 'guide',
+        }));
     const meta = buildMeta({ ...item, path, ogType: ogType || 'website' }, site);
     const tryTools = resolveLinks(item.relatedTools?.slice(0, 2), ctx.toolsMap, '/tools');
     const isBlog = snippetType === 'blog' || sectionLabel === 'Blog';
@@ -314,6 +318,9 @@ function generateContentPages(ctx, items, config) {
     ].filter(s => s && s.length > 2);
 
     const supplementType = snippetType || 'guide';
+    const supplement = item.hreflang
+      ? ''
+      : contentSupplement({ keyword: item.primaryKeyword || item.title, type: supplementType });
     const html = renderPage('content', {
       site,
       page: item,
@@ -323,7 +330,7 @@ function generateContentPages(ctx, items, config) {
       relatedHtml: renderRelatedPartial(related),
       faqHtml: renderFaqPartial(item.faq),
       tryItHtml: renderTryItPartial(tryTools),
-      contentHtml: item.content + contentSupplement({ keyword: item.primaryKeyword || item.title, type: supplementType }),
+      contentHtml: item.content + supplement,
       quickAnswerHtml,
       year: new Date().getFullYear(),
       ...related,

@@ -13,6 +13,13 @@ import {
   learnContent, providerContent, useCaseContent, buildFaq,
 } from './lib/content-templates.js';
 import { assignLinks } from './lib/link-graph.js';
+import {
+  applyGuideLocalization,
+  localizedGuideContent,
+  localizedGuideFaq,
+  localizedGuideMeta,
+  localizeAllGuides,
+} from './lib/guide-i18n.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -223,22 +230,27 @@ function seedLearnLanguages() {
 }
 
 function fromCsvGuides(rows) {
-  return rows.map(row => assignLinks({
-    slug: row.slug || slugify(row.primary_keyword),
-    title: row.title,
-    seoTitle: `${row.title} | JWTValidator.org`,
-    description: row.description || `Guide to ${row.primary_keyword}. Free JWT decoder and validator tools included.`,
-    keywords: `${row.primary_keyword},${row.secondary_keywords || 'jwt'}`,
-    content: guideContent({
+  return rows.map(row => {
+    const slug = row.slug || slugify(row.primary_keyword);
+    const base = assignLinks({
+      slug,
       title: row.title,
-      keyword: row.primary_keyword,
-      lang: row.language || null,
-      fixType: row.fix_type || null,
-    }),
-    faq: buildFaq(row.primary_keyword),
-    cluster: row.cluster || 'decode-validate',
-    pageType: 'guides',
-  }, 'guides', row.cluster || 'decode-validate'));
+      seoTitle: `${row.title} | JWTValidator.org`,
+      description: row.description || `Guide to ${row.primary_keyword}. Free JWT decoder and validator tools included.`,
+      keywords: `${row.primary_keyword},${row.secondary_keywords || 'jwt'}`,
+      primaryKeyword: row.primary_keyword,
+      content: guideContent({
+        title: row.title,
+        keyword: row.primary_keyword,
+        lang: row.language || null,
+        fixType: row.fix_type || null,
+      }),
+      faq: buildFaq(row.primary_keyword),
+      cluster: row.cluster || 'decode-validate',
+      pageType: 'guides',
+    }, 'guides', row.cluster || 'decode-validate');
+    return applyGuideLocalization(base);
+  });
 }
 
 function fromCsvErrors(rows) {
@@ -289,7 +301,7 @@ function loadAllCsv(prefix) {
 const guideRows = loadAllCsv('guides');
 const existingGuides = readJson('guides.json');
 const { items: guides, added: guidesAdded } = mergeBySlug(existingGuides, fromCsvGuides(guideRows));
-writeJson('guides.json', guides);
+writeJson('guides.json', localizeAllGuides(guides));
 stats.guides = guidesAdded;
 
 // Errors from all errors*.csv files
